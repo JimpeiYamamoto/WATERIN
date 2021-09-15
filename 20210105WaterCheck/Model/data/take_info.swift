@@ -20,6 +20,8 @@ class take_info
     var minute:String?
     var category:String?
     
+    var outcome_mulch:[String:Double]?
+    
 //    init(subject:String, outcome:Double, paper:String, year:Int, month:Int, day:Int, hour:Int, minute:Int, category:String)
 //    {
 //        self.subject = subject

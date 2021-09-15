@@ -9,6 +9,26 @@ import UIKit
 import CoreLocation
 import FirebaseDatabase
 
+
+var r_after = 0.0
+var g_after = 0.0
+var b_after = 0.0
+
+
+var pH_result = 0.0
+var pH_result2 = 0.0
+
+var r_g = r_after - g_after
+var r_b = r_after - b_after
+
+var r_g_hozon = r_after - g_after
+var r_b_hozon = r_after - b_after
+
+var i = 0.0
+
+var r_g2 = 0.0
+var r_b2 = 0.0
+
 class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 {    
     var reCall = ResultCall()
@@ -22,12 +42,73 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     let geocoder = CLGeocoder()
     var locationManager: CLLocationManager!
     @IBOutlet weak var back_button: UIButton!
+
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         set_view()
     }
+    
+    
+    @IBOutlet weak var parameter: UILabel!
+    @IBOutlet weak var alpha: UILabel!
+    
+    
+    @IBAction func plus(_ sender: Any) {
+        i = i + 1
+        
+        r_g2 = r_g + 0.2 * i
+        r_b2 = r_b + 0.2 * i
+        
+        let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927
+        
+        pH_result2 = (pH_r_g + pH_r_b) / 2
+        
+        pH_result2 = round(pH_result2 * 10)
+        pH_result2 = pH_result2 / 10
+        
+        parameter.text = String(pH_result2)
+        
+        alpha.text = "α：" + String(i)
+        
+//        UserDefaults.standard.set(r_g_alpha, forKey: "r_g_alpha")
+//        UserDefaults.standard.set(r_b_alpha, forKey: "r_b_alpha")
+
+        
+        
+        
+    }
+    
+    
+    @IBAction func minus(_ sender: Any) {
+        i = i - 1
+        
+        r_g2 = r_g + 0.2 * i
+        r_b2 = r_b + 0.2 * i
+        
+        let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927
+        
+        
+        pH_result2 = (pH_r_g + pH_r_b) / 2
+        
+        pH_result2 = round(pH_result2 * 10)
+        pH_result2 = pH_result2 / 10
+        
+        parameter.text = String(pH_result2)
+        
+        alpha.text = "α：-" + String(i)
+        
+        
+//        UserDefaults.standard.set(r_g_alpha, forKey: "r_g_alpha")
+//        UserDefaults.standard.set(r_b_alpha, forKey: "r_b_alpha")
+        
+        
+        
+    }
+    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -45,6 +126,27 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         print("\(t_info.subject!)を測定しました。")
         print("試験紙は\(t_info.paper!)です")
         show_outcome()
+        
+        
+        r_after = t_info.outcome_mulch!["r_after"]!
+        g_after = t_info.outcome_mulch!["g_after"]!
+        b_after = t_info.outcome_mulch!["b_after"]!
+
+        
+        var r_g = r_after - g_after
+        var r_b = r_after - b_after
+        
+        
+        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
+        
+        pH_result = ((pH_r_g + pH_r_b) / 2)
+        pH_result = round(pH_result * 10)
+        pH_result = pH_result / 10
+        
+        parameter.text = String(pH_result)
+        alpha.text = "α：0"
+        
     }
     
     @IBOutlet weak var top_view: UIView!
@@ -66,17 +168,17 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         let v_w = view.frame.size.width / 100
         let v_h = view.frame.size.height / 100
         date_label.frame = CGRect(x: v_w * 5, y: v_h * 7, width: v_w * 94, height: v_h * 6)
-        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 30)
+        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 20)
         let t_w = top_view.frame.size.width / 100
         let t_h = top_view.frame.size.height / 100
         sub_label.frame = CGRect(x: t_w * 5, y: t_h * 3, width: t_w * 30, height: t_h * 10)
-        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 14, width: t_w * 60, height: t_h * 82)
-        second_v.frame = CGRect(x: v_w * 3, y: v_h * 47, width: v_w * 94, height: v_h * 15)
+        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 15, width: t_w * 60, height: t_h * 82)
+        second_v.frame = CGRect(x: v_w * 3, y: v_h * 40, width: v_w * 94, height: v_h * 8)
         let s_w = second_v.frame.size.width / 100
         let s_h = second_v.frame.size.height / 100
         paper_label.frame = CGRect(x: s_w * 5, y: s_h * 3, width: s_w * 30, height: s_h * 30)
         selected_paper_label.frame = CGRect(x: s_w * 10, y: s_h * 33, width: s_w * 80, height: s_h * 65)
-        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 64, width: v_w * 94, height: v_h * 20)
+        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 50, width: v_w * 94, height: v_h * 15)
         let b_w = buttom_v.frame.size.width / 100
         let b_h = buttom_v.frame.size.height / 100
         water_label.frame = CGRect(x: b_w * 5, y: b_h * 3, width: b_w * 30, height: b_h * 15)
@@ -119,10 +221,10 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     func show_outcome()
     {
         date_label.text = "\(add_zero(num:t_info.year!))年 \(add_zero(num:t_info.month!))月\(add_zero(num:t_info.day!))日 \(add_zero(num:t_info.hour!)):\(add_zero(num:t_info.minute!))"
-        let outcome2 = round(t_info.outcome! * 10)
-        outcome_label.text = String(outcome2 / 10)
+        let outcome = round(t_info.outcome_mulch!["pH_result"]! * 10)
+        outcome_label.text = String(outcome / 10)
         selected_paper_label.text = t_info.paper
-        evaluate_label.text = judge_water(outcome: t_info.outcome!)
+        evaluate_label.text = judge_water(outcome: t_info.outcome_mulch!["pH_result"]!)
         cate_tf.text = t_info.category!
     }
     
@@ -140,7 +242,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["time"] = "\(t_info.year!)/\(t_info.month!)/\(t_info.day!)/\(t_info.hour!)/\(t_info.minute!)"
         values["subject"] = t_info.subject
         values["sikenshi"] = t_info.paper
-        values["outcome"] = String(t_info.outcome!)
+        values["pH"] = String(t_info.outcome_mulch!["pH_result"]!)
         values["address"] = l_info.address
         values["lot"] = l_info.lot
         values["lat"] = l_info.lat
@@ -149,7 +251,14 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["subThoroughfare"] = l_info.subthr
         values["taken_ok"] = "ok"
         values["category"] = t_info.category
-        let database = Database.database().reference().child("nikaho")
+        values["pH_alpha"] = String(pH_result2)
+        values["red_before"] = String(t_info.outcome_mulch!["r_before"]!)
+        values["green_before"] = String(t_info.outcome_mulch!["g_before"]!)
+        values["blue_before"] = String(t_info.outcome_mulch!["b_before"]!)
+        values["red_after"] = String(t_info.outcome_mulch!["r_after"]!)
+        values["green_after"] = String(t_info.outcome_mulch!["g_after"]!)
+        values["blue_after"] = String(t_info.outcome_mulch!["b_after"]!)
+        let database = Database.database().reference().child("nikaho_syakujii")
         database.childByAutoId().setValue(values)
         saveOrNonSave()
     }
@@ -189,7 +298,8 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             reCall.whichSubject = t_info.subject!
             reCall.getContents()
             //appendしてから保存する
-            reCall.ataiList.append(t_info.outcome!)
+            reCall.ataiList.append(t_info.outcome_mulch!["pH_result"]!)
+        
             if (l_info.address == nil)
             {
                 reCall.addressList.append("")

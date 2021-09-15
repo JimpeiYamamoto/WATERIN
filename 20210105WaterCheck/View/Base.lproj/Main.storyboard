@@ -1881,12 +1881,43 @@
                                     <action selector="finish_action:" destination="Pvy-B0-haR" eventType="touchUpInside" id="fvo-Bt-8jo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcx-xW-2hO">
+                                <rect key="frame" x="27" y="449" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-a2-w0D">
+                                <rect key="frame" x="242" y="495" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="plus"/>
+                                <connections>
+                                    <action selector="plus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="WgZ-Uf-35I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvp-gu-I85">
+                                <rect key="frame" x="48" y="495" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="minus"/>
+                                <connections>
+                                    <action selector="minus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="vsr-ZI-gpR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-yk-VHE">
+                                <rect key="frame" x="191" y="443" width="154" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kSg-jQ-IJA"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qck-0Y-Bs7"/>
                     <connections>
+                        <outlet property="alpha" destination="y3J-yk-VHE" id="Lh5-Af-dP5"/>
                         <outlet property="back_button" destination="L5E-1x-zNK" id="IFm-8Z-LRX"/>
                         <outlet property="buttom_v" destination="6MN-mQ-s9W" id="WCJ-IO-3SV"/>
                         <outlet property="cate_label" destination="vNS-eN-Vxk" id="cc9-Qv-7qZ"/>
@@ -1896,6 +1927,7 @@
                         <outlet property="evaluate_label" destination="SBc-OO-0kH" id="uGY-kx-qAI"/>
                         <outlet property="outcome_label" destination="Rnf-xN-3F4" id="h5J-ZC-ekK"/>
                         <outlet property="paper_label" destination="Qrh-Kw-zrK" id="qjT-5T-zFZ"/>
+                        <outlet property="parameter" destination="lcx-xW-2hO" id="zug-Ly-G4G"/>
                         <outlet property="second_v" destination="llh-7I-r8Q" id="Kfi-1Q-hzw"/>
                         <outlet property="selected_paper_label" destination="X35-Iw-hNC" id="rQT-y0-Bm4"/>
                         <outlet property="sub_label" destination="GZE-6h-jRN" id="vKf-FO-hbi"/>
@@ -2523,7 +2555,9 @@
         <image name="largecircle.fill.circle" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="m_n_image" width="481" height="602"/>
+        <image name="minus" width="512" height="512"/>
         <image name="network" catalog="system" width="128" height="121"/>
+        <image name="plus" width="512" height="512"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

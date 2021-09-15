@@ -25,7 +25,7 @@ class CheckPicViewController: UIViewController
     @IBOutlet weak var ok_button: UIButton!
     @IBOutlet weak var full_v: UIView!
     
-    func calc_pH(image:UIImage) -> Double
+    func calc_pH() -> [String:Double]
     {
         let r_y_lst = [219.506, 219.334, 218.504, 218.285, 217.739, 193.504, 140.789, 109.473,
                        89.962, 76.630, 74.576, 74.280, 72.481, 71.318, 73.786]
@@ -54,10 +54,15 @@ class CheckPicViewController: UIViewController
         print(g_x_lst)
         print("---b_x_lst---")
         print(b_x_lst)
-        let r_adjusted = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: target_rgb[0])
-        let g_adjusted = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: target_rgb[1])
-        let b_adjusted = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: target_rgb[2])
+        var r_adjusted = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: target_rgb[0])
+        var g_adjusted = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: target_rgb[1])
+        var b_adjusted = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: target_rgb[2])
         print("---before_addjust---")
+        
+        let r_before = target_rgb[0]
+        let g_before = target_rgb[1]
+        let b_before = target_rgb[2]
+        
         print("r:\(target_rgb[0])\ng:\(target_rgb[1])\nb:\(target_rgb[2])")
         print("---after_addjust---")
         print("r:\(r_adjusted)\ng:\(g_adjusted)\nb:\(b_adjusted)")
@@ -69,7 +74,9 @@ class CheckPicViewController: UIViewController
         let pH_g_b = -0.0456 * g_b + 9.7907
         print("pH_r_g=\(pH_r_g)\npH_r_b=\(pH_r_b)\npH_g_b=\(pH_g_b)")
         print("average_pH=\((pH_r_g + pH_r_b + pH_g_b)/3)")
-        return ((pH_r_g + pH_r_b) / 2)
+        let pH_result = (pH_r_g + pH_r_b) / 2
+        return ["pH_result":pH_result, "r_after":r_adjusted, "g_after":g_adjusted, "b_after":b_adjusted,
+                "r_before":r_before, "g_before":g_before, "b_before":b_before]
     }
     
     func set_view()
@@ -130,7 +137,7 @@ class CheckPicViewController: UIViewController
     {
         let outVC = (storyboard?.instantiateViewController(identifier: "outcome_"))! as OutcomeViewController
         outVC.t_info = self.t_info
-        outVC.t_info.outcome = calc_pH(image: image_view.image!)
+        outVC.t_info.outcome_mulch = calc_pH()
         outVC.takenImage = image_view.image!
         self.navigationController?.pushViewController(outVC, animated: true)
     }
