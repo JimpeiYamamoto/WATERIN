@@ -76,8 +76,26 @@ class CheckPicViewController: UIViewController
         print("average_pH=\((pH_r_g + pH_r_b + pH_g_b)/3)")
         let pH_result = (pH_r_g + pH_r_b) / 2
         return ["pH_result":pH_result, "r_after":r_adjusted, "g_after":g_adjusted, "b_after":b_adjusted,
-                "r_before":r_before, "g_before":g_before, "b_before":b_before]
+                "r_before":r_before, "g_before":g_before, "b_before":b_before,
+                
+                "r_0":ref_rgb_1["y_0"]![0], "r_1":ref_rgb_1["y_1"]![0], "r_2":ref_rgb_1["y_2"]![0], "r_3":ref_rgb_1["y_3"]![0],
+                "r_4":ref_rgb_1["y_4"]![0], "r_5":ref_rgb_1["y_5"]![0], "r_6":ref_rgb_1["y_6"]![0], "r_7":ref_rgb_1["y_7"]![0],
+                "r_7_2":ref_rgb_2["y_7"]![0], "r_8":ref_rgb_2["y_8"]![0], "r_9":ref_rgb_2["y_9"]![0], "r_10":ref_rgb_2["y_10"]![0],
+                "r_11":ref_rgb_2["y_11"]![0], "r_12":ref_rgb_2["y_12"]![0], "r_13":ref_rgb_2["y_13"]![0], "r_14":ref_rgb_2["y_14"]![0],
+        
+                "g_0":ref_rgb_1["y_0"]![1], "g_1":ref_rgb_1["y_1"]![1], "g_2":ref_rgb_1["y_2"]![1], "g_3":ref_rgb_1["y_3"]![1],
+                "g_4":ref_rgb_1["y_4"]![1], "g_5":ref_rgb_1["y_5"]![1], "g_6":ref_rgb_1["y_6"]![1], "g_7":ref_rgb_1["y_7"]![1],
+                "g_7_2":ref_rgb_2["y_7"]![1], "g_8":ref_rgb_2["y_8"]![1], "g_9":ref_rgb_2["y_9"]![1], "g_10":ref_rgb_2["y_10"]![1],
+                "g_11":ref_rgb_2["y_11"]![1], "g_12":ref_rgb_2["y_12"]![1], "g_13":ref_rgb_2["y_13"]![1], "g_14":ref_rgb_2["y_14"]![1],
+        
+                "b_0":ref_rgb_1["y_0"]![2], "b_1":ref_rgb_1["y_1"]![2], "b_2":ref_rgb_1["y_2"]![2], "b_3":ref_rgb_1["y_3"]![2],
+                "b_4":ref_rgb_1["y_4"]![2], "b_5":ref_rgb_1["y_5"]![2], "b_6":ref_rgb_1["y_6"]![2], "b_7":ref_rgb_1["y_7"]![2],
+                "b_7_2":ref_rgb_2["y_7"]![2], "b_8":ref_rgb_2["y_8"]![2], "b_9":ref_rgb_2["y_9"]![2], "b_10":ref_rgb_2["y_10"]![2],
+                "b_11":ref_rgb_2["y_11"]![2], "b_12":ref_rgb_2["y_12"]![2], "b_13":ref_rgb_2["y_13"]![2], "b_14":ref_rgb_2["y_14"]![2],]
     }
+    
+    
+    
     
     func set_view()
     {

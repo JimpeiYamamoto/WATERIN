@@ -354,7 +354,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func fetch_data()
     {
-        _ = Database.database().reference().child("nikaho").queryLimited(toLast: 1000).queryOrdered(byChild: "time").observe(.value)
+        _ = Database.database().reference().child("nikaho_syakujii").queryLimited(toLast: 1000).queryOrdered(byChild: "time").observe(.value)
         { snapshot in
             self.contents.removeAll()
             if let snapShot = snapshot.children.allObjects as? [DataSnapshot]
@@ -363,7 +363,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 {
                     if let postData = snap.value as? [String:Any]
                     {
-                        let outcome = postData["outcome"] as? String
+                        let outcome = postData["alpha"] as? String
                         let time = postData["time"] as? String
                         let arr:[String] = (time?.components(separatedBy: "/"))!
                         let lat = postData["lat"] as? String

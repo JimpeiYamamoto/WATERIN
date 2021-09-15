@@ -99,7 +99,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         
         parameter.text = String(pH_result2)
         
-        alpha.text = "α：-" + String(i)
+        alpha.text = "α：" + String(i)
         
         
 //        UserDefaults.standard.set(r_g_alpha, forKey: "r_g_alpha")
@@ -251,13 +251,69 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["subThoroughfare"] = l_info.subthr
         values["taken_ok"] = "ok"
         values["category"] = t_info.category
+        
         values["pH_alpha"] = String(pH_result2)
+        values["alpha"] = String(i)
         values["red_before"] = String(t_info.outcome_mulch!["r_before"]!)
         values["green_before"] = String(t_info.outcome_mulch!["g_before"]!)
         values["blue_before"] = String(t_info.outcome_mulch!["b_before"]!)
         values["red_after"] = String(t_info.outcome_mulch!["r_after"]!)
         values["green_after"] = String(t_info.outcome_mulch!["g_after"]!)
         values["blue_after"] = String(t_info.outcome_mulch!["b_after"]!)
+        
+        values["red_0"] = String(t_info.outcome_mulch!["r_0"]!)
+        values["red_1"] = String(t_info.outcome_mulch!["r_1"]!)
+        values["red_2"] = String(t_info.outcome_mulch!["r_2"]!)
+        values["red_3"] = String(t_info.outcome_mulch!["r_3"]!)
+        values["red_4"] = String(t_info.outcome_mulch!["r_4"]!)
+        values["red_5"] = String(t_info.outcome_mulch!["r_5"]!)
+        values["red_6"] = String(t_info.outcome_mulch!["r_6"]!)
+        values["red_7"] = String(t_info.outcome_mulch!["r_7"]!)
+        values["red_7_2"] = String(t_info.outcome_mulch!["r_7_2"]!)
+        values["red_8"] = String(t_info.outcome_mulch!["r_8"]!)
+        values["red_9"] = String(t_info.outcome_mulch!["r_9"]!)
+        values["red_10"] = String(t_info.outcome_mulch!["r_10"]!)
+        values["red_11"] = String(t_info.outcome_mulch!["r_11"]!)
+        values["red_12"] = String(t_info.outcome_mulch!["r_12"]!)
+        values["red_13"] = String(t_info.outcome_mulch!["r_13"]!)
+        values["red_14"] = String(t_info.outcome_mulch!["r_14"]!)
+        
+        values["green_0"] = String(t_info.outcome_mulch!["g_0"]!)
+        values["green_1"] = String(t_info.outcome_mulch!["g_1"]!)
+        values["green_2"] = String(t_info.outcome_mulch!["g_2"]!)
+        values["green_3"] = String(t_info.outcome_mulch!["g_3"]!)
+        values["green_4"] = String(t_info.outcome_mulch!["g_4"]!)
+        values["green_5"] = String(t_info.outcome_mulch!["g_5"]!)
+        values["green_6"] = String(t_info.outcome_mulch!["g_6"]!)
+        values["green_7"] = String(t_info.outcome_mulch!["g_7"]!)
+        values["green_7_2"] = String(t_info.outcome_mulch!["g_7_2"]!)
+        values["green_8"] = String(t_info.outcome_mulch!["g_8"]!)
+        values["green_9"] = String(t_info.outcome_mulch!["g_9"]!)
+        values["green_10"] = String(t_info.outcome_mulch!["g_10"]!)
+        values["green_11"] = String(t_info.outcome_mulch!["g_11"]!)
+        values["green_12"] = String(t_info.outcome_mulch!["g_12"]!)
+        values["green_13"] = String(t_info.outcome_mulch!["g_13"]!)
+        values["green_14"] = String(t_info.outcome_mulch!["g_14"]!)
+        
+        values["blue_0"] = String(t_info.outcome_mulch!["b_0"]!)
+        values["blue_1"] = String(t_info.outcome_mulch!["b_1"]!)
+        values["blue_2"] = String(t_info.outcome_mulch!["b_2"]!)
+        values["blue_3"] = String(t_info.outcome_mulch!["b_3"]!)
+        values["blue_4"] = String(t_info.outcome_mulch!["b_4"]!)
+        values["blue_5"] = String(t_info.outcome_mulch!["b_5"]!)
+        values["blue_6"] = String(t_info.outcome_mulch!["b_6"]!)
+        values["blue_7"] = String(t_info.outcome_mulch!["b_7"]!)
+        values["blue_7_2"] = String(t_info.outcome_mulch!["b_7_2"]!)
+        values["blue_8"] = String(t_info.outcome_mulch!["b_8"]!)
+        values["blue_9"] = String(t_info.outcome_mulch!["b_9"]!)
+        values["blue_10"] = String(t_info.outcome_mulch!["b_10"]!)
+        values["blue_11"] = String(t_info.outcome_mulch!["b_11"]!)
+        values["blue_12"] = String(t_info.outcome_mulch!["b_12"]!)
+        values["blue_13"] = String(t_info.outcome_mulch!["b_13"]!)
+        values["blue_14"] = String(t_info.outcome_mulch!["b_14"]!)
+        
+        
+        
         let database = Database.database().reference().child("nikaho_syakujii")
         database.childByAutoId().setValue(values)
         saveOrNonSave()
