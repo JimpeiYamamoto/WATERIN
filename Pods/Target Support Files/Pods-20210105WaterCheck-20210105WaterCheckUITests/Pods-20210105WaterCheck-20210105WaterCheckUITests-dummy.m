@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_20210105WaterCheck_20210105WaterCheckUITests : NSObject
+@end
+@implementation PodsDummy_Pods_20210105WaterCheck_20210105WaterCheckUITests
+@end

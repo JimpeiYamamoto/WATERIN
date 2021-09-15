@@ -1,0 +1,6 @@
+framework module Pods_20210105WaterCheck_20210105WaterCheckUITests {
+  umbrella header "Pods-20210105WaterCheck-20210105WaterCheckUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>266877969967-lpgnavcj07qrq65tnpoivoat1lsc1v1k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.266877969967-lpgnavcj07qrq65tnpoivoat1lsc1v1k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBSyaj0SSBWXt1NAR5K7KkxoWNHZf0eZys</string>
+	<key>GCM_SENDER_ID</key>
+	<string>266877969967</string>
+	<key>PLIST_VERSION</key>
+	<string>1.0.10</string>
+	<key>BUNDLE_ID</key>
+	<string>com.KigyoClub.WaterCheckerProttt</string>
+	<key>PROJECT_ID</key>
+	<string>kigyoclub</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kigyoclub.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:266877969967:ios:e61db62d088500926f88da</string>
+	<key>DATABASE_URL</key>
+	<string>https://kigyoclub.firebaseio.com</string>
+</dict>
+</plist>

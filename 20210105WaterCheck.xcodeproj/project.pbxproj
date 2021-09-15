@@ -1,0 +1,1052 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */; };
+		7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */; };
+		733442B32644FDC20095DA2B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733442B22644FDC20095DA2B /* Store.swift */; };
+		73413BF526D207EF0096DAC4 /* Cal2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */; };
+		73413BF726D20D340096DAC4 /* CheckPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BF626D20D340096DAC4 /* CheckPicViewController.swift */; };
+		73413BFB26D217BE0096DAC4 /* Mesure_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */; };
+		73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFC26D21BB50096DAC4 /* take_info.swift */; };
+		73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFE26D21DE20096DAC4 /* location_info.swift */; };
+		73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413C0126D22EE50096DAC4 /* MapViewController.swift */; };
+		73607D7626E0DBBC006AD3CB /* TutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73607D7526E0DBBC006AD3CB /* TutoViewController.swift */; };
+		7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7826D3845A0031F339 /* DayGraph.swift */; };
+		7368BF7B26D4A43C0031F339 /* pH_to_RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7A26D4A43C0031F339 /* pH_to_RGB.swift */; };
+		7369288D266387190088280C /* ProCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288C266387190088280C /* ProCheck.swift */; };
+		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
+		73A9828426999F77000917B8 /* Regression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9828326999F77000917B8 /* Regression.swift */; };
+		73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A982852699C4D0000917B8 /* Cl_Predict.swift */; };
+		73B47EBB2636A8D100A6B47E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */; };
+		73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */; };
+		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
+		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
+		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
+		73BD8DAA25B2CF1500F80127 /* ResultCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8DA925B2CF1500F80127 /* ResultCall.swift */; };
+		73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71825A45BFF00C62ADC /* AppDelegate.swift */; };
+		73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71A25A45BFF00C62ADC /* SceneDelegate.swift */; };
+		73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71C25A45BFF00C62ADC /* ViewController.swift */; };
+		73C7A72025A45BFF00C62ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A71E25A45BFF00C62ADC /* Main.storyboard */; };
+		73C7A72225A45C0000C62ADC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A72125A45C0000C62ADC /* Assets.xcassets */; };
+		73C7A72525A45C0000C62ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C7A72325A45C0000C62ADC /* LaunchScreen.storyboard */; };
+		73C7A73025A45C0100C62ADC /* _0210105WaterCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A72F25A45C0100C62ADC /* _0210105WaterCheckTests.swift */; };
+		73C7A73B25A45C0100C62ADC /* _0210105WaterCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A73A25A45C0100C62ADC /* _0210105WaterCheckUITests.swift */; };
+		73C7A76A25A4A30600C62ADC /* SetMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A76925A4A30600C62ADC /* SetMainViewController.swift */; };
+		73C7A77225A4A31700C62ADC /* LogMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A77125A4A31700C62ADC /* LogMainViewController.swift */; };
+		73C7A77725A4A34B00C62ADC /* PreMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */; };
+		73C7A77C25A4A7F500C62ADC /* LogDetaillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A77B25A4A7F500C62ADC /* LogDetaillViewController.swift */; };
+		73C7A78125A4ABD300C62ADC /* Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A78025A4ABD300C62ADC /* Cal1ViewController.swift */; };
+		73C7A78625A4AE2A00C62ADC /* SelectSikensiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */; };
+		73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A78D25A59FE800C62ADC /* SelectCateViewController.swift */; };
+		73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A79225A5A92000C62ADC /* resizeExtension.swift */; };
+		73C7A79825A5A97200C62ADC /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A79725A5A97200C62ADC /* RGB.swift */; };
+		73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */; };
+		73C7A7A725A5AA4400C62ADC /* MonthGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */; };
+		73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */; };
+		73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7B025A6A04D00C62ADC /* Contents.swift */; };
+		73C7A7B625A6AAF300C62ADC /* SetCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7B525A6AAF300C62ADC /* SetCharts.swift */; };
+		73C7A7CF25AB0C9000C62ADC /* AVCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7CE25AB0C9000C62ADC /* AVCapture.swift */; };
+		73C7A7D425AB0E4300C62ADC /* OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */; };
+		73C7A7D925AB118C00C62ADC /* getTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7D825AB118C00C62ADC /* getTime.swift */; };
+		73C7A7DE25AB183300C62ADC /* GetPlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7DD25AB183300C62ADC /* GetPlaceInfo.swift */; };
+		73ED33E926456D36006F2D34 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33E826456D36006F2D34 /* UserViewController.swift */; };
+		73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EA26457973006F2D34 /* MKViewController.swift */; };
+		73ED33ED2645858C006F2D34 /* ConformUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EC2645858C006F2D34 /* ConformUpViewController.swift */; };
+		73ED33EF264594E8006F2D34 /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EE264594E8006F2D34 /* ChangePassViewController.swift */; };
+		73ED33F1264CF37F006F2D34 /* model_free.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33F0264CF37D006F2D34 /* model_free.mlmodel */; };
+		73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33F2264CFD6B006F2D34 /* RuleViewController.swift */; };
+		850BD844F86C1A2D689E4850 /* Pods_20210105WaterCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA21AB2CF65B8C64DCF506B /* Pods_20210105WaterCheck.framework */; };
+		8E826B850D8A39EB84046302 /* Pods_20210105WaterCheck_20210105WaterCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8705BDB148A8CF845230435D /* Pods_20210105WaterCheck_20210105WaterCheckUITests.framework */; };
+		C2281340DC8B4AB39BD399C9 /* Pods_20210105WaterCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE15B7C9BEF303E390A8C591 /* Pods_20210105WaterCheckTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73C7A72C25A45C0100C62ADC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73C7A70D25A45BFF00C62ADC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73C7A71425A45BFF00C62ADC;
+			remoteInfo = 20210105WaterCheck;
+		};
+		73C7A73725A45C0100C62ADC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73C7A70D25A45BFF00C62ADC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73C7A71425A45BFF00C62ADC;
+			remoteInfo = 20210105WaterCheck;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.release.xcconfig"; sourceTree = "<group>"; };
+		349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.release.xcconfig"; sourceTree = "<group>"; };
+		646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6991A428921C7A72D32AC8D7 /* Pods-20210105WaterCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
+		70B0944F779CDD01D186722C /* Pods-20210105WaterCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = orange_blue_green.mlmodel; sourceTree = "<group>"; };
+		7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = pink_blue_green.mlmodel; sourceTree = "<group>"; };
+		733442B22644FDC20095DA2B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cal2ViewController.swift; sourceTree = "<group>"; };
+		73413BF626D20D340096DAC4 /* CheckPicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPicViewController.swift; sourceTree = "<group>"; };
+		73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesure_ViewController.swift; sourceTree = "<group>"; };
+		73413BFC26D21BB50096DAC4 /* take_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = take_info.swift; sourceTree = "<group>"; };
+		73413BFE26D21DE20096DAC4 /* location_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location_info.swift; sourceTree = "<group>"; };
+		73413C0126D22EE50096DAC4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		73607D7526E0DBBC006AD3CB /* TutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoViewController.swift; sourceTree = "<group>"; };
+		7368BF7826D3845A0031F339 /* DayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGraph.swift; sourceTree = "<group>"; };
+		7368BF7A26D4A43C0031F339 /* pH_to_RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_to_RGB.swift; sourceTree = "<group>"; };
+		7369288C266387190088280C /* ProCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCheck.swift; sourceTree = "<group>"; };
+		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
+		73A9828326999F77000917B8 /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
+		73A982852699C4D0000917B8 /* Cl_Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Predict.swift; sourceTree = "<group>"; };
+		73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
+		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
+		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
+		73BD8DA925B2CF1500F80127 /* ResultCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCall.swift; sourceTree = "<group>"; };
+		73C7A71525A45BFF00C62ADC /* 20210105WaterCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20210105WaterCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C7A71825A45BFF00C62ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		73C7A71A25A45BFF00C62ADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		73C7A71C25A45BFF00C62ADC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73C7A71F25A45BFF00C62ADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		73C7A72125A45C0000C62ADC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		73C7A72425A45C0000C62ADC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		73C7A72625A45C0000C62ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C7A72B25A45C0100C62ADC /* 20210105WaterCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 20210105WaterCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C7A72F25A45C0100C62ADC /* _0210105WaterCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0210105WaterCheckTests.swift; sourceTree = "<group>"; };
+		73C7A73125A45C0100C62ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C7A73625A45C0100C62ADC /* 20210105WaterCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 20210105WaterCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C7A73A25A45C0100C62ADC /* _0210105WaterCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0210105WaterCheckUITests.swift; sourceTree = "<group>"; };
+		73C7A73C25A45C0100C62ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C7A76925A4A30600C62ADC /* SetMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMainViewController.swift; sourceTree = "<group>"; };
+		73C7A77125A4A31700C62ADC /* LogMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMainViewController.swift; sourceTree = "<group>"; };
+		73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreMesureViewController.swift; sourceTree = "<group>"; };
+		73C7A77B25A4A7F500C62ADC /* LogDetaillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetaillViewController.swift; sourceTree = "<group>"; };
+		73C7A78025A4ABD300C62ADC /* Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cal1ViewController.swift; sourceTree = "<group>"; };
+		73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSikensiViewController.swift; sourceTree = "<group>"; };
+		73C7A78D25A59FE800C62ADC /* SelectCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCateViewController.swift; sourceTree = "<group>"; };
+		73C7A79225A5A92000C62ADC /* resizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resizeExtension.swift; sourceTree = "<group>"; };
+		73C7A79725A5A97200C62ADC /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
+		73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekGraph.swift; sourceTree = "<group>"; };
+		73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthGraph.swift; sourceTree = "<group>"; };
+		73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearGraph.swift; sourceTree = "<group>"; };
+		73C7A7B025A6A04D00C62ADC /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		73C7A7B525A6AAF300C62ADC /* SetCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharts.swift; sourceTree = "<group>"; };
+		73C7A7CE25AB0C9000C62ADC /* AVCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCapture.swift; sourceTree = "<group>"; };
+		73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeViewController.swift; sourceTree = "<group>"; };
+		73C7A7D825AB118C00C62ADC /* getTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTime.swift; sourceTree = "<group>"; };
+		73C7A7DD25AB183300C62ADC /* GetPlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaceInfo.swift; sourceTree = "<group>"; };
+		73ED33E826456D36006F2D34 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		73ED33EA26457973006F2D34 /* MKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKViewController.swift; sourceTree = "<group>"; };
+		73ED33EC2645858C006F2D34 /* ConformUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConformUpViewController.swift; sourceTree = "<group>"; };
+		73ED33EE264594E8006F2D34 /* ChangePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
+		73ED33F0264CF37D006F2D34 /* model_free.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_free.mlmodel; sourceTree = "<group>"; };
+		73ED33F2264CFD6B006F2D34 /* RuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViewController.swift; sourceTree = "<group>"; };
+		8705BDB148A8CF845230435D /* Pods_20210105WaterCheck_20210105WaterCheckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20210105WaterCheck_20210105WaterCheckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA21AB2CF65B8C64DCF506B /* Pods_20210105WaterCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20210105WaterCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE15B7C9BEF303E390A8C591 /* Pods_20210105WaterCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20210105WaterCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73C7A71225A45BFF00C62ADC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850BD844F86C1A2D689E4850 /* Pods_20210105WaterCheck.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A72825A45C0100C62ADC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2281340DC8B4AB39BD399C9 /* Pods_20210105WaterCheckTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A73325A45C0100C62ADC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E826B850D8A39EB84046302 /* Pods_20210105WaterCheck_20210105WaterCheckUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3865D09907037DD8E50AF935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70B0944F779CDD01D186722C /* Pods-20210105WaterCheck.debug.xcconfig */,
+				349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */,
+				646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */,
+				679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */,
+				6991A428921C7A72D32AC8D7 /* Pods-20210105WaterCheckTests.debug.xcconfig */,
+				240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		412A6B7CC0ADB7BD1F3BA534 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACA21AB2CF65B8C64DCF506B /* Pods_20210105WaterCheck.framework */,
+				8705BDB148A8CF845230435D /* Pods_20210105WaterCheck_20210105WaterCheckUITests.framework */,
+				AE15B7C9BEF303E390A8C591 /* Pods_20210105WaterCheckTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73413C0026D22EB80096DAC4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				73413C0126D22EE50096DAC4 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		737A8E01269ADE6900A47663 /* predict */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A79725A5A97200C62ADC /* RGB.swift */,
+				73A982852699C4D0000917B8 /* Cl_Predict.swift */,
+				73A9828326999F77000917B8 /* Regression.swift */,
+				7368BF7A26D4A43C0031F339 /* pH_to_RGB.swift */,
+			);
+			path = predict;
+			sourceTree = "<group>";
+		};
+		737A8E02269ADE8100A47663 /* calender_graph */ = {
+			isa = PBXGroup;
+			children = (
+				7368BF7826D3845A0031F339 /* DayGraph.swift */,
+				73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */,
+				73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */,
+				73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */,
+				73C7A7B525A6AAF300C62ADC /* SetCharts.swift */,
+			);
+			path = calender_graph;
+			sourceTree = "<group>";
+		};
+		737A8E03269ADEC800A47663 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				73BD8DA925B2CF1500F80127 /* ResultCall.swift */,
+				73C7A7B025A6A04D00C62ADC /* Contents.swift */,
+				73413BFC26D21BB50096DAC4 /* take_info.swift */,
+				73413BFE26D21DE20096DAC4 /* location_info.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		737A8E04269ADEEA00A47663 /* camera_image */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A7CE25AB0C9000C62ADC /* AVCapture.swift */,
+				73C7A79225A5A92000C62ADC /* resizeExtension.swift */,
+			);
+			path = camera_image;
+			sourceTree = "<group>";
+		};
+		737A8E05269ADF0B00A47663 /* premium */ = {
+			isa = PBXGroup;
+			children = (
+				7369288E2665C32A0088280C /* UpgradeNotice.swift */,
+				733442B22644FDC20095DA2B /* Store.swift */,
+				7369288C266387190088280C /* ProCheck.swift */,
+			);
+			path = premium;
+			sourceTree = "<group>";
+		};
+		737A8E06269ADF2C00A47663 /* get_info */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A7DD25AB183300C62ADC /* GetPlaceInfo.swift */,
+				73C7A7D825AB118C00C62ADC /* getTime.swift */,
+			);
+			path = get_info;
+			sourceTree = "<group>";
+		};
+		73A982872699CE19000917B8 /* pH */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A78025A4ABD300C62ADC /* Cal1ViewController.swift */,
+				73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */,
+				73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */,
+				73413BF626D20D340096DAC4 /* CheckPicViewController.swift */,
+			);
+			path = pH;
+			sourceTree = "<group>";
+		};
+		73C7A70C25A45BFF00C62ADC = {
+			isa = PBXGroup;
+			children = (
+				73C7A71725A45BFF00C62ADC /* 20210105WaterCheck */,
+				73C7A72E25A45C0100C62ADC /* 20210105WaterCheckTests */,
+				73C7A73925A45C0100C62ADC /* 20210105WaterCheckUITests */,
+				73C7A71625A45BFF00C62ADC /* Products */,
+				3865D09907037DD8E50AF935 /* Pods */,
+				412A6B7CC0ADB7BD1F3BA534 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		73C7A71625A45BFF00C62ADC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A71525A45BFF00C62ADC /* 20210105WaterCheck.app */,
+				73C7A72B25A45C0100C62ADC /* 20210105WaterCheckTests.xctest */,
+				73C7A73625A45C0100C62ADC /* 20210105WaterCheckUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73C7A71725A45BFF00C62ADC /* 20210105WaterCheck */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A72625A45C0000C62ADC /* Info.plist */,
+				73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */,
+				73C7A72125A45C0000C62ADC /* Assets.xcassets */,
+				73C7A76225A45EDE00C62ADC /* Model */,
+				73C7A76025A45ECB00C62ADC /* View */,
+				73C7A76125A45ED400C62ADC /* Controller */,
+			);
+			path = 20210105WaterCheck;
+			sourceTree = "<group>";
+		};
+		73C7A72E25A45C0100C62ADC /* 20210105WaterCheckTests */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A72F25A45C0100C62ADC /* _0210105WaterCheckTests.swift */,
+				73C7A73125A45C0100C62ADC /* Info.plist */,
+			);
+			path = 20210105WaterCheckTests;
+			sourceTree = "<group>";
+		};
+		73C7A73925A45C0100C62ADC /* 20210105WaterCheckUITests */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A73A25A45C0100C62ADC /* _0210105WaterCheckUITests.swift */,
+				73C7A73C25A45C0100C62ADC /* Info.plist */,
+			);
+			path = 20210105WaterCheckUITests;
+			sourceTree = "<group>";
+		};
+		73C7A76025A45ECB00C62ADC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A71825A45BFF00C62ADC /* AppDelegate.swift */,
+				73C7A71A25A45BFF00C62ADC /* SceneDelegate.swift */,
+				73C7A71E25A45BFF00C62ADC /* Main.storyboard */,
+				73C7A72325A45C0000C62ADC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73C7A76125A45ED400C62ADC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				73413C0026D22EB80096DAC4 /* Map */,
+				73C7A76825A4A0A000C62ADC /* Logg */,
+				73C7A76725A4A08D00C62ADC /* Setting */,
+				73C7A76625A4A06E00C62ADC /* Mesure */,
+				73ED33F0264CF37D006F2D34 /* model_free.mlmodel */,
+				7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */,
+				7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		73C7A76225A45EDE00C62ADC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				737A8E06269ADF2C00A47663 /* get_info */,
+				737A8E05269ADF0B00A47663 /* premium */,
+				737A8E04269ADEEA00A47663 /* camera_image */,
+				737A8E03269ADEC800A47663 /* data */,
+				737A8E02269ADE8100A47663 /* calender_graph */,
+				737A8E01269ADE6900A47663 /* predict */,
+				73BD8D9A25ADE87500F80127 /* backNavigation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		73C7A76625A4A06E00C62ADC /* Mesure */ = {
+			isa = PBXGroup;
+			children = (
+				73A982872699CE19000917B8 /* pH */,
+				73C7A71C25A45BFF00C62ADC /* ViewController.swift */,
+				73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */,
+				73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */,
+				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
+				73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */,
+				73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */,
+				73607D7526E0DBBC006AD3CB /* TutoViewController.swift */,
+			);
+			path = Mesure;
+			sourceTree = "<group>";
+		};
+		73C7A76725A4A08D00C62ADC /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A76925A4A30600C62ADC /* SetMainViewController.swift */,
+				73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */,
+				73ED33E826456D36006F2D34 /* UserViewController.swift */,
+				73ED33EA26457973006F2D34 /* MKViewController.swift */,
+				73ED33EC2645858C006F2D34 /* ConformUpViewController.swift */,
+				73ED33EE264594E8006F2D34 /* ChangePassViewController.swift */,
+				73ED33F2264CFD6B006F2D34 /* RuleViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		73C7A76825A4A0A000C62ADC /* Logg */ = {
+			isa = PBXGroup;
+			children = (
+				73C7A77125A4A31700C62ADC /* LogMainViewController.swift */,
+				73C7A77B25A4A7F500C62ADC /* LogDetaillViewController.swift */,
+				73C7A78D25A59FE800C62ADC /* SelectCateViewController.swift */,
+			);
+			path = Logg;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		73C7A71425A45BFF00C62ADC /* 20210105WaterCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C7A73F25A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheck" */;
+			buildPhases = (
+				E8D6257FE9A6F18121D33B2B /* [CP] Check Pods Manifest.lock */,
+				73C7A71125A45BFF00C62ADC /* Sources */,
+				73C7A71225A45BFF00C62ADC /* Frameworks */,
+				73C7A71325A45BFF00C62ADC /* Resources */,
+				A2CBA93F3D07275042A359C9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 20210105WaterCheck;
+			productName = 20210105WaterCheck;
+			productReference = 73C7A71525A45BFF00C62ADC /* 20210105WaterCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+		73C7A72A25A45C0100C62ADC /* 20210105WaterCheckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C7A74225A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheckTests" */;
+			buildPhases = (
+				F7DDE406648122D5FA68A0ED /* [CP] Check Pods Manifest.lock */,
+				73C7A72725A45C0100C62ADC /* Sources */,
+				73C7A72825A45C0100C62ADC /* Frameworks */,
+				73C7A72925A45C0100C62ADC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73C7A72D25A45C0100C62ADC /* PBXTargetDependency */,
+			);
+			name = 20210105WaterCheckTests;
+			productName = 20210105WaterCheckTests;
+			productReference = 73C7A72B25A45C0100C62ADC /* 20210105WaterCheckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		73C7A73525A45C0100C62ADC /* 20210105WaterCheckUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C7A74525A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheckUITests" */;
+			buildPhases = (
+				8E20431912F94B8F960E7268 /* [CP] Check Pods Manifest.lock */,
+				73C7A73225A45C0100C62ADC /* Sources */,
+				73C7A73325A45C0100C62ADC /* Frameworks */,
+				73C7A73425A45C0100C62ADC /* Resources */,
+				AD6A3CC594B31B7DF214CDAF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73C7A73825A45C0100C62ADC /* PBXTargetDependency */,
+			);
+			name = 20210105WaterCheckUITests;
+			productName = 20210105WaterCheckUITests;
+			productReference = 73C7A73625A45C0100C62ADC /* 20210105WaterCheckUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73C7A70D25A45BFF00C62ADC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					73C7A71425A45BFF00C62ADC = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					73C7A72A25A45C0100C62ADC = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 73C7A71425A45BFF00C62ADC;
+					};
+					73C7A73525A45C0100C62ADC = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 73C7A71425A45BFF00C62ADC;
+					};
+				};
+			};
+			buildConfigurationList = 73C7A71025A45BFF00C62ADC /* Build configuration list for PBXProject "20210105WaterCheck" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 73C7A70C25A45BFF00C62ADC;
+			productRefGroup = 73C7A71625A45BFF00C62ADC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73C7A71425A45BFF00C62ADC /* 20210105WaterCheck */,
+				73C7A72A25A45C0100C62ADC /* 20210105WaterCheckTests */,
+				73C7A73525A45C0100C62ADC /* 20210105WaterCheckUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73C7A71325A45BFF00C62ADC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C7A72525A45C0000C62ADC /* LaunchScreen.storyboard in Resources */,
+				73B47EBB2636A8D100A6B47E /* GoogleService-Info.plist in Resources */,
+				73C7A72225A45C0000C62ADC /* Assets.xcassets in Resources */,
+				73C7A72025A45BFF00C62ADC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A72925A45C0100C62ADC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A73425A45C0100C62ADC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E20431912F94B8F960E7268 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-20210105WaterCheck-20210105WaterCheckUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2CBA93F3D07275042A359C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6A3CC594B31B7DF214CDAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D6257FE9A6F18121D33B2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-20210105WaterCheck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DDE406648122D5FA68A0ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-20210105WaterCheckTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73C7A71125A45BFF00C62ADC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C7A77C25A4A7F500C62ADC /* LogDetaillViewController.swift in Sources */,
+				73BD8DAA25B2CF1500F80127 /* ResultCall.swift in Sources */,
+				73C7A7CF25AB0C9000C62ADC /* AVCapture.swift in Sources */,
+				73413BFB26D217BE0096DAC4 /* Mesure_ViewController.swift in Sources */,
+				73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */,
+				73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */,
+				7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */,
+				73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */,
+				73ED33E926456D36006F2D34 /* UserViewController.swift in Sources */,
+				73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */,
+				73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */,
+				733442B32644FDC20095DA2B /* Store.swift in Sources */,
+				73A9828426999F77000917B8 /* Regression.swift in Sources */,
+				73C7A7D925AB118C00C62ADC /* getTime.swift in Sources */,
+				7368BF7B26D4A43C0031F339 /* pH_to_RGB.swift in Sources */,
+				73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */,
+				73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */,
+				73C7A79825A5A97200C62ADC /* RGB.swift in Sources */,
+				73413BF526D207EF0096DAC4 /* Cal2ViewController.swift in Sources */,
+				73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */,
+				73C7A77725A4A34B00C62ADC /* PreMesureViewController.swift in Sources */,
+				73C7A77225A4A31700C62ADC /* LogMainViewController.swift in Sources */,
+				7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */,
+				73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */,
+				73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */,
+				73C7A78125A4ABD300C62ADC /* Cal1ViewController.swift in Sources */,
+				73C7A7A725A5AA4400C62ADC /* MonthGraph.swift in Sources */,
+				73ED33EF264594E8006F2D34 /* ChangePassViewController.swift in Sources */,
+				73C7A7D425AB0E4300C62ADC /* OutcomeViewController.swift in Sources */,
+				73ED33F1264CF37F006F2D34 /* model_free.mlmodel in Sources */,
+				73C7A78625A4AE2A00C62ADC /* SelectSikensiViewController.swift in Sources */,
+				7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */,
+				73ED33ED2645858C006F2D34 /* ConformUpViewController.swift in Sources */,
+				73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */,
+				7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */,
+				73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */,
+				73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */,
+				73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */,
+				7369288D266387190088280C /* ProCheck.swift in Sources */,
+				73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */,
+				73C7A76A25A4A30600C62ADC /* SetMainViewController.swift in Sources */,
+				73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */,
+				73C7A7DE25AB183300C62ADC /* GetPlaceInfo.swift in Sources */,
+				73413BF726D20D340096DAC4 /* CheckPicViewController.swift in Sources */,
+				73C7A7B625A6AAF300C62ADC /* SetCharts.swift in Sources */,
+				73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */,
+				73607D7626E0DBBC006AD3CB /* TutoViewController.swift in Sources */,
+				73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A72725A45C0100C62ADC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C7A73025A45C0100C62ADC /* _0210105WaterCheckTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C7A73225A45C0100C62ADC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C7A73B25A45C0100C62ADC /* _0210105WaterCheckUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73C7A72D25A45C0100C62ADC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73C7A71425A45BFF00C62ADC /* 20210105WaterCheck */;
+			targetProxy = 73C7A72C25A45C0100C62ADC /* PBXContainerItemProxy */;
+		};
+		73C7A73825A45C0100C62ADC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73C7A71425A45BFF00C62ADC /* 20210105WaterCheck */;
+			targetProxy = 73C7A73725A45C0100C62ADC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		73C7A71E25A45BFF00C62ADC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73C7A71F25A45BFF00C62ADC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		73C7A72325A45C0000C62ADC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73C7A72425A45C0000C62ADC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		73C7A73D25A45C0100C62ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		73C7A73E25A45C0100C62ADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		73C7A74025A45C0100C62ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B0944F779CDD01D186722C /* Pods-20210105WaterCheck.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.10;
+				DEVELOPMENT_TEAM = BN3Q7X8773;
+				INFOPLIST_FILE = 20210105WaterCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KigyoClub.WaterCheckerProttt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		73C7A74125A45C0100C62ADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.10;
+				DEVELOPMENT_TEAM = BN3Q7X8773;
+				INFOPLIST_FILE = 20210105WaterCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KigyoClub.WaterCheckerProttt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		73C7A74325A45C0100C62ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6991A428921C7A72D32AC8D7 /* Pods-20210105WaterCheckTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JXCB7X2L;
+				INFOPLIST_FILE = 20210105WaterCheckTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KigyoClub.-0210105WaterCheckTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/20210105WaterCheck.app/20210105WaterCheck";
+			};
+			name = Debug;
+		};
+		73C7A74425A45C0100C62ADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JXCB7X2L;
+				INFOPLIST_FILE = 20210105WaterCheckTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KigyoClub.-0210105WaterCheckTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/20210105WaterCheck.app/20210105WaterCheck";
+			};
+			name = Release;
+		};
+		73C7A74625A45C0100C62ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JXCB7X2L;
+				INFOPLIST_FILE = 20210105WaterCheckUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KigyoClub.-0210105WaterCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = 20210105WaterCheck;
+			};
+			name = Debug;
+		};
+		73C7A74725A45C0100C62ADC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JXCB7X2L;
+				INFOPLIST_FILE = 20210105WaterCheckUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KigyoClub.-0210105WaterCheckUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = 20210105WaterCheck;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73C7A71025A45BFF00C62ADC /* Build configuration list for PBXProject "20210105WaterCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C7A73D25A45C0100C62ADC /* Debug */,
+				73C7A73E25A45C0100C62ADC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C7A73F25A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C7A74025A45C0100C62ADC /* Debug */,
+				73C7A74125A45C0100C62ADC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C7A74225A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C7A74325A45C0100C62ADC /* Debug */,
+				73C7A74425A45C0100C62ADC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C7A74525A45C0100C62ADC /* Build configuration list for PBXNativeTarget "20210105WaterCheckUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C7A74625A45C0100C62ADC /* Debug */,
+				73C7A74725A45C0100C62ADC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73C7A70D25A45BFF00C62ADC /* Project object */;
+}
