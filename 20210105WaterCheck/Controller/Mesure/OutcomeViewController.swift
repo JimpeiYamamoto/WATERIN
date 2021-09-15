@@ -58,8 +58,8 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func plus(_ sender: Any) {
         i = i + 1
         
-        r_g2 = r_g + 0.2 * i
-        r_b2 = r_b + 0.2 * i
+        r_g2 = r_g + 0.5 * i
+        r_b2 = r_b + 0.5 * i
         
         let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
         let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927
@@ -85,8 +85,8 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func minus(_ sender: Any) {
         i = i - 1
         
-        r_g2 = r_g + 0.2 * i
-        r_b2 = r_b + 0.2 * i
+        r_g2 = r_g + 0.5 * i
+        r_b2 = r_b + 0.5 * i
         
         let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
         let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927

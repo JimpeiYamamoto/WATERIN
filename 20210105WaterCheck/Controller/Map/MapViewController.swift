@@ -363,7 +363,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 {
                     if let postData = snap.value as? [String:Any]
                     {
-                        let outcome = postData["alpha"] as? String
+                        let outcome = postData["pH_alpha"] as? String
                         let time = postData["time"] as? String
                         let arr:[String] = (time?.components(separatedBy: "/"))!
                         let lat = postData["lat"] as? String

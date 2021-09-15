@@ -75,6 +75,7 @@ class CheckPicViewController: UIViewController
         print("pH_r_g=\(pH_r_g)\npH_r_b=\(pH_r_b)\npH_g_b=\(pH_g_b)")
         print("average_pH=\((pH_r_g + pH_r_b + pH_g_b)/3)")
         let pH_result = (pH_r_g + pH_r_b) / 2
+        
         return ["pH_result":pH_result, "r_after":r_adjusted, "g_after":g_adjusted, "b_after":b_adjusted,
                 "r_before":r_before, "g_before":g_before, "b_before":b_before,
                 
