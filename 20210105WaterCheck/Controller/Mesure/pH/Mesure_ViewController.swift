@@ -32,6 +32,17 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
     {
         let image = image_view.image!
         let resize_image = image.resize(width_size: full_v.frame.size.width, height_size: full_v.frame.size.height)
+        let x_ = full_v.frame.size.width * 0.08985782
+        let paper_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 5.854368932, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
+        print("---target_rgb---")
+        print("r:\(paper_rgb[0])\ng:\(paper_rgb[1])\nb:\(paper_rgb[2])")
+        return (paper_rgb)
+    }
+    
+    func target_rgb_get_ori() -> [Double]
+    {
+        let image = image_view.image!
+        let resize_image = image.resize(width_size: full_v.frame.size.width, height_size: full_v.frame.size.height)
         let x_ = full_v.frame.size.width * 0.072985782
         let paper_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 5.854368932, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
         print("---target_rgb---")
@@ -40,6 +51,50 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
     }
     
     func set_view()
+    {
+        let v_w = view.frame.size.width / 100
+        let v_h = view.frame.size.height / 100
+        full_v.frame = CGRect(x: v_w * 6.8, y: v_h * 11, width: v_w * 86.4, height: v_w * 153.6)
+        image_view.frame = CGRect(x: 0, y: 0, width: full_v.frame.size.width, height: full_v.frame.size.height)
+//        let x_ = full_v.frame.size.width * 0.072985782
+        let x_ = full_v.frame.size.width * 0.08985782
+        paper_v.frame = CGRect(x: x_ * 4.621359223, y: x_ * 4.165048544, width: x_ * 1, height: x_ * 9.223300971)
+        ta_1.frame = CGRect(x: x_ * 4.621359223, y: x_ * 4.504854369, width: x_ * 1, height: x_ * 0.902912621)
+        ta_2.frame = CGRect(x: x_ * 4.621359223, y: x_ * 5.854368932, width: x_ * 1, height: x_ * 0.902912621)
+        ta_3.frame = CGRect(x: x_ * 4.621359223, y: x_ * 7.242718447, width: x_ * 1, height: x_ * 0.902912621)
+        ta_4.frame = CGRect(x: x_ * 4.621359223, y: x_ * 8.563106796, width: x_ * 1, height: x_ * 0.902912621)
+        paper_v.layer.borderColor = UIColor.black.cgColor
+        paper_v.backgroundColor = .clear
+        paper_v.layer.borderWidth = 2
+        ta_1.layer.borderColor = UIColor.black.cgColor
+        ta_1.backgroundColor = .clear
+        ta_1.layer.borderWidth = 2
+        ta_2.layer.borderColor = UIColor.black.cgColor
+        ta_2.backgroundColor = .clear
+        ta_2.layer.borderWidth = 2
+        ta_3.layer.borderColor = UIColor.black.cgColor
+        ta_3.backgroundColor = .clear
+        ta_3.layer.borderWidth = 2
+        ta_4.layer.borderColor = UIColor.black.cgColor
+        ta_4.backgroundColor = .clear
+        ta_4.layer.borderWidth = 2
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+                    title: "",
+                    style: .plain,
+                    target: nil,
+                    action: nil
+        )
+        self.tabBarController?.tabBar.barTintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        let viewWidth = view.frame.size.width / 100
+        let viewHeight = view.frame.size.height / 100
+        take_button.frame = CGRect(x: viewWidth * 35, y: viewHeight * 75, width: viewWidth * 30, height: viewHeight * 20)
+        take_button.imageView?.contentMode = .scaleAspectFit
+        take_button.contentHorizontalAlignment = .fill
+        take_button.contentVerticalAlignment = .fill
+    }
+    
+    func set_view_ori()
     {
         let v_w = view.frame.size.width / 100
         let v_h = view.frame.size.height / 100

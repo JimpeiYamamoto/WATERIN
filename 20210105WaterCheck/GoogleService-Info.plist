@@ -11,7 +11,7 @@
 	<key>GCM_SENDER_ID</key>
 	<string>266877969967</string>
 	<key>PLIST_VERSION</key>
-	<string>1.0.10</string>
+	<string>1.0.15</string>
 	<key>BUNDLE_ID</key>
 	<string>com.KigyoClub.WaterCheckerProttt</string>
 	<key>PROJECT_ID</key>
