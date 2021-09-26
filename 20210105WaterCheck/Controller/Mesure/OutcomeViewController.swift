@@ -9,106 +9,48 @@ import UIKit
 import CoreLocation
 import FirebaseDatabase
 
-
-var r_after = 0.0
-var g_after = 0.0
-var b_after = 0.0
-
-
-var pH_result = 0.0
-var pH_result2 = 0.0
-
-var r_g = r_after - g_after
-var r_b = r_after - b_after
-
-var r_g_hozon = r_after - g_after
-var r_b_hozon = r_after - b_after
-
-var i = 0.0
-
-var r_g2 = 0.0
-var r_b2 = 0.0
-
 class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 {    
+
     var reCall = ResultCall()
     var timeClass = GetTime()
     var timeDict = [String:String]()
-    
     var t_info = take_info()
     var l_info = location_info()
-    
+    var ref_rgb_1 = [String:[Double]]()
+    var ref_rgb_2 = [String:[Double]]()
     var takenImage = UIImage()
     let geocoder = CLGeocoder()
     var locationManager: CLLocationManager!
+    
+    @IBOutlet weak var top_view: UIView!
+    @IBOutlet weak var date_label: UILabel!
+    @IBOutlet weak var sub_label: UILabel!
+    @IBOutlet weak var outcome_label: UILabel!
+    @IBOutlet weak var second_v: UIView!
+    @IBOutlet weak var paper_label: UILabel!
+    @IBOutlet weak var selected_paper_label: UILabel!
+    @IBOutlet weak var buttom_v: UIView!
+    @IBOutlet weak var water_label: UILabel!
+    @IBOutlet weak var evaluate_label: UILabel!
+    @IBOutlet weak var cate_label: UILabel!
+    @IBOutlet weak var cate_tf: UITextField!
+    @IBOutlet weak var change_cate_button: UIButton!
+    
+    @IBOutlet weak var parameter: UILabel!
+    @IBOutlet weak var alpha: UILabel!
     @IBOutlet weak var back_button: UIButton!
-
+    
+    var r_g = Double()
+    var r_b = Double()
+    var alpha_num = Int()
+    var alpha_pH = Double()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         set_view()
     }
-    
-    
-    @IBOutlet weak var parameter: UILabel!
-    @IBOutlet weak var alpha: UILabel!
-    
-    
-    @IBAction func plus(_ sender: Any) {
-        i = i + 1
-        
-        r_g2 = r_g + 0.5 * i
-        r_b2 = r_b + 0.5 * i
-        
-        let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
-        let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927
-        
-        pH_result2 = (pH_r_g + pH_r_b) / 2
-        
-        pH_result2 = round(pH_result2 * 10)
-        pH_result2 = pH_result2 / 10
-        
-        parameter.text = String(pH_result2)
-        
-        alpha.text = "α：" + String(i)
-        
-//        UserDefaults.standard.set(r_g_alpha, forKey: "r_g_alpha")
-//        UserDefaults.standard.set(r_b_alpha, forKey: "r_b_alpha")
-
-        
-        
-        
-    }
-    
-    
-    @IBAction func minus(_ sender: Any) {
-        i = i - 1
-        
-        r_g2 = r_g + 0.5 * i
-        r_b2 = r_b + 0.5 * i
-        
-        let pH_r_g = -0.00001 * pow(r_g2, 3) + 0.0006 * pow(r_g2, 2) - 0.0303 * r_g2 + 6.4479
-        let pH_r_b = -0.0000006 * pow(r_b2, 3) + 0.0002 * pow(r_b2, 2) - 0.036 * r_b2 + 8.2927
-        
-        
-        pH_result2 = (pH_r_g + pH_r_b) / 2
-        
-        pH_result2 = round(pH_result2 * 10)
-        pH_result2 = pH_result2 / 10
-        
-        parameter.text = String(pH_result2)
-        
-        alpha.text = "α：" + String(i)
-        
-        
-//        UserDefaults.standard.set(r_g_alpha, forKey: "r_g_alpha")
-//        UserDefaults.standard.set(r_b_alpha, forKey: "r_b_alpha")
-        
-        
-        
-    }
-    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -126,84 +68,45 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         print("\(t_info.subject!)を測定しました。")
         print("試験紙は\(t_info.paper!)です")
         show_outcome()
-        
-        
-        r_after = t_info.outcome_mulch!["r_after"]!
-        g_after = t_info.outcome_mulch!["g_after"]!
-        b_after = t_info.outcome_mulch!["b_after"]!
-
-        
-        var r_g = r_after - g_after
-        var r_b = r_after - b_after
-        
-        
-        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-        
-        pH_result = ((pH_r_g + pH_r_b) / 2)
-        pH_result = round(pH_result * 10)
-        pH_result = pH_result / 10
-        
-        parameter.text = String(pH_result)
-        alpha.text = "α：0"
-        
+        init_alpha()
     }
     
-    @IBOutlet weak var top_view: UIView!
-    @IBOutlet weak var date_label: UILabel!
-    @IBOutlet weak var sub_label: UILabel!
-    @IBOutlet weak var outcome_label: UILabel!
-    @IBOutlet weak var second_v: UIView!
-    @IBOutlet weak var paper_label: UILabel!
-    @IBOutlet weak var selected_paper_label: UILabel!
-    @IBOutlet weak var buttom_v: UIView!
-    @IBOutlet weak var water_label: UILabel!
-    @IBOutlet weak var evaluate_label: UILabel!
-    @IBOutlet weak var cate_label: UILabel!
-    @IBOutlet weak var cate_tf: UITextField!
-    @IBOutlet weak var change_cate_button: UIButton!
-    
-    func set_view()
+    func init_alpha()
     {
-        let v_w = view.frame.size.width / 100
-        let v_h = view.frame.size.height / 100
-        date_label.frame = CGRect(x: v_w * 5, y: v_h * 7, width: v_w * 94, height: v_h * 6)
-        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 22)
-        let t_w = top_view.frame.size.width / 100
-        let t_h = top_view.frame.size.height / 100
-        sub_label.frame = CGRect(x: t_w * 5, y: t_h * 3, width: t_w * 30, height: t_h * 10)
-        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 15, width: t_w * 60, height: t_h * 82)
-        second_v.frame = CGRect(x: v_w * 3, y: v_h * 39, width: v_w * 94, height: v_h * 10)
-        let s_w = second_v.frame.size.width / 100
-        let s_h = second_v.frame.size.height / 100
-        paper_label.frame = CGRect(x: s_w * 5, y: s_h * 3, width: s_w * 30, height: s_h * 30)
-        selected_paper_label.frame = CGRect(x: s_w * 10, y: s_h * 33, width: s_w * 80, height: s_h * 65)
-        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 52, width: v_w * 94, height: v_h * 17)
-        let b_w = buttom_v.frame.size.width / 100
-        let b_h = buttom_v.frame.size.height / 100
-        water_label.frame = CGRect(x: b_w * 5, y: b_h * 3, width: b_w * 30, height: b_h * 15)
-        evaluate_label.frame = CGRect(x: b_w * 10, y:b_h * 20, width: b_w * 80, height: b_h * 20)
-        cate_label.frame = CGRect(x: b_w * 5, y: b_h * 43, width: b_w * 30, height: b_h * 15)
-        cate_tf.frame = CGRect(x: b_w * 20, y: b_h * 63, width: b_w * 60, height: b_h * 30)
-        change_cate_button.frame = CGRect(x: b_w * 82, y: b_h * 63, width: b_w * 16, height: b_h * 30)
-        back_button.frame = CGRect(x: v_w * 30, y: v_h * 86, width: v_w * 40, height: v_h * 13)
-        cate_tf.layer.borderWidth = 1.0
-        cate_tf.layer.borderColor = UIColor.black.cgColor
-        back_button.imageView?.contentMode = .scaleAspectFit
-        back_button.contentHorizontalAlignment = .fill
-        back_button.contentVerticalAlignment = .fill
-        change_cate_button.imageView?.contentMode = .scaleAspectFit
-        change_cate_button.contentHorizontalAlignment = .fill
-        change_cate_button.contentVerticalAlignment = .fill
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
-                    title: "",
-                    style: .plain,
-                    target: nil,
-                    action: nil
-        )
-        top_view.layer.borderColor = UIColor.black.cgColor
-        top_view.layer.borderWidth = 1.0
-
+        r_g = t_info.outcome_mulch!["r_after"]! - t_info.outcome_mulch!["g_after"]!
+        r_b = t_info.outcome_mulch!["r_after"]! - t_info.outcome_mulch!["b_after"]!
+        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
+        alpha_pH = ((pH_r_g + pH_r_b) / 2)
+        parameter.text = String(round(alpha_pH * 10) / 10)
+        alpha.text = "α：0"
+        alpha_num = 0
+    }
+    
+    @IBAction func plus(_ sender: Any)
+    {
+        alpha_num += 1
+        r_g += 0.5
+        r_b += 0.5
+        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
+        alpha_pH = (pH_r_g + pH_r_b) / 2
+        alpha_pH = round(alpha_pH * 10) / 10
+        parameter.text = String(alpha_pH)
+        alpha.text = "α：" + String(alpha_num)
+    }
+    
+    @IBAction func minus(_ sender: Any)
+    {
+        alpha_num -= 1
+        r_g -= 0.5
+        r_b -= 0.5
+        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
+        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
+        alpha_pH = (pH_r_g + pH_r_b) / 2
+        alpha_pH = round(alpha_pH * 10) / 10
+        parameter.text = String(alpha_pH)
+        alpha.text = "α：" + String(alpha_num)
     }
     
     func add_zero(num:String) -> String
@@ -251,99 +154,82 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["subThoroughfare"] = l_info.subthr
         values["taken_ok"] = "ok"
         values["category"] = t_info.category
-        
-        values["pH_alpha"] = String(pH_result2)
-        values["alpha"] = String(i)
+        values["pH_alpha"] = String(alpha_pH)
+        values["alpha"] = String(alpha_num)
         values["red_before"] = String(t_info.outcome_mulch!["r_before"]!)
         values["green_before"] = String(t_info.outcome_mulch!["g_before"]!)
         values["blue_before"] = String(t_info.outcome_mulch!["b_before"]!)
         values["red_after"] = String(t_info.outcome_mulch!["r_after"]!)
         values["green_after"] = String(t_info.outcome_mulch!["g_after"]!)
         values["blue_after"] = String(t_info.outcome_mulch!["b_after"]!)
-        
-        values["red_0"] = String(t_info.outcome_mulch!["r_0"]!)
-        values["red_1"] = String(t_info.outcome_mulch!["r_1"]!)
-        values["red_2"] = String(t_info.outcome_mulch!["r_2"]!)
-        values["red_3"] = String(t_info.outcome_mulch!["r_3"]!)
-        values["red_4"] = String(t_info.outcome_mulch!["r_4"]!)
-        values["red_5"] = String(t_info.outcome_mulch!["r_5"]!)
-        values["red_6"] = String(t_info.outcome_mulch!["r_6"]!)
-        values["red_7"] = String(t_info.outcome_mulch!["r_7"]!)
-        values["red_7_2"] = String(t_info.outcome_mulch!["r_7_2"]!)
-        values["red_8"] = String(t_info.outcome_mulch!["r_8"]!)
-        values["red_9"] = String(t_info.outcome_mulch!["r_9"]!)
-        values["red_10"] = String(t_info.outcome_mulch!["r_10"]!)
-        values["red_11"] = String(t_info.outcome_mulch!["r_11"]!)
-        values["red_12"] = String(t_info.outcome_mulch!["r_12"]!)
-        values["red_13"] = String(t_info.outcome_mulch!["r_13"]!)
-        values["red_14"] = String(t_info.outcome_mulch!["r_14"]!)
-        
-        values["green_0"] = String(t_info.outcome_mulch!["g_0"]!)
-        values["green_1"] = String(t_info.outcome_mulch!["g_1"]!)
-        values["green_2"] = String(t_info.outcome_mulch!["g_2"]!)
-        values["green_3"] = String(t_info.outcome_mulch!["g_3"]!)
-        values["green_4"] = String(t_info.outcome_mulch!["g_4"]!)
-        values["green_5"] = String(t_info.outcome_mulch!["g_5"]!)
-        values["green_6"] = String(t_info.outcome_mulch!["g_6"]!)
-        values["green_7"] = String(t_info.outcome_mulch!["g_7"]!)
-        values["green_7_2"] = String(t_info.outcome_mulch!["g_7_2"]!)
-        values["green_8"] = String(t_info.outcome_mulch!["g_8"]!)
-        values["green_9"] = String(t_info.outcome_mulch!["g_9"]!)
-        values["green_10"] = String(t_info.outcome_mulch!["g_10"]!)
-        values["green_11"] = String(t_info.outcome_mulch!["g_11"]!)
-        values["green_12"] = String(t_info.outcome_mulch!["g_12"]!)
-        values["green_13"] = String(t_info.outcome_mulch!["g_13"]!)
-        values["green_14"] = String(t_info.outcome_mulch!["g_14"]!)
-        
-        values["blue_0"] = String(t_info.outcome_mulch!["b_0"]!)
-        values["blue_1"] = String(t_info.outcome_mulch!["b_1"]!)
-        values["blue_2"] = String(t_info.outcome_mulch!["b_2"]!)
-        values["blue_3"] = String(t_info.outcome_mulch!["b_3"]!)
-        values["blue_4"] = String(t_info.outcome_mulch!["b_4"]!)
-        values["blue_5"] = String(t_info.outcome_mulch!["b_5"]!)
-        values["blue_6"] = String(t_info.outcome_mulch!["b_6"]!)
-        values["blue_7"] = String(t_info.outcome_mulch!["b_7"]!)
-        values["blue_7_2"] = String(t_info.outcome_mulch!["b_7_2"]!)
-        values["blue_8"] = String(t_info.outcome_mulch!["b_8"]!)
-        values["blue_9"] = String(t_info.outcome_mulch!["b_9"]!)
-        values["blue_10"] = String(t_info.outcome_mulch!["b_10"]!)
-        values["blue_11"] = String(t_info.outcome_mulch!["b_11"]!)
-        values["blue_12"] = String(t_info.outcome_mulch!["b_12"]!)
-        values["blue_13"] = String(t_info.outcome_mulch!["b_13"]!)
-        valuqes["blue_14"] = String(t_info.outcome_mulch!["b_14"]!)
-        
-        
-        
+        for ref in ref_rgb_1
+        {
+            let num = ref.key.components(separatedBy: "_")[1]
+            values["red_" + num] = String(ref.value[0])
+            values["green_" + num] = String(ref.value[1])
+            values["blue_" + num] = String(ref.value[2])
+        }
+        for ref in ref_rgb_2
+        {
+            let num = ref.key.components(separatedBy: "_")[1]
+            if (String(num) == "7")
+            {
+                values["red_" + num + "_2"] = String(ref.value[0])
+                values["green_" + num + "_2"] = String(ref.value[1])
+                values["blue_" + num + "_2"] = String(ref.value[2])
+            }
+            values["red_" + num] = String(ref.value[0])
+            values["green_" + num] = String(ref.value[1])
+            values["blue_" + num] = String(ref.value[2])
+        }
         let database = Database.database().reference().child("nikaho_syakujii")
         database.childByAutoId().setValue(values)
         saveOrNonSave()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int
+    func set_view()
     {
-        return (1)
+        let v_w = view.frame.size.width / 100
+        let v_h = view.frame.size.height / 100
+        date_label.frame = CGRect(x: v_w * 5, y: v_h * 7, width: v_w * 94, height: v_h * 6)
+        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 22)
+        let t_w = top_view.frame.size.width / 100
+        let t_h = top_view.frame.size.height / 100
+        sub_label.frame = CGRect(x: t_w * 5, y: t_h * 3, width: t_w * 30, height: t_h * 10)
+        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 15, width: t_w * 60, height: t_h * 82)
+        second_v.frame = CGRect(x: v_w * 3, y: v_h * 39, width: v_w * 94, height: v_h * 10)
+        let s_w = second_v.frame.size.width / 100
+        let s_h = second_v.frame.size.height / 100
+        paper_label.frame = CGRect(x: s_w * 5, y: s_h * 3, width: s_w * 30, height: s_h * 30)
+        selected_paper_label.frame = CGRect(x: s_w * 10, y: s_h * 33, width: s_w * 80, height: s_h * 65)
+        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 52, width: v_w * 94, height: v_h * 17)
+        let b_w = buttom_v.frame.size.width / 100
+        let b_h = buttom_v.frame.size.height / 100
+        water_label.frame = CGRect(x: b_w * 5, y: b_h * 3, width: b_w * 30, height: b_h * 15)
+        evaluate_label.frame = CGRect(x: b_w * 10, y:b_h * 20, width: b_w * 80, height: b_h * 20)
+        cate_label.frame = CGRect(x: b_w * 5, y: b_h * 43, width: b_w * 30, height: b_h * 15)
+        cate_tf.frame = CGRect(x: b_w * 20, y: b_h * 63, width: b_w * 60, height: b_h * 30)
+        change_cate_button.frame = CGRect(x: b_w * 82, y: b_h * 63, width: b_w * 16, height: b_h * 30)
+        back_button.frame = CGRect(x: v_w * 30, y: v_h * 86, width: v_w * 40, height: v_h * 13)
+        cate_tf.layer.borderWidth = 1.0
+        cate_tf.layer.borderColor = UIColor.black.cgColor
+        back_button.imageView?.contentMode = .scaleAspectFit
+        back_button.contentHorizontalAlignment = .fill
+        back_button.contentVerticalAlignment = .fill
+        change_cate_button.imageView?.contentMode = .scaleAspectFit
+        change_cate_button.contentHorizontalAlignment = .fill
+        change_cate_button.contentVerticalAlignment = .fill
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+                    title: "",
+                    style: .plain,
+                    target: nil,
+                    action: nil
+        )
+        top_view.layer.borderColor = UIColor.black.cgColor
+        top_view.layer.borderWidth = 1.0
+
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        var height = tableView.frame.size.height
-        switch indexPath.row {
-        case 1:
-            height /= 4
-        default:
-            height /= 8
-        }
-        return (height)
-    }
-
-    //カテゴリー変更ボタンを押したら呼ばれる
-    @objc func changeCateEvent(_ sender: UIButton)
-    {
-        let selectVC = (storyboard?.instantiateViewController(identifier: "selectCate"))! as SelectCategoryMesureViewController
-        selectVC.whichSubject = t_info.subject!
-        navigationController?.pushViewController(selectVC, animated: true)
-    }
-
     func saveOrNonSave()
     {
         // styleをActionSheetに設定
@@ -501,6 +387,5 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         message_list.append(skin_massage)
         return (message_list)
     }
-    
 
 }
