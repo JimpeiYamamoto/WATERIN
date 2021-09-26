@@ -54,15 +54,13 @@ class CheckPicViewController: UIViewController
         print(g_x_lst)
         print("---b_x_lst---")
         print(b_x_lst)
-        var r_adjusted = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: target_rgb[0])
-        var g_adjusted = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: target_rgb[1])
-        var b_adjusted = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: target_rgb[2])
+        let r_adjusted = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: target_rgb[0])
+        let g_adjusted = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: target_rgb[1])
+        let b_adjusted = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: target_rgb[2])
         print("---before_addjust---")
-        
         let r_before = target_rgb[0]
         let g_before = target_rgb[1]
         let b_before = target_rgb[2]
-        
         print("r:\(target_rgb[0])\ng:\(target_rgb[1])\nb:\(target_rgb[2])")
         print("---after_addjust---")
         print("r:\(r_adjusted)\ng:\(g_adjusted)\nb:\(b_adjusted)")
@@ -75,24 +73,33 @@ class CheckPicViewController: UIViewController
         print("pH_r_g=\(pH_r_g)\npH_r_b=\(pH_r_b)\npH_g_b=\(pH_g_b)")
         print("average_pH=\((pH_r_g + pH_r_b + pH_g_b)/3)")
         let pH_result = (pH_r_g + pH_r_b) / 2
-        
         return ["pH_result":pH_result, "r_after":r_adjusted, "g_after":g_adjusted, "b_after":b_adjusted,
-                "r_before":r_before, "g_before":g_before, "b_before":b_before,
-                
-                "r_0":ref_rgb_1["y_0"]![0], "r_1":ref_rgb_1["y_1"]![0], "r_2":ref_rgb_1["y_2"]![0], "r_3":ref_rgb_1["y_3"]![0],
-                "r_4":ref_rgb_1["y_4"]![0], "r_5":ref_rgb_1["y_5"]![0], "r_6":ref_rgb_1["y_6"]![0], "r_7":ref_rgb_1["y_7"]![0],
-                "r_7_2":ref_rgb_2["y_7"]![0], "r_8":ref_rgb_2["y_8"]![0], "r_9":ref_rgb_2["y_9"]![0], "r_10":ref_rgb_2["y_10"]![0],
-                "r_11":ref_rgb_2["y_11"]![0], "r_12":ref_rgb_2["y_12"]![0], "r_13":ref_rgb_2["y_13"]![0], "r_14":ref_rgb_2["y_14"]![0],
-        
-                "g_0":ref_rgb_1["y_0"]![1], "g_1":ref_rgb_1["y_1"]![1], "g_2":ref_rgb_1["y_2"]![1], "g_3":ref_rgb_1["y_3"]![1],
-                "g_4":ref_rgb_1["y_4"]![1], "g_5":ref_rgb_1["y_5"]![1], "g_6":ref_rgb_1["y_6"]![1], "g_7":ref_rgb_1["y_7"]![1],
-                "g_7_2":ref_rgb_2["y_7"]![1], "g_8":ref_rgb_2["y_8"]![1], "g_9":ref_rgb_2["y_9"]![1], "g_10":ref_rgb_2["y_10"]![1],
-                "g_11":ref_rgb_2["y_11"]![1], "g_12":ref_rgb_2["y_12"]![1], "g_13":ref_rgb_2["y_13"]![1], "g_14":ref_rgb_2["y_14"]![1],
-        
-                "b_0":ref_rgb_1["y_0"]![2], "b_1":ref_rgb_1["y_1"]![2], "b_2":ref_rgb_1["y_2"]![2], "b_3":ref_rgb_1["y_3"]![2],
-                "b_4":ref_rgb_1["y_4"]![2], "b_5":ref_rgb_1["y_5"]![2], "b_6":ref_rgb_1["y_6"]![2], "b_7":ref_rgb_1["y_7"]![2],
-                "b_7_2":ref_rgb_2["y_7"]![2], "b_8":ref_rgb_2["y_8"]![2], "b_9":ref_rgb_2["y_9"]![2], "b_10":ref_rgb_2["y_10"]![2],
-                "b_11":ref_rgb_2["y_11"]![2], "b_12":ref_rgb_2["y_12"]![2], "b_13":ref_rgb_2["y_13"]![2], "b_14":ref_rgb_2["y_14"]![2],]
+                "r_before":r_before, "g_before":g_before, "b_before":b_before]
+    }
+
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        set_view()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        image_view.image = takenImage
+        image_view.contentMode = .scaleToFill
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
+    @IBAction func ok_action(_ sender: Any)
+    {
+        let outVC = (storyboard?.instantiateViewController(identifier: "outcome_"))! as OutcomeViewController
+        outVC.t_info = self.t_info
+        outVC.t_info.outcome_mulch = calc_pH()
+        outVC.takenImage = image_view.image!
+        outVC.ref_rgb_1 = self.ref_rgb_1
+        outVC.ref_rgb_2 = self.ref_rgb_2
+        self.navigationController?.pushViewController(outVC, animated: true)
     }
     
     func set_view()
@@ -101,7 +108,6 @@ class CheckPicViewController: UIViewController
         let v_h = view.frame.size.height / 100
         full_v.frame = CGRect(x: v_w * 6.8, y: v_h * 11, width: v_w * 86.4, height: v_w * 153.6)
         image_view.frame = CGRect(x: 0, y: 0, width: full_v.frame.size.width, height: full_v.frame.size.height)
-//        let x_ = full_v.frame.size.width * 0.072985782
         let x_ = full_v.frame.size.width * 0.08985782
         paper_v.frame = CGRect(x: x_ * 4.621359223, y: x_ * 4.165048544, width: x_ * 1, height: x_ * 9.223300971)
         ta_1.frame = CGRect(x: x_ * 4.621359223, y: x_ * 4.504854369, width: x_ * 1, height: x_ * 0.902912621)
@@ -136,8 +142,6 @@ class CheckPicViewController: UIViewController
         ok_button.contentHorizontalAlignment = .fill
         ok_button.contentVerticalAlignment = .fill
     }
-    
-    
     
     func set_view_ori()
     {
@@ -178,27 +182,5 @@ class CheckPicViewController: UIViewController
         ok_button.imageView?.contentMode = .scaleAspectFit
         ok_button.contentHorizontalAlignment = .fill
         ok_button.contentVerticalAlignment = .fill
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        set_view()
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        image_view.image = takenImage
-        image_view.contentMode = .scaleToFill
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-
-    @IBAction func ok_action(_ sender: Any)
-    {
-        let outVC = (storyboard?.instantiateViewController(identifier: "outcome_"))! as OutcomeViewController
-        outVC.t_info = self.t_info
-        outVC.t_info.outcome_mulch = calc_pH()
-        outVC.takenImage = image_view.image!
-        self.navigationController?.pushViewController(outVC, animated: true)
     }
 }
