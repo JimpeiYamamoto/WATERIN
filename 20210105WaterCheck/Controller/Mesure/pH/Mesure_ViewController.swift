@@ -84,6 +84,7 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
         avCapture.stopSession()
     }
     
+    
     func set_view()
     {
         let v_w = view.frame.size.width / 100

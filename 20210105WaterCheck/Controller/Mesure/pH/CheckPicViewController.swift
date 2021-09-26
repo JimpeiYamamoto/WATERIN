@@ -82,7 +82,7 @@ class CheckPicViewController: UIViewController
 //        let b_adjusted = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: target_rgb[2])
         var r_1_after = reg.get_ans(x_lst: r_x1_lst, y_lst: r_y1_lst, value: t_info.target!["paper1_rgb"]![0])
         var g_1_after = reg.get_ans(x_lst: g_x1_lst, y_lst: g_y1_lst, value: t_info.target!["paper1_rgb"]![1])
-        var b_1_after = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: t_info.target!["paper1_rbb"]![2])
+        var b_1_after = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: t_info.target!["paper1_rgb"]![2])
         var r_2_after = reg.get_ans(x_lst: r_x2_lst, y_lst: r_y2_lst, value: t_info.target!["paper2_rgb"]![0])
         var g_2_after = reg.get_ans(x_lst: g_x2_lst, y_lst: g_y2_lst, value: t_info.target!["paper2_rgb"]![1])
         var b_2_after = reg.get_ans(x_lst: b_x2_lst, y_lst: b_y2_lst, value: t_info.target!["paper2_rgb"]![2])
@@ -92,7 +92,7 @@ class CheckPicViewController: UIViewController
         print("---before_addjust---")
         let r_1_before = t_info.target!["paper1_rgb"]![0]
         let g_1_before = t_info.target!["paper1_rgb"]![1]
-        let b_1_before = t_info.target!["paper1_rbb"]![2]
+        let b_1_before = t_info.target!["paper1_rgb"]![2]
         let r_2_before = t_info.target!["paper2_rgb"]![0]
         let g_2_before = t_info.target!["paper2_rgb"]![1]
         let b_2_before = t_info.target!["paper2_rgb"]![2]

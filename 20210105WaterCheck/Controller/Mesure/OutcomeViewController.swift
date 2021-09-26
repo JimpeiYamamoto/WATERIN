@@ -55,6 +55,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     var g_b_3 = Double()
     var alpha_num = Int()
     var alpha_pH = Double()
+    var pH_raw = Double()
     var mode = Int()
     
     override func viewDidLoad()
@@ -190,10 +191,35 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     func show_outcome()
     {
         date_label.text = "\(add_zero(num:t_info.year!))年 \(add_zero(num:t_info.month!))月\(add_zero(num:t_info.day!))日 \(add_zero(num:t_info.hour!)):\(add_zero(num:t_info.minute!))"
-        let outcome = round(t_info.outcome_mulch!["pH_result"]! * 10)
+        r_g_1 = t_info.outcome_mulch!["r_1_after"]! - t_info.outcome_mulch!["g_1_after"]!
+        r_b_1 = t_info.outcome_mulch!["r_1_after"]! - t_info.outcome_mulch!["b_1_after"]!
+        g_b_1 = t_info.outcome_mulch!["g_1_after"]! - t_info.outcome_mulch!["b_1_after"]!
+        r_g_2 = t_info.outcome_mulch!["r_2_after"]! - t_info.outcome_mulch!["g_2_after"]!
+        r_b_2 = t_info.outcome_mulch!["r_2_after"]! - t_info.outcome_mulch!["b_2_after"]!
+        g_b_2 = t_info.outcome_mulch!["g_2_after"]! - t_info.outcome_mulch!["b_2_after"]!
+        r_g_3 = t_info.outcome_mulch!["r_3_after"]! - t_info.outcome_mulch!["g_3_after"]!
+        r_b_3 = t_info.outcome_mulch!["r_3_after"]! - t_info.outcome_mulch!["b_3_after"]!
+        g_b_3 = t_info.outcome_mulch!["g_3_after"]! - t_info.outcome_mulch!["b_3_after"]!
+        
+        if r_g_1 < 170 && r_b_1 > 80 && g_b_1 < 140{
+            let pH_r_g = 6 * 0.00000001 * pow(r_g_1, 4) - 4 * 0.00001 * pow(r_g_1, 3) - 0.0083 * pow(r_g_1, 2) + 0.7737 * r_g_1 + 26.811
+            let pH_g_b = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+            pH_raw = (pH_r_g + pH_g_b) / 2
+        } else if r_g_3 > 100 && r_b_3 < 160 && g_b_3 < 70{
+            let pH_r_g = 0.0873 * r_g_3 + 2.4524
+            let pH_r_b = -0.0187 * r_b_3 + 12.833
+            let pH_g_b = -0.0157 * g_b_3 + 11.013
+            pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
+        } else{
+            let pH_r_g = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
+            let pH_r_b = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
+            let pH_g_b = -0.0456 * g_b_2 + 9.7907
+            pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
+        }
+        let outcome = round(alpha_pH * 10)
         outcome_label.text = String(outcome / 10)
         selected_paper_label.text = t_info.paper
-        evaluate_label.text = judge_water(outcome: t_info.outcome_mulch!["pH_result"]!)
+        evaluate_label.text = judge_water(outcome: alpha_pH)
         cate_tf.text = t_info.category!
     }
     
@@ -211,7 +237,9 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["time"] = "\(t_info.year!)/\(t_info.month!)/\(t_info.day!)/\(t_info.hour!)/\(t_info.minute!)"
         values["subject"] = t_info.subject
         values["sikenshi"] = t_info.paper
-        values["pH"] = String(t_info.outcome_mulch!["pH_result"]!)
+        values["pH1"] = String(t_info.outcome_mulch!["pH_result_1"]!)
+        values["pH2"] = String(t_info.outcome_mulch!["pH_result_2"]!)
+        values["pH3"] = String(t_info.outcome_mulch!["pH_result_3"]!)
         values["address"] = l_info.address
         values["lot"] = l_info.lot
         values["lat"] = l_info.lat
@@ -222,12 +250,25 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["category"] = t_info.category
         values["pH_alpha"] = String(alpha_pH)
         values["alpha"] = String(alpha_num)
-        values["red_before"] = String(t_info.outcome_mulch!["r_before"]!)
-        values["green_before"] = String(t_info.outcome_mulch!["g_before"]!)
-        values["blue_before"] = String(t_info.outcome_mulch!["b_before"]!)
-        values["red_after"] = String(t_info.outcome_mulch!["r_after"]!)
-        values["green_after"] = String(t_info.outcome_mulch!["g_after"]!)
-        values["blue_after"] = String(t_info.outcome_mulch!["b_after"]!)
+        values["red1_before"] = String(t_info.outcome_mulch!["r_1_before"]!)
+        values["green1_before"] = String(t_info.outcome_mulch!["g_1_before"]!)
+        values["blue1_before"] = String(t_info.outcome_mulch!["b_1_before"]!)
+        values["red1_after"] = String(t_info.outcome_mulch!["r_1_after"]!)
+        values["green1_after"] = String(t_info.outcome_mulch!["g_1_after"]!)
+        values["blue1_after"] = String(t_info.outcome_mulch!["b_1_after"]!)
+        values["red2_before"] = String(t_info.outcome_mulch!["r_2_before"]!)
+        values["green2_before"] = String(t_info.outcome_mulch!["g_2_before"]!)
+        values["blue2_before"] = String(t_info.outcome_mulch!["b_2_before"]!)
+        values["red2_after"] = String(t_info.outcome_mulch!["r_2_after"]!)
+        values["green2_after"] = String(t_info.outcome_mulch!["g_2_after"]!)
+        values["blue2_after"] = String(t_info.outcome_mulch!["b_2_after"]!)
+        values["red3_before"] = String(t_info.outcome_mulch!["r_3_before"]!)
+        values["green3_before"] = String(t_info.outcome_mulch!["g_3_before"]!)
+        values["blue3_before"] = String(t_info.outcome_mulch!["b_3_before"]!)
+        values["red3_after"] = String(t_info.outcome_mulch!["r_3_after"]!)
+        values["green3_after"] = String(t_info.outcome_mulch!["g_3_after"]!)
+        values["blue3_after"] = String(t_info.outcome_mulch!["b_3_after"]!)
+        
         for ref in ref_rgb_1
         {
             let num = ref.key.components(separatedBy: "_")[1]
@@ -244,6 +285,13 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
                 values["green_" + num + "_2"] = String(ref.value[1])
                 values["blue_" + num + "_2"] = String(ref.value[2])
             }
+            values["red_" + num] = String(ref.value[0])
+            values["green_" + num] = String(ref.value[1])
+            values["blue_" + num] = String(ref.value[2])
+        }
+        for ref in ref_rgb_1
+        {
+            let num = ref.key.components(separatedBy: "_")[1]
             values["red_" + num] = String(ref.value[0])
             values["green_" + num] = String(ref.value[1])
             values["blue_" + num] = String(ref.value[2])
@@ -306,7 +354,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             reCall.whichSubject = t_info.subject!
             reCall.getContents()
             //appendしてから保存する
-            reCall.ataiList.append(t_info.outcome_mulch!["pH_result"]!)
+            reCall.ataiList.append(pH_raw)
         
             if (l_info.address == nil)
             {
