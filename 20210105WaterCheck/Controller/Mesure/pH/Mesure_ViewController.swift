@@ -57,15 +57,17 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
         image_view.image = image
     }
     
-    func target_rgb_get() -> [Double]
+    func target_rgb_get() -> [String:[Double]]
     {
         let image = image_view.image!
         let resize_image = image.resize(width_size: full_v.frame.size.width, height_size: full_v.frame.size.height)
         let x_ = full_v.frame.size.width * 0.08985782
-        let paper_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 5.854368932, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
+        let paper1_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 4.504854369, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
+        let paper2_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 5.854368932, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
+        let paper3_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 7.242718447, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
         print("---target_rgb---")
-        print("r:\(paper_rgb[0])\ng:\(paper_rgb[1])\nb:\(paper_rgb[2])")
-        return (paper_rgb)
+        print("r:\(paper2_rgb[0])\ng:\(paper2_rgb[1])\nb:\(paper2_rgb[2])")
+        return (["paper1_rgb":paper1_rgb, "paper2_rgb":paper2_rgb, "paper3_rgb":paper3_rgb])
     }
     
     @IBAction func take_action(_ sender: Any)
@@ -74,7 +76,8 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
         outVC.t_info = self.t_info
         outVC.ref_rgb_1 = ref_rgb_1
         outVC.ref_rgb_2 = ref_rgb_2
-        outVC.target_rgb = target_rgb_get()
+//        outVC.target_rgb = target_rgb_get()
+        outVC.t_info.target = target_rgb_get()
         //撮影した写真を渡す
         outVC.takenImage = image_view.image!
         self.navigationController?.pushViewController(outVC, animated: true)

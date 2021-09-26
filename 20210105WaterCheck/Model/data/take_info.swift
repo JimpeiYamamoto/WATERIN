@@ -20,4 +20,5 @@ class take_info
     var minute:String?
     var category:String?
     var outcome_mulch:[String:Double]?
+    var target:[String:[Double]]?
 }

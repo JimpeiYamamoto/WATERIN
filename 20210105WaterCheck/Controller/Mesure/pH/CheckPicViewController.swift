@@ -27,54 +27,108 @@ class CheckPicViewController: UIViewController
     
     func calc_pH() -> [String:Double]
     {
-        let r_y_lst = [219.506, 219.334, 218.504, 218.285, 217.739, 193.504, 140.789, 109.473,
-                       89.962, 76.630, 74.576, 74.280, 72.481, 71.318, 73.786]
-        let g_y_lst = [144.230, 144.295, 143.407, 143.690, 143.346, 135.776, 122.675, 116.930,
-                       107.813, 99.552, 97.638, 97.548, 97.108, 96.806, 97.666]
-        let b_y_lst = [57.392, 57.319, 56.426, 56.863, 56.864, 50.389, 64.663, 92.237,
-                       97.220, 114.803, 112.310, 111.905, 111.326, 111.034, 111.936]
-        let r_x_lst = [ref_rgb_1["y_0"]![0], ref_rgb_1["y_1"]![0], ref_rgb_1["y_2"]![0], ref_rgb_1["y_3"]![0], ref_rgb_1["y_4"]![0],
-                       ref_rgb_1["y_5"]![0], ref_rgb_1["y_6"]![0], ref_rgb_1["y_7"]![0], ref_rgb_2["y_8"]![0], ref_rgb_2["y_9"]![0], ref_rgb_2["y_10"]![0],
-                       ref_rgb_2["y_11"]![0], ref_rgb_2["y_12"]![0], ref_rgb_2["y_13"]![0], ref_rgb_2["y_14"]![0]]
-        let g_x_lst = [ref_rgb_1["y_0"]![1], ref_rgb_1["y_1"]![1], ref_rgb_1["y_2"]![1], ref_rgb_1["y_3"]![1], ref_rgb_1["y_4"]![1],
-                       ref_rgb_1["y_5"]![1], ref_rgb_1["y_6"]![1], ref_rgb_1["y_7"]![1], ref_rgb_2["y_8"]![1], ref_rgb_2["y_9"]![1], ref_rgb_2["y_10"]![1],
-                       ref_rgb_2["y_11"]![1], ref_rgb_2["y_12"]![1], ref_rgb_2["y_13"]![1], ref_rgb_2["y_14"]![1]]
-        let b_x_lst = [ref_rgb_1["y_0"]![2], ref_rgb_1["y_1"]![2], ref_rgb_1["y_2"]![2], ref_rgb_1["y_3"]![2], ref_rgb_1["y_4"]![2],
-                       ref_rgb_1["y_5"]![2], ref_rgb_1["y_6"]![2], ref_rgb_1["y_7"]![2], ref_rgb_2["y_8"]![2], ref_rgb_2["y_9"]![2], ref_rgb_2["y_10"]![2],
-                       ref_rgb_2["y_11"]![2], ref_rgb_2["y_12"]![2], ref_rgb_2["y_13"]![2], ref_rgb_2["y_14"]![2]]
-        print("---r_y_lst---")
-        print(r_y_lst)
-        print("---g_y_lst---")
-        print(g_y_lst)
-        print("---b_y_lst---")
-        print(b_y_lst)
-        print("---r_x_lst---")
-        print(r_x_lst)
-        print("---g_x_lst---")
-        print(g_x_lst)
-        print("---b_x_lst---")
-        print(b_x_lst)
-        let r_adjusted = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: target_rgb[0])
-        let g_adjusted = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: target_rgb[1])
-        let b_adjusted = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: target_rgb[2])
+        let r_y1_lst = [219.506, 219.334, 218.504, 218.285, 217.739, 193.504, 140.789, 109.473, 89.962, 76.630, 74.576, 74.280, 72.481, 71.318, 73.786]
+        let g_y1_lst = [144.230, 144.295, 143.407, 143.690, 143.346, 135.776, 122.675, 116.930, 107.813, 99.552, 97.638, 97.548, 97.108, 96.806, 97.666]
+        let b_y1_lst = [57.392, 57.319, 56.426, 56.863, 56.864, 50.389, 64.663, 92.237, 97.220, 114.803, 112.310, 111.905, 111.326, 111.034, 111.936]
+        let r_x1_lst = [ref_rgb_1["y1_0"]![0], ref_rgb_1["y1_1"]![0], ref_rgb_1["y1_2"]![0], ref_rgb_1["y1_3"]![0], ref_rgb_1["y1_4"]![0],
+                       ref_rgb_1["y1_5"]![0], ref_rgb_1["y1_6"]![0], ref_rgb_1["y1_7"]![0], ref_rgb_2["y1_8"]![0], ref_rgb_2["y1_9"]![0], ref_rgb_2["y1_10"]![0],
+                       ref_rgb_2["y1_11"]![0], ref_rgb_2["y1_12"]![0], ref_rgb_2["y1_13"]![0], ref_rgb_2["y1_14"]![0]]
+        let g_x1_lst = [ref_rgb_1["y1_0"]![1], ref_rgb_1["y1_1"]![1], ref_rgb_1["y1_2"]![1], ref_rgb_1["y1_3"]![1], ref_rgb_1["y1_4"]![1],
+                       ref_rgb_1["y1_5"]![1], ref_rgb_1["y1_6"]![1], ref_rgb_1["y1_7"]![1], ref_rgb_2["y1_8"]![1], ref_rgb_2["y1_9"]![1], ref_rgb_2["y1_10"]![1],
+                       ref_rgb_2["y1_11"]![1], ref_rgb_2["y1_12"]![1], ref_rgb_2["y1_13"]![1], ref_rgb_2["y1_14"]![1]]
+        let b_x1_lst = [ref_rgb_1["y1_0"]![2], ref_rgb_1["y1_1"]![2], ref_rgb_1["y1_2"]![2], ref_rgb_1["y1_3"]![2], ref_rgb_1["y1_4"]![2],
+                       ref_rgb_1["y1_5"]![2], ref_rgb_1["y1_6"]![2], ref_rgb_1["y1_7"]![2], ref_rgb_2["y1_8"]![2], ref_rgb_2["y1_9"]![2], ref_rgb_2["y1_10"]![2],
+                       ref_rgb_2["y1_11"]![2], ref_rgb_2["y1_12"]![2], ref_rgb_2["y1_13"]![2], ref_rgb_2["y1_14"]![2]]
+        
+        let r_y2_lst = [219.506, 219.334, 218.504, 218.285, 217.739, 193.504, 140.789, 109.473, 89.962, 76.630, 74.576, 74.280, 72.481, 71.318, 73.786]
+        let g_y2_lst = [144.230, 144.295, 143.407, 143.690, 143.346, 135.776, 122.675, 116.930, 107.813, 99.552, 97.638, 97.548, 97.108, 96.806, 97.666]
+        let b_y2_lst = [57.392, 57.319, 56.426, 56.863, 56.864, 50.389, 64.663, 92.237, 97.220, 114.803, 112.310, 111.905, 111.326, 111.034, 111.936]
+        let r_x2_lst = [ref_rgb_1["y2_0"]![0], ref_rgb_1["y2_1"]![0], ref_rgb_1["y2_2"]![0], ref_rgb_1["y2_3"]![0], ref_rgb_1["y2_4"]![0],
+                       ref_rgb_1["y2_5"]![0], ref_rgb_1["y2_6"]![0], ref_rgb_1["y2_7"]![0], ref_rgb_2["y2_8"]![0], ref_rgb_2["y2_9"]![0], ref_rgb_2["y2_10"]![0],
+                       ref_rgb_2["y2_11"]![0], ref_rgb_2["y2_12"]![0], ref_rgb_2["y2_13"]![0], ref_rgb_2["y2_14"]![0]]
+        let g_x2_lst = [ref_rgb_1["y2_0"]![1], ref_rgb_1["y2_1"]![1], ref_rgb_1["y2_2"]![1], ref_rgb_1["y2_3"]![1], ref_rgb_1["y2_4"]![1],
+                       ref_rgb_1["y2_5"]![1], ref_rgb_1["y2_6"]![1], ref_rgb_1["y2_7"]![1], ref_rgb_2["y2_8"]![1], ref_rgb_2["y2_9"]![1], ref_rgb_2["y2_10"]![1],
+                       ref_rgb_2["y2_11"]![1], ref_rgb_2["y2_12"]![1], ref_rgb_2["y2_13"]![1], ref_rgb_2["y2_14"]![1]]
+        let b_x2_lst = [ref_rgb_1["y2_0"]![2], ref_rgb_1["y2_1"]![2], ref_rgb_1["y2_2"]![2], ref_rgb_1["y2_3"]![2], ref_rgb_1["y2_4"]![2],
+                       ref_rgb_1["y2_5"]![2], ref_rgb_1["y2_6"]![2], ref_rgb_1["y2_7"]![2], ref_rgb_2["y2_8"]![2], ref_rgb_2["y2_9"]![2], ref_rgb_2["y2_10"]![2],
+                       ref_rgb_2["y2_11"]![2], ref_rgb_2["y2_12"]![2], ref_rgb_2["y2_13"]![2], ref_rgb_2["y2_14"]![2]]
+        
+        let r_y3_lst = [219.506, 219.334, 218.504, 218.285, 217.739, 193.504, 140.789, 109.473, 89.962, 76.630, 74.576, 74.280, 72.481, 71.318, 73.786]
+        let g_y3_lst = [144.230, 144.295, 143.407, 143.690, 143.346, 135.776, 122.675, 116.930, 107.813, 99.552, 97.638, 97.548, 97.108, 96.806, 97.666]
+        let b_y3_lst = [57.392, 57.319, 56.426, 56.863, 56.864, 50.389, 64.663, 92.237, 97.220, 114.803, 112.310, 111.905, 111.326, 111.034, 111.936]
+        let r_x3_lst = [ref_rgb_1["y3_0"]![0], ref_rgb_1["y3_1"]![0], ref_rgb_1["y3_2"]![0], ref_rgb_1["y3_3"]![0], ref_rgb_1["y3_4"]![0],
+                       ref_rgb_1["y3_5"]![0], ref_rgb_1["y3_6"]![0], ref_rgb_1["y3_7"]![0], ref_rgb_2["y3_8"]![0], ref_rgb_2["y3_9"]![0], ref_rgb_2["y3_10"]![0],
+                       ref_rgb_2["y3_11"]![0], ref_rgb_2["y3_12"]![0], ref_rgb_2["y3_13"]![0], ref_rgb_2["y3_14"]![0]]
+        let g_x3_lst = [ref_rgb_1["y3_0"]![1], ref_rgb_1["y3_1"]![1], ref_rgb_1["y3_2"]![1], ref_rgb_1["y3_3"]![1], ref_rgb_1["y3_4"]![1],
+                       ref_rgb_1["y3_5"]![1], ref_rgb_1["y3_6"]![1], ref_rgb_1["y3_7"]![1], ref_rgb_2["y3_8"]![1], ref_rgb_2["y3_9"]![1], ref_rgb_2["y3_10"]![1],
+                       ref_rgb_2["y3_11"]![1], ref_rgb_2["y3_12"]![1], ref_rgb_2["y3_13"]![1], ref_rgb_2["y3_14"]![1]]
+        let b_x3_lst = [ref_rgb_1["y3_0"]![2], ref_rgb_1["y3_1"]![2], ref_rgb_1["y3_2"]![2], ref_rgb_1["y3_3"]![2], ref_rgb_1["y3_4"]![2],
+                       ref_rgb_1["y3_5"]![2], ref_rgb_1["y3_6"]![2], ref_rgb_1["y3_7"]![2], ref_rgb_2["y3_8"]![2], ref_rgb_2["y3_9"]![2], ref_rgb_2["y3_10"]![2],
+                       ref_rgb_2["y3_11"]![2], ref_rgb_2["y3_12"]![2], ref_rgb_2["y3_13"]![2], ref_rgb_2["y3_14"]![2]]
+//        print("---r_y_lst---")
+//        print(r_y_lst)
+//        print("---g_y_lst---")
+//        print(g_y_lst)
+//        print("---b_y_lst---")
+//        print(b_y_lst)
+//        print("---r_x_lst---")
+//        print(r_x_lst)
+//        print("---g_x_lst---")
+//        print(g_x_lst)
+//        print("---b_x_lst---")
+//        print(b_x_lst)
+//        let r_adjusted = reg.get_ans(x_lst: r_x1_lst, y_lst: r_y1_lst, value: target_rgb[0])
+//        let g_adjusted = reg.get_ans(x_lst: g_x1_lst, y_lst: g_y1_lst, value: target_rgb[1])
+//        let b_adjusted = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: target_rgb[2])
+        var r_1_after = reg.get_ans(x_lst: r_x1_lst, y_lst: r_y1_lst, value: t_info.target!["paper1_rgb"]![0])
+        var g_1_after = reg.get_ans(x_lst: g_x1_lst, y_lst: g_y1_lst, value: t_info.target!["paper1_rgb"]![1])
+        var b_1_after = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: t_info.target!["paper1_rbb"]![2])
+        var r_2_after = reg.get_ans(x_lst: r_x2_lst, y_lst: r_y2_lst, value: t_info.target!["paper2_rgb"]![0])
+        var g_2_after = reg.get_ans(x_lst: g_x2_lst, y_lst: g_y2_lst, value: t_info.target!["paper2_rgb"]![1])
+        var b_2_after = reg.get_ans(x_lst: b_x2_lst, y_lst: b_y2_lst, value: t_info.target!["paper2_rgb"]![2])
+        var r_3_after = reg.get_ans(x_lst: r_x3_lst, y_lst: r_y3_lst, value: t_info.target!["paper3_rgb"]![0])
+        var g_3_after = reg.get_ans(x_lst: g_x3_lst, y_lst: g_y3_lst, value: t_info.target!["paper3_rgb"]![1])
+        var b_3_after = reg.get_ans(x_lst: b_x3_lst, y_lst: b_y3_lst, value: t_info.target!["paper3_rgb"]![2])
         print("---before_addjust---")
-        let r_before = target_rgb[0]
-        let g_before = target_rgb[1]
-        let b_before = target_rgb[2]
-        print("r:\(target_rgb[0])\ng:\(target_rgb[1])\nb:\(target_rgb[2])")
+        let r_1_before = t_info.target!["paper1_rgb"]![0]
+        let g_1_before = t_info.target!["paper1_rgb"]![1]
+        let b_1_before = t_info.target!["paper1_rbb"]![2]
+        let r_2_before = t_info.target!["paper2_rgb"]![0]
+        let g_2_before = t_info.target!["paper2_rgb"]![1]
+        let b_2_before = t_info.target!["paper2_rgb"]![2]
+        let r_3_before = t_info.target!["paper3_rgb"]![0]
+        let g_3_before = t_info.target!["paper3_rgb"]![1]
+        let b_3_before = t_info.target!["paper3_rgb"]![2]
+//        print("r:\(target_rgb[0])\ng:\(target_rgb[1])\nb:\(target_rgb[2])")
         print("---after_addjust---")
-        print("r:\(r_adjusted)\ng:\(g_adjusted)\nb:\(b_adjusted)")
-        let r_g = r_adjusted - g_adjusted
-        let r_b = r_adjusted - b_adjusted
-        let g_b = g_adjusted - b_adjusted
-        let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-        let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-        let pH_g_b = -0.0456 * g_b + 9.7907
-        print("pH_r_g=\(pH_r_g)\npH_r_b=\(pH_r_b)\npH_g_b=\(pH_g_b)")
-        print("average_pH=\((pH_r_g + pH_r_b + pH_g_b)/3)")
-        let pH_result = (pH_r_g + pH_r_b) / 2
-        return ["pH_result":pH_result, "r_after":r_adjusted, "g_after":g_adjusted, "b_after":b_adjusted,
-                "r_before":r_before, "g_before":g_before, "b_before":b_before]
+//        print("r:\(r_adjusted)\ng:\(g_adjusted)\nb:\(b_adjusted)")
+//        let r_g = r_adjusted - g_adjusted
+//        let r_b = r_adjusted - b_adjusted
+//        let g_b = g_adjusted - b_adjusted
+        let r_g_1 = r_1_after - g_1_after
+        let r_b_1 = r_1_after - b_1_after
+        let g_b_1 = g_1_after - b_1_after
+        let r_g_2 = r_2_after - g_2_after
+        let r_b_2 = r_2_after - b_2_after
+        let g_b_2 = g_2_after - b_2_after
+        let r_g_3 = r_3_after - g_3_after
+        let r_b_3 = r_3_after - b_3_after
+        let g_b_3 = g_3_after - b_3_after
+        let pH_r_g_1 = 6 * 0.00000001 * pow(r_g_1, 4) - 4 * 0.00001 * pow(r_g_1, 3) - 0.0083 * pow(r_g_1, 2) + 0.7737 * r_g_1 + 26.811
+        let pH_g_b_1 = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+        let pH_result_1 = (pH_r_g_1 + pH_g_b_1) / 2
+        let pH_r_g_2 = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
+        let pH_r_b_2 = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
+        let pH_g_b_2 = -0.0456 * g_b_2 + 9.7907
+        let pH_result_2 = (pH_r_g_2 + pH_r_b_2 + pH_g_b_2) / 3
+        let pH_r_g_3 = 0.0873 * r_g_3 + 2.4524
+        let pH_r_b_3 = -0.0187 * r_b_3 + 12.833
+        let pHg_b_3 = -0.0157 * g_b_3 + 11.013
+        let pH_result_3 = (pH_r_g_3 + pH_r_b_3 + pHg_b_3) / 3
+        return ["pH_result_1":pH_result_1, "pH_result_2":pH_result_2, "pH_result_3":pH_result_3, "r_1_after":r_1_after, "g_1_after":g_1_after, "b_1_after":b_1_after,
+                "r_1_before":r_1_before, "g_1_before":g_1_before, "b_1_before":b_1_before, "r_2_after":r_2_after, "g_2_after":g_2_after, "b_2_after":b_2_after,
+                "r_2_before":r_2_before, "g_2_before":g_2_before, "b_2_before":b_2_before, "r_3_after":r_3_after, "g_3_after":g_3_after, "b_3_after":b_3_after,
+                "r_3_before":r_3_before, "g_3_before":g_3_before, "b_3_before":b_3_before]
     }
 
     
