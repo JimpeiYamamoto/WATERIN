@@ -85,15 +85,15 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func plus(_ sender: Any)
     {
         alpha_num += 1
-        t_info.outcome_mulch!["r_1_after"]! += 0.25
-        t_info.outcome_mulch!["g_1_after"]! -= 0.25
-        t_info.outcome_mulch!["b_1_after"]! -= 0.25
-        t_info.outcome_mulch!["r_2_after"]! += 0.25
-        t_info.outcome_mulch!["g_2_after"]! -= 0.25
-        t_info.outcome_mulch!["b_2_after"]! -= 0.25
-        t_info.outcome_mulch!["r_3_after"]! += 0.25
-        t_info.outcome_mulch!["g_3_after"]! -= 0.25
-        t_info.outcome_mulch!["b_3_after"]! -= 0.25
+        t_info.outcome_mulch!["r_1_after"]! += 3.04878049
+        t_info.outcome_mulch!["g_1_after"]! += 4.90196078
+        t_info.outcome_mulch!["b_1_after"]! -= 1.08577633
+        t_info.outcome_mulch!["r_2_after"]! += 3.08641975
+        t_info.outcome_mulch!["g_2_after"]! += 0.93632959
+        t_info.outcome_mulch!["b_2_after"]! -= 1.24069479
+        t_info.outcome_mulch!["r_3_after"]! += 2.65251989
+        t_info.outcome_mulch!["g_3_after"]! += 3.67647059
+        t_info.outcome_mulch!["b_3_after"]! -= 2.7700841
         let paper1_after_rgb = [t_info.outcome_mulch!["r_1_after"]!, t_info.outcome_mulch!["g_1_after"]!, t_info.outcome_mulch!["b_1_after"]!]
         let paper2_after_rgb = [t_info.outcome_mulch!["r_2_after"]!, t_info.outcome_mulch!["g_2_after"]!, t_info.outcome_mulch!["b_2_after"]!]
         let paper3_after_rgb = [t_info.outcome_mulch!["r_3_after"]!, t_info.outcome_mulch!["g_3_after"]!, t_info.outcome_mulch!["b_3_after"]!]
@@ -106,15 +106,15 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func minus(_ sender: Any)
     {
         alpha_num -= 1
-        t_info.outcome_mulch!["r_1_after"]! -= 0.25
-        t_info.outcome_mulch!["g_1_after"]! += 0.25
-        t_info.outcome_mulch!["b_1_after"]! += 0.25
-        t_info.outcome_mulch!["r_2_after"]! -= 0.25
-        t_info.outcome_mulch!["g_2_after"]! += 0.25
-        t_info.outcome_mulch!["b_2_after"]! += 0.25
-        t_info.outcome_mulch!["r_3_after"]! -= 0.25
-        t_info.outcome_mulch!["g_3_after"]! += 0.25
-        t_info.outcome_mulch!["b_3_after"]! += 0.25
+        t_info.outcome_mulch!["r_1_after"]! -= 3.04878049
+        t_info.outcome_mulch!["g_1_after"]! -= 4.90196078
+        t_info.outcome_mulch!["b_1_after"]! += 1.08577633
+        t_info.outcome_mulch!["r_2_after"]! -= 3.08641975
+        t_info.outcome_mulch!["g_2_after"]! -= 0.93632959
+        t_info.outcome_mulch!["b_2_after"]! += 1.24069479
+        t_info.outcome_mulch!["r_3_after"]! -= 2.65251989
+        t_info.outcome_mulch!["g_3_after"]! -= 3.67647059
+        t_info.outcome_mulch!["b_3_after"]! += 2.7700841
         let paper1_after_rgb = [t_info.outcome_mulch!["r_1_after"]!, t_info.outcome_mulch!["g_1_after"]!, t_info.outcome_mulch!["b_1_after"]!]
         let paper2_after_rgb = [t_info.outcome_mulch!["r_2_after"]!, t_info.outcome_mulch!["g_2_after"]!, t_info.outcome_mulch!["b_2_after"]!]
         let paper3_after_rgb = [t_info.outcome_mulch!["r_3_after"]!, t_info.outcome_mulch!["g_3_after"]!, t_info.outcome_mulch!["b_3_after"]!]
