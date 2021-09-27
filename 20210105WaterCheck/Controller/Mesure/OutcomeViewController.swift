@@ -11,11 +11,11 @@ import FirebaseDatabase
 
 class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 {    
-
     var reCall = ResultCall()
     var timeClass = GetTime()
     var timeDict = [String:String]()
     var t_info = take_info()
+    var pH_Class = pH_class()
     var l_info = location_info()
     var ref_rgb_1 = [String:[Double]]()
     var ref_rgb_2 = [String:[Double]]()
@@ -44,18 +44,8 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     var r_g = Double()
     var r_b = Double()
     var g_b = Double()
-//    var r_g_1 = Double()
-//    var r_b_1 = Double()
-//    var g_b_1 = Double()
-//    var r_g_2 = Double()
-//    var r_b_2 = Double()
-//    var g_b_2 = Double()
-//    var r_g_3 = Double()
-//    var r_b_3 = Double()
-//    var g_b_3 = Double()
     var alpha_num = Int()
     var alpha_pH = Double()
-    var pH_raw = Double()
     var mode = Double()
     
     override func viewDidLoad()
@@ -85,32 +75,9 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     
     func init_alpha()
     {
-        r_g = t_info.outcome_mulch!["r_g"]!
-        r_b = t_info.outcome_mulch!["r_b"]!
-        g_b = t_info.outcome_mulch!["g_b"]!
+        pH_Class.t_info = self.t_info
         mode = t_info.outcome_mulch!["mode"]!
-        
-        if mode == 1.0 {
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_b + pH_g_b) / 2
-        } else if mode == 2.0 {
-            let pH_r_g = -4 * 0.0000001 * pow(r_g, 4) + 0.0002 * pow(r_g, 3) - 0.0347 * pow(r_g, 2) + 2.5171 * r_g - 60.471
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else if mode == 3.0 {
-            let pH_r_g = 0.0873 * r_g + 2.4524
-            let pH_r_b = -0.0187 * r_b + 12.833
-            let pH_g_b = -0.0157 * g_b + 11.013
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else{
-            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-            let pH_g_b = -0.0456 * g_b + 9.7907
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        }
-        parameter.text = String(round(alpha_pH * 10) / 10)
+        parameter.text = String(round(t_info.outcome_mulch!["pH_result"]! * 10) / 10.0)
         alpha.text = "α：0"
         alpha_num = 0
     }
@@ -118,45 +85,19 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func plus(_ sender: Any)
     {
         alpha_num += 1
-        r_g += 0.5
-        r_b += 0.5
-        g_b += 0.5
-//        if mode == 1{
-//            let pH_r_g = 6 * 0.00000001 * pow(r_g, 4) - 4 * 0.00001 * pow(r_g, 3) - 0.0083 * pow(r_g, 2) + 0.7737 * r_g + 26.811
-//            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-//            alpha_pH = (pH_r_g + pH_g_b) / 2
-//        } else if mode == 2{
-//            let pH_r_g = 0.0873 * r_g + 2.4524
-//            let pH_r_b = -0.0187 * r_b + 12.833
-//            let pH_g_b = -0.0157 * g_b + 11.013
-//            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-//        } else {
-//            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-//            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-//            let pH_g_b = -0.0456 * g_b + 9.7907
-//            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-//        }
-        
-        if mode == 1.0 {
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_b + pH_g_b) / 2
-        } else if mode == 2.0 {
-            let pH_r_g = -4 * 0.0000001 * pow(r_g, 4) + 0.0002 * pow(r_g, 3) - 0.0347 * pow(r_g, 2) + 2.5171 * r_g - 60.471
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else if mode == 3.0 {
-            let pH_r_g = 0.0873 * r_g + 2.4524
-            let pH_r_b = -0.0187 * r_b + 12.833
-            let pH_g_b = -0.0157 * g_b + 11.013
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else{
-            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-            let pH_g_b = -0.0456 * g_b + 9.7907
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        }
+        t_info.outcome_mulch!["r_1_after"]! += 0.25
+        t_info.outcome_mulch!["g_1_after"]! -= 0.25
+        t_info.outcome_mulch!["b_1_after"]! -= 0.25
+        t_info.outcome_mulch!["r_2_after"]! += 0.25
+        t_info.outcome_mulch!["g_2_after"]! -= 0.25
+        t_info.outcome_mulch!["b_2_after"]! -= 0.25
+        t_info.outcome_mulch!["r_3_after"]! += 0.25
+        t_info.outcome_mulch!["g_3_after"]! -= 0.25
+        t_info.outcome_mulch!["b_3_after"]! -= 0.25
+        let paper1_after_rgb = [t_info.outcome_mulch!["r_1_after"]!, t_info.outcome_mulch!["g_1_after"]!, t_info.outcome_mulch!["b_1_after"]!]
+        let paper2_after_rgb = [t_info.outcome_mulch!["r_2_after"]!, t_info.outcome_mulch!["g_2_after"]!, t_info.outcome_mulch!["b_2_after"]!]
+        let paper3_after_rgb = [t_info.outcome_mulch!["r_3_after"]!, t_info.outcome_mulch!["g_3_after"]!, t_info.outcome_mulch!["b_3_after"]!]
+        alpha_pH = pH_Class.calculate_pH_by_mode(paper1_after_rgb: paper1_after_rgb, paper2_after_rgb: paper2_after_rgb, paper3_after_rgb: paper3_after_rgb)
         alpha_pH = round(alpha_pH * 10) / 10
         parameter.text = String(alpha_pH)
         alpha.text = "α：" + String(alpha_num)
@@ -165,45 +106,19 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func minus(_ sender: Any)
     {
         alpha_num -= 1
-        r_g -= 0.5
-        r_b -= 0.5
-        g_b -= 0.5
-//        if mode == 1{
-//            let pH_r_g = 6 * 0.00000001 * pow(r_g, 4) - 4 * 0.00001 * pow(r_g, 3) - 0.0083 * pow(r_g, 2) + 0.7737 * r_g + 26.811
-//            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-//            alpha_pH = (pH_r_g + pH_g_b) / 2
-//        } else if mode == 2{
-//            let pH_r_g = 0.0873 * r_g + 2.4524
-//            let pH_r_b = -0.0187 * r_b + 12.833
-//            let pH_g_b = -0.0157 * g_b + 11.013
-//            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-//        } else {
-//            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-//            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-//            let pH_g_b = -0.0456 * g_b + 9.7907
-//            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-//        }
-        
-        if mode == 1.0 {
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_b + pH_g_b) / 2
-        } else if mode == 2.0 {
-            let pH_r_g = -4 * 0.0000001 * pow(r_g, 4) + 0.0002 * pow(r_g, 3) - 0.0347 * pow(r_g, 2) + 2.5171 * r_g - 60.471
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else if mode == 3.0 {
-            let pH_r_g = 0.0873 * r_g + 2.4524
-            let pH_r_b = -0.0187 * r_b + 12.833
-            let pH_g_b = -0.0157 * g_b + 11.013
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else{
-            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-            let pH_g_b = -0.0456 * g_b + 9.7907
-            alpha_pH = (pH_r_g + pH_r_b + pH_g_b) / 3
-        }
+        t_info.outcome_mulch!["r_1_after"]! -= 0.25
+        t_info.outcome_mulch!["g_1_after"]! += 0.25
+        t_info.outcome_mulch!["b_1_after"]! += 0.25
+        t_info.outcome_mulch!["r_2_after"]! -= 0.25
+        t_info.outcome_mulch!["g_2_after"]! += 0.25
+        t_info.outcome_mulch!["b_2_after"]! += 0.25
+        t_info.outcome_mulch!["r_3_after"]! -= 0.25
+        t_info.outcome_mulch!["g_3_after"]! += 0.25
+        t_info.outcome_mulch!["b_3_after"]! += 0.25
+        let paper1_after_rgb = [t_info.outcome_mulch!["r_1_after"]!, t_info.outcome_mulch!["g_1_after"]!, t_info.outcome_mulch!["b_1_after"]!]
+        let paper2_after_rgb = [t_info.outcome_mulch!["r_2_after"]!, t_info.outcome_mulch!["g_2_after"]!, t_info.outcome_mulch!["b_2_after"]!]
+        let paper3_after_rgb = [t_info.outcome_mulch!["r_3_after"]!, t_info.outcome_mulch!["g_3_after"]!, t_info.outcome_mulch!["b_3_after"]!]
+        alpha_pH = pH_Class.calculate_pH_by_mode(paper1_after_rgb: paper1_after_rgb, paper2_after_rgb: paper2_after_rgb, paper3_after_rgb: paper3_after_rgb)
         alpha_pH = round(alpha_pH * 10) / 10
         parameter.text = String(alpha_pH)
         alpha.text = "α：" + String(alpha_num)
@@ -224,46 +139,10 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     func show_outcome()
     {
         date_label.text = "\(add_zero(num:t_info.year!))年 \(add_zero(num:t_info.month!))月\(add_zero(num:t_info.day!))日 \(add_zero(num:t_info.hour!)):\(add_zero(num:t_info.minute!))"
-//        r_g_1 = t_info.outcome_mulch!["r_1_after"]! - t_info.outcome_mulch!["g_1_after"]!
-//        r_b_1 = t_info.outcome_mulch!["r_1_after"]! - t_info.outcome_mulch!["b_1_after"]!
-//        g_b_1 = t_info.outcome_mulch!["g_1_after"]! - t_info.outcome_mulch!["b_1_after"]!
-//        r_g_2 = t_info.outcome_mulch!["r_2_after"]! - t_info.outcome_mulch!["g_2_after"]!
-//        r_b_2 = t_info.outcome_mulch!["r_2_after"]! - t_info.outcome_mulch!["b_2_after"]!
-//        g_b_2 = t_info.outcome_mulch!["g_2_after"]! - t_info.outcome_mulch!["b_2_after"]!
-//        r_g_3 = t_info.outcome_mulch!["r_3_after"]! - t_info.outcome_mulch!["g_3_after"]!
-//        r_b_3 = t_info.outcome_mulch!["r_3_after"]! - t_info.outcome_mulch!["b_3_after"]!
-//        g_b_3 = t_info.outcome_mulch!["g_3_after"]! - t_info.outcome_mulch!["b_3_after"]!
-        
-        r_g = t_info.outcome_mulch!["r_g"]!
-        r_b = t_info.outcome_mulch!["r_b"]!
-        g_b = t_info.outcome_mulch!["g_b"]!
-        mode  = t_info.outcome_mulch!["mode"]!
-        
-        if mode == 1.0 {
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            pH_raw = (pH_r_b + pH_g_b) / 2
-        } else if mode == 2.0 {
-            let pH_r_g = -4 * 0.0000001 * pow(r_g, 4) + 0.0002 * pow(r_g, 3) - 0.0347 * pow(r_g, 2) + 2.5171 * r_g - 60.471
-            let pH_r_b = 6 * 0.00000001 * pow(r_b, 4) - 4 * 0.00001 * pow(r_b, 3) - 0.0083 * pow(r_b, 2) + 0.7737 * r_b + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
-            pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else if mode == 3.0 {
-            let pH_r_g = 0.0873 * r_g + 2.4524
-            let pH_r_b = -0.0187 * r_b + 12.833
-            let pH_g_b = -0.0157 * g_b + 11.013
-            pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
-        } else{
-            let pH_r_g = -0.00001 * pow(r_g, 3) + 0.0006 * pow(r_g, 2) - 0.0303 * r_g + 6.4479
-            let pH_r_b = -0.0000006 * pow(r_b, 3) + 0.0002 * pow(r_b, 2) - 0.036 * r_b + 8.2927
-            let pH_g_b = -0.0456 * g_b + 9.7907
-            pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
-        }
-        
-        let outcome = round(pH_raw * 10)
-        outcome_label.text = String(outcome / 10)
+        let outcome = round(t_info.outcome_mulch!["pH_result"]! * 10) / 10
+        outcome_label.text = String(outcome)
         selected_paper_label.text = t_info.paper
-        evaluate_label.text = judge_water(outcome: pH_raw)
+        evaluate_label.text = judge_water(outcome: outcome)
         cate_tf.text = t_info.category!
     }
     
@@ -292,25 +171,25 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["category"] = t_info.category
         values["pH_alpha"] = String(alpha_pH)
         values["alpha"] = String(alpha_num)
-        values["red1_before"] = String(t_info.outcome_mulch!["r_1_before"]!)
-        values["green1_before"] = String(t_info.outcome_mulch!["g_1_before"]!)
-        values["blue1_before"] = String(t_info.outcome_mulch!["b_1_before"]!)
+        values["red1_before"] = String(t_info.target!["paper1_rgb"]![0])
+        values["green1_before"] = String(t_info.target!["paper1_rgb"]![1])
+        values["blue1_before"] = String(t_info.target!["paper1_rgb"]![2])
         values["red1_after"] = String(t_info.outcome_mulch!["r_1_after"]!)
         values["green1_after"] = String(t_info.outcome_mulch!["g_1_after"]!)
         values["blue1_after"] = String(t_info.outcome_mulch!["b_1_after"]!)
-        values["red2_before"] = String(t_info.outcome_mulch!["r_2_before"]!)
-        values["green2_before"] = String(t_info.outcome_mulch!["g_2_before"]!)
-        values["blue2_before"] = String(t_info.outcome_mulch!["b_2_before"]!)
+        values["red2_before"] = String(t_info.target!["paper2_rgb"]![0])
+        values["green2_before"] = String(t_info.target!["paper2_rgb"]![1])
+        values["blue2_before"] = String(t_info.target!["paper2_rgb"]![2])
         values["red2_after"] = String(t_info.outcome_mulch!["r_2_after"]!)
         values["green2_after"] = String(t_info.outcome_mulch!["g_2_after"]!)
         values["blue2_after"] = String(t_info.outcome_mulch!["b_2_after"]!)
-        values["red3_before"] = String(t_info.outcome_mulch!["r_3_before"]!)
-        values["green3_before"] = String(t_info.outcome_mulch!["g_3_before"]!)
-        values["blue3_before"] = String(t_info.outcome_mulch!["b_3_before"]!)
+        values["red3_before"] = String(t_info.target!["paper3_rgb"]![0])
+        values["green3_before"] = String(t_info.target!["paper3_rgb"]![1])
+        values["blue3_before"] = String(t_info.target!["paper3_rgb"]![2])
         values["red3_after"] = String(t_info.outcome_mulch!["r_3_after"]!)
         values["green3_after"] = String(t_info.outcome_mulch!["g_3_after"]!)
         values["blue3_after"] = String(t_info.outcome_mulch!["b_3_after"]!)
-        
+        //リファレンスのRGB
         for ref in ref_rgb_1
         {
             let num = ref.key.components(separatedBy: "_")[1]
@@ -331,16 +210,9 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             values["green_" + num] = String(ref.value[1])
             values["blue_" + num] = String(ref.value[2])
         }
-        for ref in ref_rgb_1
-        {
-            let num = ref.key.components(separatedBy: "_")[1]
-            values["red_" + num] = String(ref.value[0])
-            values["green_" + num] = String(ref.value[1])
-            values["blue_" + num] = String(ref.value[2])
-        }
         let database = Database.database().reference().child("nikaho_syakujii")
         database.childByAutoId().setValue(values)
-        saveOrNonSave()
+        saveOrNonSave(pH_outcome: t_info.outcome_mulch!["pH_result"]!)
     }
     
     func set_view()
@@ -386,7 +258,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 
     }
     
-    func saveOrNonSave()
+    func saveOrNonSave(pH_outcome : Double)
     {
         // styleをActionSheetに設定
         let alertSheet = UIAlertController(title: "今回の測定結果を保存しますか？", message: "保存をすると、グラフで表示することができます", preferredStyle: UIAlertController.Style.actionSheet)
@@ -396,8 +268,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             reCall.whichSubject = t_info.subject!
             reCall.getContents()
             //appendしてから保存する
-            reCall.ataiList.append(pH_raw)
-        
+            reCall.ataiList.append(pH_outcome)
             if (l_info.address == nil)
             {
                 reCall.addressList.append("")

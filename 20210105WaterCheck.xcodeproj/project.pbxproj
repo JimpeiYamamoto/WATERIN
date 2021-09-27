@@ -25,6 +25,7 @@
 		73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A982852699C4D0000917B8 /* Cl_Predict.swift */; };
 		73B47EBB2636A8D100A6B47E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */; };
 		73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */; };
+		73BA29462701F9AC009663A7 /* pH_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA29452701F9AC009663A7 /* pH_class.swift */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
@@ -108,6 +109,7 @@
 		73A982852699C4D0000917B8 /* Cl_Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Predict.swift; sourceTree = "<group>"; };
 		73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		73BA29452701F9AC009663A7 /* pH_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_class.swift; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				73A982852699C4D0000917B8 /* Cl_Predict.swift */,
 				73A9828326999F77000917B8 /* Regression.swift */,
 				7368BF7A26D4A43C0031F339 /* pH_to_RGB.swift */,
+				73BA29452701F9AC009663A7 /* pH_class.swift */,
 			);
 			path = predict;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */,
 				73C7A77725A4A34B00C62ADC /* PreMesureViewController.swift in Sources */,
 				73C7A77225A4A31700C62ADC /* LogMainViewController.swift in Sources */,
+				73BA29462701F9AC009663A7 /* pH_class.swift in Sources */,
 				7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */,
 				73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */,
 				73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */,
