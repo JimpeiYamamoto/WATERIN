@@ -66,7 +66,9 @@ class Mesure_ViewController: UIViewController, AVCaptureDelegate
         let paper2_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 5.854368932, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
         let paper3_rgb = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 4.621359223, y: Double(x_) * 7.242718447, width: Double(x_) * 1, height: Double(x_) * 0.902912621)
         print("---target_rgb---")
-        print("r:\(paper2_rgb[0])\ng:\(paper2_rgb[1])\nb:\(paper2_rgb[2])")
+        print("r1:\(paper2_rgb[0])\ng1:\(paper2_rgb[1])\nb1:\(paper2_rgb[2])")
+        print("r2:\(paper2_rgb[0])\ng2:\(paper2_rgb[1])\nb2:\(paper2_rgb[2])")
+        print("r3:\(paper2_rgb[0])\ng3:\(paper2_rgb[1])\nb3:\(paper2_rgb[2])")
         return (["paper1_rgb":paper1_rgb, "paper2_rgb":paper2_rgb, "paper3_rgb":paper3_rgb])
     }
     
