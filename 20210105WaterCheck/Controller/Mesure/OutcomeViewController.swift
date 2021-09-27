@@ -249,7 +249,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             let pH_g_b = 2 * 0.000001 * pow(g_b, 3) - 0.0003 * pow(g_b, 2) + 0.022 * g_b + 3.1274
             pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
         } else if mode == 3.0 {
-            let pH_r_g = 0.0873 * r_g + 2.4524
+            let pH_r_g = 0.0873 * r_g + 2.4524q
             let pH_r_b = -0.0187 * r_b + 12.833
             let pH_g_b = -0.0157 * g_b + 11.013
             pH_raw = (pH_r_g + pH_r_b + pH_g_b) / 3
