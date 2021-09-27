@@ -15,6 +15,11 @@ class CheckPicViewController: UIViewController
     var ref_rgb_2 = [String:[Double]]()
     var target_rgb = [Double]()
     var reg = Regression()
+    var pH_result = Double()
+    var r_g = Double()
+    var r_b = Double()
+    var g_b = Double()
+    var mode = Double()
     
     @IBOutlet weak var image_view: UIImageView!
     @IBOutlet weak var paper_v: UIView!
@@ -65,18 +70,25 @@ class CheckPicViewController: UIViewController
         let b_x3_lst = [ref_rgb_1["y3_0"]![2], ref_rgb_1["y3_1"]![2], ref_rgb_1["y3_2"]![2], ref_rgb_1["y3_3"]![2], ref_rgb_1["y3_4"]![2],
                        ref_rgb_1["y3_5"]![2], ref_rgb_1["y3_6"]![2], ref_rgb_1["y3_7"]![2], ref_rgb_2["y3_8"]![2], ref_rgb_2["y3_9"]![2], ref_rgb_2["y3_10"]![2],
                        ref_rgb_2["y3_11"]![2], ref_rgb_2["y3_12"]![2], ref_rgb_2["y3_13"]![2], ref_rgb_2["y3_14"]![2]]
-//        print("---r_y_lst---")
-//        print(r_y_lst)
-//        print("---g_y_lst---")
-//        print(g_y_lst)
-//        print("---b_y_lst---")
-//        print(b_y_lst)
-//        print("---r_x_lst---")
-//        print(r_x_lst)
-//        print("---g_x_lst---")
-//        print(g_x_lst)
-//        print("---b_x_lst---")
-//        print(b_x_lst)
+        print("---r_y1_lst---")
+        print(r_y1_lst)
+        print("---g_y_lst---")
+        print(g_y1_lst)
+        print("---b_y1_lst---")
+        print(b_y1_lst)
+        print("---r_y2_lst---")
+        print(r_y2_lst)
+        print("---g_y2_lst---")
+        print(g_y2_lst)
+        print("---b_y2_lst---")
+        print(b_y2_lst)
+        print("---r_y3_lst---")
+        print(r_y3_lst)
+        print("---g_y3_lst---")
+        print(g_y3_lst)
+        print("---b_y3_lst---")
+        print(b_y3_lst)
+
 //        let r_adjusted = reg.get_ans(x_lst: r_x1_lst, y_lst: r_y1_lst, value: target_rgb[0])
 //        let g_adjusted = reg.get_ans(x_lst: g_x1_lst, y_lst: g_y1_lst, value: target_rgb[1])
 //        let b_adjusted = reg.get_ans(x_lst: b_x1_lst, y_lst: b_y1_lst, value: target_rgb[2])
@@ -99,12 +111,14 @@ class CheckPicViewController: UIViewController
         let r_3_before = t_info.target!["paper3_rgb"]![0]
         let g_3_before = t_info.target!["paper3_rgb"]![1]
         let b_3_before = t_info.target!["paper3_rgb"]![2]
-//        print("r:\(target_rgb[0])\ng:\(target_rgb[1])\nb:\(target_rgb[2])")
-        print("---after_addjust---")
-//        print("r:\(r_adjusted)\ng:\(g_adjusted)\nb:\(b_adjusted)")
-//        let r_g = r_adjusted - g_adjusted
-//        let r_b = r_adjusted - b_adjusted
-//        let g_b = g_adjusted - b_adjusted
+        print("---before---")
+        print("r1:\(r_1_before)\ng1:\(g_1_before)\nb1:\(b_1_before)")
+        print("r2:\(r_2_before)\ng1:\(g_2_before)\nb1:\(b_2_before)")
+        print("r3:\(r_3_before)\ng1:\(g_3_before)\nb1:\(b_3_before)")
+        print("---after---")
+        print("r1:\(r_1_after)\ng1:\(g_1_after)\nb1:\(b_1_after)")
+        print("r2:\(r_2_after)\ng1:\(g_2_after)\nb1:\(b_2_after)")
+        print("r3:\(r_3_after)\ng1:\(g_3_after)\nb1:\(b_3_after)")
         let r_g_1 = r_1_after - g_1_after
         let r_b_1 = r_1_after - b_1_after
         let g_b_1 = g_1_after - b_1_after
@@ -114,21 +128,49 @@ class CheckPicViewController: UIViewController
         let r_g_3 = r_3_after - g_3_after
         let r_b_3 = r_3_after - b_3_after
         let g_b_3 = g_3_after - b_3_after
-        let pH_r_g_1 = 6 * 0.00000001 * pow(r_g_1, 4) - 4 * 0.00001 * pow(r_g_1, 3) - 0.0083 * pow(r_g_1, 2) + 0.7737 * r_g_1 + 26.811
-        let pH_g_b_1 = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
-        let pH_result_1 = (pH_r_g_1 + pH_g_b_1) / 2
-        let pH_r_g_2 = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
-        let pH_r_b_2 = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
-        let pH_g_b_2 = -0.0456 * g_b_2 + 9.7907
-        let pH_result_2 = (pH_r_g_2 + pH_r_b_2 + pH_g_b_2) / 3
-        let pH_r_g_3 = 0.0873 * r_g_3 + 2.4524
-        let pH_r_b_3 = -0.0187 * r_b_3 + 12.833
-        let pHg_b_3 = -0.0157 * g_b_3 + 11.013
-        let pH_result_3 = (pH_r_g_3 + pH_r_b_3 + pHg_b_3) / 3
-        return ["pH_result_1":pH_result_1, "pH_result_2":pH_result_2, "pH_result_3":pH_result_3, "r_1_after":r_1_after, "g_1_after":g_1_after, "b_1_after":b_1_after,
+//        let pH_r_g_1 = 6 * 0.00000001 * pow(r_g_1, 4) - 4 * 0.00001 * pow(r_g_1, 3) - 0.0083 * pow(r_g_1, 2) + 0.7737 * r_g_1 + 26.811
+//        let pH_g_b_1 = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+//        let pH_result_1 = (pH_r_g_1 + pH_g_b_1) / 2
+//        let pH_r_g_2 = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
+//        let pH_r_b_2 = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
+//        let pH_g_b_2 = -0.0456 * g_b_2 + 9.7907
+//        let pH_result_2 = (pH_r_g_2 + pH_r_b_2 + pH_g_b_2) / 3
+//        let pH_r_g_3 = 0.0873 * r_g_3 + 2.4524
+//        let pH_r_b_3 = -0.0187 * r_b_3 + 12.833
+//        let pHg_b_3 = -0.0157 * g_b_3 + 11.013
+//        let pH_result_3 = (pH_r_g_3 + pH_r_b_3 + pHg_b_3) / 3
+        
+        if r_g_1 < 170 && r_b_1 > 80 && g_b_1 < 140{
+            r_g = r_g_1
+            r_b = r_b_1
+            g_b = g_b_1
+            let pH_r_g = 6 * 0.00000001 * pow(r_g_1, 4) - 4 * 0.00001 * pow(r_g_1, 3) - 0.0083 * pow(r_g_1, 2) + 0.7737 * r_g_1 + 26.811
+            let pH_g_b = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+            pH_result = (pH_r_g + pH_g_b) / 2
+            mode = 1.0
+        } else if r_g_3 > 100 && r_b_3 < 160 && g_b_3 < 70{
+            r_g = r_g_3
+            r_b = r_b_3
+            g_b = g_b_3
+            let pH_r_g = 0.0873 * r_g_3 + 2.4524
+            let pH_r_b = -0.0187 * r_b_3 + 12.833
+            let pH_g_b = -0.0157 * g_b_3 + 11.013
+            pH_result = (pH_r_g + pH_r_b + pH_g_b) / 3
+            mode = 2.0
+        } else{
+            r_g = r_g_2
+            r_b = r_b_2
+            g_b = g_b_2
+            let pH_r_g = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
+            let pH_r_b = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
+            let pH_g_b = -0.0456 * g_b_2 + 9.7907
+            pH_result = (pH_r_g + pH_r_b + pH_g_b) / 3
+            mode = 3.0
+        }
+        return ["pH_result":pH_result, "r_1_after":r_1_after, "g_1_after":g_1_after, "b_1_after":b_1_after,
                 "r_1_before":r_1_before, "g_1_before":g_1_before, "b_1_before":b_1_before, "r_2_after":r_2_after, "g_2_after":g_2_after, "b_2_after":b_2_after,
                 "r_2_before":r_2_before, "g_2_before":g_2_before, "b_2_before":b_2_before, "r_3_after":r_3_after, "g_3_after":g_3_after, "b_3_after":b_3_after,
-                "r_3_before":r_3_before, "g_3_before":g_3_before, "b_3_before":b_3_before]
+                "r_3_before":r_3_before, "g_3_before":g_3_before, "b_3_before":b_3_before, "r_g":r_g, "r_b":r_b, "g_b":g_b, "mode":mode]
     }
 
     
