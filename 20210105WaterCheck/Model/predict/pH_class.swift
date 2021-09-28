@@ -20,11 +20,11 @@ class pH_class
         let r_g_3 = paper3_after_rgb[0] - paper3_after_rgb[1]
         let r_b_3 = paper3_after_rgb[0] - paper3_after_rgb[2]
         let g_b_3 = paper3_after_rgb[1] - paper3_after_rgb[2]
-        if (r_g_1 < 170 && r_g_1 > 80 && r_b_1 > 130 && g_b_1 < 140 && g_b_1 > -18)
+        if (r_g_1 > 80 && r_b_1 > 87.45 && g_b_1 < 141.49 && g_b_1 > -46.65)
         {
             return (1)
         }
-        else if (r_g_1 < 170 && r_g_1 > 80 && r_b_1 > 80 && g_b_1 < 140)
+        else if (r_g_1 > 130 && r_b_1 < 140 && g_b_1 < -20)
         {
            return (2)
         }
@@ -53,23 +53,24 @@ class pH_class
         let g_b_2 = paper2_after_rgb[1] - paper2_after_rgb[2]
         switch mode {
         case 1:
-            let pH_r_b = 6 * 0.00000001 * pow(r_b_1, 4) - 4 * 0.00001 * pow(r_b_1, 3) - 0.0083 * pow(r_b_1, 2) + 0.7737 * r_b_1 + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+            
+            let pH_r_b = 5.906979 * 0.00000001 * pow(r_b_1, 4) - 3.687084 * 0.00001 * pow(r_b_1, 3) + 0.008306749 * pow(r_b_1, 2) - 0.7737231 * r_b_1 + 26.81055
+            let pH_g_b = 0.000002 * pow(g_b_1, 3) - 0.000280 * pow(g_b_1, 2) + 0.022289 * g_b_1 + 3.121426
             return ((pH_r_b + pH_g_b) / 2)
         case 2:
             let pH_r_g = -4 * 0.0000001 * pow(r_g_1, 4) + 0.0002 * pow(r_g_1, 3) - 0.0347 * pow(r_g_1, 2) + 2.5171 * r_g_1 - 60.471
-            let pH_r_b = 6 * 0.00000001 * pow(r_b_1, 4) - 4 * 0.00001 * pow(r_b_1, 3) - 0.0083 * pow(r_b_1, 2) + 0.7737 * r_b_1 + 26.811
-            let pH_g_b = 2 * 0.000001 * pow(g_b_1, 3) - 0.0003 * pow(g_b_1, 2) + 0.022 * g_b_1 + 3.1274
+            let pH_r_b = 5.906979 * 0.00000001 * pow(r_b_1, 4) - 3.687084 * 0.00001 * pow(r_b_1, 3) + 0.008306749 * pow(r_b_1, 2) - 0.7737231 * r_b_1 + 26.81055
+            let pH_g_b = 0.000002 * pow(g_b_1, 3) - 0.000280 * pow(g_b_1, 2) + 0.022289 * g_b_1 + 3.121426
             return ((pH_r_g + pH_r_b + pH_g_b) / 3)
         case 3:
-            let pH_r_g = 0.0873 * r_g_3 + 2.4524
-            let pH_r_b = -0.0187 * r_b_3 + 12.833
-            let pH_g_b = -0.0157 * g_b_3 + 11.013
+            let pH_r_g = 0.087267 * r_g_3 + 2.452448
+            let pH_r_b = -0.018725 * r_b_3 + 12.833116
+            let pH_g_b = -0.015696 * g_b_3 + 11.013066
             return ((pH_r_g + pH_r_b + pH_g_b) / 3)
         default:
-            let pH_r_g = -0.00001 * pow(r_g_2, 3) + 0.0006 * pow(r_g_2, 2) - 0.0303 * r_g_2 + 6.4479
-            let pH_r_b = -0.0000006 * pow(r_b_2, 3) + 0.0002 * pow(r_b_2, 2) - 0.036 * r_b_2 + 8.2927
-            let pH_g_b = -0.0456 * g_b_2 + 9.7907
+            let pH_r_g = -0.000011 * pow(r_g_2, 3) + 0.000561 * pow(r_g_2, 2) - 0.032106 * r_g_2 + 6.466415
+            let pH_r_b = -7.023018 * 0.0000001 * pow(r_b_2, 3) + 0.0002278498 * pow(r_b_2, 2) - 0.04024807 * r_b_2 + 8.451023
+            let pH_g_b = -0.04862 * g_b_2 + 9.972723
             return ((pH_r_g + pH_r_b + pH_g_b) / 3)
         }
     }
