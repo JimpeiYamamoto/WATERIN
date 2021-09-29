@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DD4AABE2704B15600A9CD60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DD4AABD2704B15600A9CD60 /* GoogleService-Info.plist */; };
 		7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */; };
 		7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */; };
 		733442B32644FDC20095DA2B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733442B22644FDC20095DA2B /* Store.swift */; };
@@ -23,7 +24,6 @@
 		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
 		73A9828426999F77000917B8 /* Regression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9828326999F77000917B8 /* Regression.swift */; };
 		73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A982852699C4D0000917B8 /* Cl_Predict.swift */; };
-		73B47EBB2636A8D100A6B47E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */; };
 		73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */; };
 		73BA29462701F9AC009663A7 /* pH_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA29452701F9AC009663A7 /* pH_class.swift */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
@@ -86,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.release.xcconfig"; sourceTree = "<group>"; };
+		2DD4AABD2704B15600A9CD60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.release.xcconfig"; sourceTree = "<group>"; };
 		646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
 		73A9828326999F77000917B8 /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
 		73A982852699C4D0000917B8 /* Cl_Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Predict.swift; sourceTree = "<group>"; };
-		73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		73BA29452701F9AC009663A7 /* pH_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_class.swift; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				73C7A72625A45C0000C62ADC /* Info.plist */,
-				73B47EBA2636A8D100A6B47E /* GoogleService-Info.plist */,
+				2DD4AABD2704B15600A9CD60 /* GoogleService-Info.plist */,
 				73C7A72125A45C0000C62ADC /* Assets.xcassets */,
 				73C7A76225A45EDE00C62ADC /* Model */,
 				73C7A76025A45ECB00C62ADC /* View */,
@@ -530,7 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C7A72525A45C0000C62ADC /* LaunchScreen.storyboard in Resources */,
-				73B47EBB2636A8D100A6B47E /* GoogleService-Info.plist in Resources */,
+				2DD4AABE2704B15600A9CD60 /* GoogleService-Info.plist in Resources */,
 				73C7A72225A45C0000C62ADC /* Assets.xcassets in Resources */,
 				73C7A72025A45BFF00C62ADC /* Main.storyboard in Resources */,
 			);
@@ -886,7 +886,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.15;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = BN3Q7X8773;
 				INFOPLIST_FILE = 20210105WaterCheck/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -894,8 +894,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.KigyoClub.WaterCheckerProttt;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RWater.WaterIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -909,7 +909,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.15;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = BN3Q7X8773;
 				INFOPLIST_FILE = 20210105WaterCheck/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -917,8 +917,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.KigyoClub.WaterCheckerProttt;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RWater.WaterIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
