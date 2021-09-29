@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DD4AAC02704B86B00A9CD60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DD4AABF2704B86B00A9CD60 /* GoogleService-Info.plist */; };
 		7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */; };
 		7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */; };
 		733442B32644FDC20095DA2B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733442B22644FDC20095DA2B /* Store.swift */; };
@@ -26,6 +25,7 @@
 		73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A982852699C4D0000917B8 /* Cl_Predict.swift */; };
 		73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */; };
 		73BA29462701F9AC009663A7 /* pH_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA29452701F9AC009663A7 /* pH_class.swift */; };
+		73BA294C2704CE6D009663A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
@@ -86,7 +86,6 @@
 
 /* Begin PBXFileReference section */
 		240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.release.xcconfig"; sourceTree = "<group>"; };
-		2DD4AABF2704B86B00A9CD60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.release.xcconfig"; sourceTree = "<group>"; };
 		646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		73A982852699C4D0000917B8 /* Cl_Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Predict.swift; sourceTree = "<group>"; };
 		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		73BA29452701F9AC009663A7 /* pH_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_class.swift; sourceTree = "<group>"; };
+		73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
@@ -315,8 +315,8 @@
 		73C7A71725A45BFF00C62ADC /* 20210105WaterCheck */ = {
 			isa = PBXGroup;
 			children = (
+				73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */,
 				73C7A72625A45C0000C62ADC /* Info.plist */,
-				2DD4AABF2704B86B00A9CD60 /* GoogleService-Info.plist */,
 				73C7A72125A45C0000C62ADC /* Assets.xcassets */,
 				73C7A76225A45EDE00C62ADC /* Model */,
 				73C7A76025A45ECB00C62ADC /* View */,
@@ -530,7 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C7A72525A45C0000C62ADC /* LaunchScreen.storyboard in Resources */,
-				2DD4AAC02704B86B00A9CD60 /* GoogleService-Info.plist in Resources */,
+				73BA294C2704CE6D009663A7 /* GoogleService-Info.plist in Resources */,
 				73C7A72225A45C0000C62ADC /* Assets.xcassets in Resources */,
 				73C7A72025A45BFF00C62ADC /* Main.storyboard in Resources */,
 			);

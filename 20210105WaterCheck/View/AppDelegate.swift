@@ -19,23 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        //課金用に追加してみた
-        SwiftyStoreKit.completeTransactions(atomically: true)
-        { purchases in
-            for purchase in purchases
-            {
-                switch purchase.transaction.transactionState
-                {
-                case .purchased, .restored:
-                    if purchase.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(purchase.transaction)
-                    }
-                // Unlock content
-                case .failed, .purchasing, .deferred:
-                    break // do nothing
-                }
-            }
-        }
+//        //課金用に追加してみた
+//        SwiftyStoreKit.completeTransactions(atomically: true)
+//        { purchases in
+//            for purchase in purchases
+//            {
+//                switch purchase.transaction.transactionState
+//                {
+//                case .purchased, .restored:
+//                    if purchase.needsFinishTransaction {
+//                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+//                    }
+//                // Unlock content
+//                case .failed, .purchasing, .deferred:
+//                    break // do nothing
+//                }
+//            }
+//        }
         sleep(2)
         return true
     }
