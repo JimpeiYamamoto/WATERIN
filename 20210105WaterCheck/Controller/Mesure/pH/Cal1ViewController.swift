@@ -121,9 +121,30 @@ class Cal1ViewController: UIViewController, AVCaptureDelegate {
         let checkVC = (storyboard?.instantiateViewController(identifier: "cal2"))! as Cal2ViewController
         checkVC.t_info = self.t_info
         checkVC.ref_rgb_1 = ref_rgb_get()
-        avCapture.delegate = nil
-        avCapture.stopSession()
-        self.navigationController?.pushViewController(checkVC, animated: true)
+        checkVC.t_info.ref1_image = imageView.image
+        if (checkVC.ref_rgb_1["y2_0"]![2] >= 80.0)
+        {
+            let alertSheet = UIAlertController(title: "【注意】強い光が当たっています", message: "正しい結果が得られない恐れがあります", preferredStyle: UIAlertController.Style.actionSheet)
+            let action1 = UIAlertAction(title: "続ける", style: UIAlertAction.Style.default, handler:
+            { [] (action: UIAlertAction!) in
+                //ここに処理を書いていく
+                self.avCapture.delegate = nil
+                self.avCapture.stopSession()
+                self.navigationController?.pushViewController(checkVC, animated: true)
+            })
+            let action2 = UIAlertAction(title: "やり直す", style: UIAlertAction.Style.destructive, handler:
+            { [] (action: UIAlertAction!) in
+            })
+            alertSheet.addAction(action1)
+            alertSheet.addAction(action2)
+            self.present(alertSheet, animated: true, completion: nil)
+        }
+        else
+        {
+            self.avCapture.delegate = nil
+            self.avCapture.stopSession()
+            self.navigationController?.pushViewController(checkVC, animated: true)
+        }
     }
     
     func ref_rgb_get() -> [String:[Double]]
@@ -409,7 +430,4 @@ class Cal1ViewController: UIViewController, AVCaptureDelegate {
         v_7_4.backgroundColor = .clear
         v_7_4.layer.borderWidth = 2
     }
-    
-    
-    
 }

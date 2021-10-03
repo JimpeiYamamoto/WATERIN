@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import FirebaseDatabase
+import FirebaseStorage
 
 class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 {    
@@ -19,7 +20,6 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     var l_info = location_info()
     var ref_rgb_1 = [String:[Double]]()
     var ref_rgb_2 = [String:[Double]]()
-    var takenImage = UIImage()
     let geocoder = CLGeocoder()
     var locationManager: CLLocationManager!
     
@@ -153,9 +153,38 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         navigationController?.pushViewController(selectVC, animated: true)
     }
     
-
+    fileprivate func upload(image:UIImage, name:String)
+    {
+        let file_name = "\(t_info.year!)_\(t_info.month!)_\(t_info.day!)_\(t_info.hour!)_\(t_info.minute!)_pH\(t_info.outcome_mulch!["pH_result"]!)_r1before\(t_info.target!["paper1_rgb"]![0])_\(name)"
+        let storageRef = Storage.storage().reference().child("images").child("\(file_name).jpg")
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        if let uploadData = image.jpegData(compressionQuality: 0.9)
+        {
+            storageRef.putData(uploadData, metadata: metaData)
+            { (metadata , error) in
+                if error != nil
+                {
+                    print("error: \(String(describing: error?.localizedDescription))")
+                }
+                storageRef.downloadURL(completion:{ (url, error) in
+                if error != nil
+                {
+                    print("error: \(String(describing: error?.localizedDescription))")
+                }
+                    print("url: \(String(describing: url?.absoluteString))")
+                })
+            }
+        }
+    }
+        
     @IBAction func finish_action(_ sender: Any)
     {
+        //Strageに画像を送信
+        upload(image: t_info.ref1_image!, name: "ref1")
+        upload(image: t_info.ref2_image!, name: "ref2")
+        upload(image: t_info.target_image!, name: "target")
+        //RealTimeデータベースに送信
         var values = [String:String]()
         values["time"] = "\(t_info.year!)/\(t_info.month!)/\(t_info.day!)/\(t_info.hour!)/\(t_info.minute!)"
         values["subject"] = t_info.subject
@@ -215,49 +244,6 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         saveOrNonSave(pH_outcome: t_info.outcome_mulch!["pH_result"]!)
     }
     
-    func set_view()
-    {
-        let v_w = view.frame.size.width / 100
-        let v_h = view.frame.size.height / 100
-        date_label.frame = CGRect(x: v_w * 5, y: v_h * 7, width: v_w * 94, height: v_h * 6)
-        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 22)
-        let t_w = top_view.frame.size.width / 100
-        let t_h = top_view.frame.size.height / 100
-        sub_label.frame = CGRect(x: t_w * 5, y: t_h * 3, width: t_w * 30, height: t_h * 10)
-        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 15, width: t_w * 60, height: t_h * 82)
-        second_v.frame = CGRect(x: v_w * 3, y: v_h * 39, width: v_w * 94, height: v_h * 10)
-        let s_w = second_v.frame.size.width / 100
-        let s_h = second_v.frame.size.height / 100
-        paper_label.frame = CGRect(x: s_w * 5, y: s_h * 3, width: s_w * 30, height: s_h * 30)
-        selected_paper_label.frame = CGRect(x: s_w * 10, y: s_h * 33, width: s_w * 80, height: s_h * 65)
-        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 52, width: v_w * 94, height: v_h * 17)
-        let b_w = buttom_v.frame.size.width / 100
-        let b_h = buttom_v.frame.size.height / 100
-        water_label.frame = CGRect(x: b_w * 5, y: b_h * 3, width: b_w * 30, height: b_h * 15)
-        evaluate_label.frame = CGRect(x: b_w * 10, y:b_h * 20, width: b_w * 80, height: b_h * 20)
-        cate_label.frame = CGRect(x: b_w * 5, y: b_h * 43, width: b_w * 30, height: b_h * 15)
-        cate_tf.frame = CGRect(x: b_w * 20, y: b_h * 63, width: b_w * 60, height: b_h * 30)
-        change_cate_button.frame = CGRect(x: b_w * 82, y: b_h * 63, width: b_w * 16, height: b_h * 30)
-        back_button.frame = CGRect(x: v_w * 30, y: v_h * 86, width: v_w * 40, height: v_h * 13)
-        cate_tf.layer.borderWidth = 1.0
-        cate_tf.layer.borderColor = UIColor.black.cgColor
-        back_button.imageView?.contentMode = .scaleAspectFit
-        back_button.contentHorizontalAlignment = .fill
-        back_button.contentVerticalAlignment = .fill
-        change_cate_button.imageView?.contentMode = .scaleAspectFit
-        change_cate_button.contentHorizontalAlignment = .fill
-        change_cate_button.contentVerticalAlignment = .fill
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
-                    title: "",
-                    style: .plain,
-                    target: nil,
-                    action: nil
-        )
-        top_view.layer.borderColor = UIColor.black.cgColor
-        top_view.layer.borderWidth = 1.0
-
-    }
-    
     func saveOrNonSave(pH_outcome : Double)
     {
         // styleをActionSheetに設定
@@ -303,6 +289,49 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
                alertSheet.addAction(action2)
                alertSheet.addAction(action3)
         self.present(alertSheet, animated: true, completion: nil)
+    }
+    
+    func set_view()
+    {
+        let v_w = view.frame.size.width / 100
+        let v_h = view.frame.size.height / 100
+        date_label.frame = CGRect(x: v_w * 5, y: v_h * 7, width: v_w * 94, height: v_h * 6)
+        top_view.frame = CGRect(x: v_w * 3, y: v_h * 15, width: v_w * 94, height: v_h * 22)
+        let t_w = top_view.frame.size.width / 100
+        let t_h = top_view.frame.size.height / 100
+        sub_label.frame = CGRect(x: t_w * 5, y: t_h * 3, width: t_w * 30, height: t_h * 15)
+        outcome_label.frame = CGRect(x: t_w * 20, y: t_h * 15, width: t_w * 60, height: t_h * 82)
+        second_v.frame = CGRect(x: v_w * 3, y: v_h * 39, width: v_w * 94, height: v_h * 10)
+        let s_w = second_v.frame.size.width / 100
+        let s_h = second_v.frame.size.height / 100
+        paper_label.frame = CGRect(x: s_w * 5, y: s_h * 3, width: s_w * 30, height: s_h * 30)
+        selected_paper_label.frame = CGRect(x: s_w * 10, y: s_h * 33, width: s_w * 80, height: s_h * 67)
+        buttom_v.frame = CGRect(x: v_w * 3, y: v_h * 52, width: v_w * 94, height: v_h * 17)
+        let b_w = buttom_v.frame.size.width / 100
+        let b_h = buttom_v.frame.size.height / 100
+        water_label.frame = CGRect(x: b_w * 5, y: b_h * 3, width: b_w * 30, height: b_h * 17)
+        evaluate_label.frame = CGRect(x: b_w * 10, y:b_h * 20, width: b_w * 80, height: b_h * 20)
+        cate_label.frame = CGRect(x: b_w * 5, y: b_h * 43, width: b_w * 30, height: b_h * 17)
+        cate_tf.frame = CGRect(x: b_w * 20, y: b_h * 63, width: b_w * 60, height: b_h * 30)
+        change_cate_button.frame = CGRect(x: b_w * 82, y: b_h * 63, width: b_w * 16, height: b_h * 30)
+        back_button.frame = CGRect(x: v_w * 30, y: v_h * 86, width: v_w * 40, height: v_h * 13)
+        cate_tf.layer.borderWidth = 1.0
+        cate_tf.layer.borderColor = UIColor.black.cgColor
+        back_button.imageView?.contentMode = .scaleAspectFit
+        back_button.contentHorizontalAlignment = .fill
+        back_button.contentVerticalAlignment = .fill
+        change_cate_button.imageView?.contentMode = .scaleAspectFit
+        change_cate_button.contentHorizontalAlignment = .fill
+        change_cate_button.contentVerticalAlignment = .fill
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+                    title: "",
+                    style: .plain,
+                    target: nil,
+                    action: nil
+        )
+        top_view.layer.borderColor = UIColor.black.cgColor
+        top_view.layer.borderWidth = 1.0
+
     }
     
     func setupLocationManager() {

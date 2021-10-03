@@ -65,9 +65,9 @@ class CheckPicViewController: UIViewController
         let outVC = (storyboard?.instantiateViewController(identifier: "outcome_"))! as OutcomeViewController
         outVC.t_info = self.t_info
         outVC.t_info.outcome_mulch = calc_pH()
-        outVC.takenImage = image_view.image!
         outVC.ref_rgb_1 = self.ref_rgb_1
         outVC.ref_rgb_2 = self.ref_rgb_2
+        outVC.t_info.target_image = image_view.image
         self.navigationController?.pushViewController(outVC, animated: true)
     }
     
