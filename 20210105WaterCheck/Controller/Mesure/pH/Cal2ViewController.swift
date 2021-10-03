@@ -262,6 +262,7 @@ class Cal2ViewController: UIViewController, AVCaptureDelegate
     {
         let mesure_vc = storyboard?.instantiateViewController(identifier: "mesure_") as! Mesure_ViewController
         mesure_vc.t_info = self.t_info
+        mesure_vc.t_info.ref2_image = imageView.image
         mesure_vc.ref_rgb_1 = ref_rgb_1
         mesure_vc.ref_rgb_2 = ref_rgb_get()
         self.navigationController?.pushViewController(mesure_vc, animated: true)

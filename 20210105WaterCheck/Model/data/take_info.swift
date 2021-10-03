@@ -7,6 +7,7 @@
 
 
 import Foundation
+import UIKit
 
 class take_info
 {
@@ -21,4 +22,7 @@ class take_info
     var category:String?
     var outcome_mulch:[String:Double]?
     var target:[String:[Double]]?
+    var ref1_image:UIImage?
+    var ref2_image:UIImage?
+    var target_image:UIImage?
 }

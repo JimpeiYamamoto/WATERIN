@@ -11,6 +11,7 @@ target '20210105WaterCheck' do
 pod 'Charts'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 pod 'SwiftyStoreKit'
   target '20210105WaterCheckTests' do
     inherit! :search_paths
