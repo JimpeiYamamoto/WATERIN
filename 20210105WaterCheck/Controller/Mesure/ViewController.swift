@@ -32,22 +32,57 @@ class ViewController: UIViewController, UITabBarDelegate{
     @IBOutlet weak var right_v: UIView!
     
     var result_call = ResultCall()
+    var t_info = take_info()
+    var sub_num = 0
+    let sub_lst = ["pH", "Cl"]
+    let paper_lst = ["MARCHERY-NAGEL", "Cl_paper"]
+    var locationManager: CLLocationManager!
     
-    func add_zero(num:String) -> String
+    override func viewDidLoad()
     {
-        if (Int(num)! < 10)
+        super.viewDidLoad()
+        set_view()
+        UpgradeNotice.shared.fire()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        setupLocationManager()
+        t_info.subject = "pH"
+        t_info.paper = "MARCHERY-NAGEL"
+        t_info.category = "未分類"
+        show_latest()
+    }
+    
+    func setupLocationManager()
+    {
+        locationManager = CLLocationManager()
+        guard let locationManager = locationManager else { return }
+        locationManager.requestWhenInUseAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse ||  status == .authorizedAlways
         {
-            return ("0" + num)
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
         }
-        else
-        {
-            return (num)
-        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.first
+        let latitude = location?.coordinate.latitude
+        let longitude = location?.coordinate.longitude
+        print("latitude: \(latitude!)\nlongitude: \(longitude!)")
     }
     
     func show_latest()
     {
-        result_call.whichSubject = "pH"
+        result_call.whichSubject = t_info.subject!
+        top_sub_label.text = t_info.subject
+        top_paper_label.text = t_info.paper
         result_call.getContents()
         date_label.adjustsFontSizeToFitWidth = true
         let cnt = result_call.ataiList.count
@@ -64,11 +99,72 @@ class ViewController: UIViewController, UITabBarDelegate{
             let hour = add_zero(num: String(result_call.hourList[cnt - 1]))
             let minute = add_zero(num: String(result_call.minuteList[cnt - 1]))
             date_label.text = "\(month)月\(date)日 \(hour):\(minute)"
-            latest_paper_label.text = "MARCHERY-NAGEL"
+            latest_paper_label.text = paper_lst[sub_num % 2]
             var outcome = result_call.ataiList[cnt - 1]
             outcome = round(outcome * 10) / 10
             latest_outcome_label.text = "\(outcome)"
         }
+    }
+    
+    func add_zero(num:String) -> String
+    {
+        if (Int(num)! < 10)
+        {
+            return ("0" + num)
+        }
+        else
+        {
+            return (num)
+        }
+    }
+    
+    @IBAction func right_subject(_ sender: Any)
+    {
+        sub_num += 1
+        sub_tf.text = sub_lst[sub_num % 2]
+        paper_tf.text = paper_lst[sub_num % 2]
+        t_info.subject = sub_tf.text
+        t_info.paper = paper_tf.text
+        show_latest()
+        
+    }
+    
+    @IBAction func left_subject(_ sender: Any)
+    {
+        sub_num += 1
+        sub_tf.text = sub_lst[sub_num % 2]
+        paper_tf.text = paper_lst[sub_num % 2]
+        t_info.subject = sub_tf.text
+        t_info.paper = paper_tf.text
+        show_latest()
+    }
+    
+    @IBAction func pH_startAction(_ sender: Any)
+    {
+        if (sub_tf.text == "pH")
+        {
+            let mesureVC = storyboard?.instantiateViewController(identifier: "cal1") as! Cal1ViewController
+            mesureVC.t_info = self.t_info
+            navigationController?.pushViewController(mesureVC, animated: true)
+        }
+        else
+        {
+            let mesureVC = storyboard?.instantiateViewController(identifier: "cl_cal") as! Cl_Cal1ViewController
+            mesureVC.t_info = self.t_info
+            navigationController?.pushViewController(mesureVC, animated: true)
+        }
+    }
+    
+    @IBAction func goSetAction(_ sender: Any) {
+        let setVC = storyboard?.instantiateViewController(identifier: "setting") as! SetMainViewController
+        navigationController?.pushViewController(setVC, animated: true)
+    }
+    
+    func alert(title:String, message:String)
+    {
+        let alertController = UIAlertController(title: title,message: message,preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK",style: .default,handler: nil))
+        present(alertController, animated: true)
     }
     
     func set_view()
@@ -135,64 +231,4 @@ class ViewController: UIViewController, UITabBarDelegate{
         right_v.layer.borderColor = UIColor.black.cgColor
     }
     
-    var locationManager: CLLocationManager!
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        set_view()
-        UpgradeNotice.shared.fire()
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        setupLocationManager()
-        show_latest()
-    }
-    
-    func setupLocationManager()
-    {
-        locationManager = CLLocationManager()
-        guard let locationManager = locationManager else { return }
-        locationManager.requestWhenInUseAuthorization()
-        let status = CLLocationManager.authorizationStatus()
-        if status == .authorizedWhenInUse ||  status == .authorizedAlways
-        {
-            locationManager.distanceFilter = 10
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        let location = locations.first
-        let latitude = location?.coordinate.latitude
-        let longitude = location?.coordinate.longitude
-        print("latitude: \(latitude!)\nlongitude: \(longitude!)")
-    }
-    
-    @IBAction func pH_startAction(_ sender: Any)
-    {
-        let mesureVC = storyboard?.instantiateViewController(identifier: "cal1") as! Cal1ViewController
-        mesureVC.t_info.subject = "pH"
-        mesureVC.t_info.paper = "MARCHERY-NAGEL"
-        mesureVC.t_info.category = "未分類"
-        navigationController?.pushViewController(mesureVC, animated: true)
-    }
-    
-    @IBAction func goSetAction(_ sender: Any) {
-        let setVC = storyboard?.instantiateViewController(identifier: "setting") as! SetMainViewController
-        navigationController?.pushViewController(setVC, animated: true)
-    }
-    
-    func alert(title:String, message:String)
-    {
-        let alertController = UIAlertController(title: title,message: message,preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK",style: .default,handler: nil))
-        present(alertController, animated: true)
-    }
 }
-

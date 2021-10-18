@@ -9,7 +9,11 @@ import UIKit
 import CoreLocation
 import FirebaseDatabase
 import FirebaseStorage
-
+/*
+ うまくClとpHのどちらを撮影したのかをt_infoの中身から
+ 判断して、測定結果を表示して
+ 保存するようにしてください。
+ */
 class OutcomeViewController: UIViewController, CLLocationManagerDelegate
 {    
     var reCall = ResultCall()
@@ -244,6 +248,11 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         saveOrNonSave(pH_outcome: t_info.outcome_mulch!["pH_result"]!)
     }
     
+    /*
+     saveOrNonSave
+     はすでにt_info.subjectに応じて保存するようにできているので、
+     引数に塩素モデルで計算した結果を代入すれば、pHにみたいに保存されるはずです。
+     */
     func saveOrNonSave(pH_outcome : Double)
     {
         // styleをActionSheetに設定
