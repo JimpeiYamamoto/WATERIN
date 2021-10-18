@@ -26,6 +26,10 @@
 		73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */; };
 		73BA29462701F9AC009663A7 /* pH_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA29452701F9AC009663A7 /* pH_class.swift */; };
 		73BA294C2704CE6D009663A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */; };
+		73BA294F271D43F6009663A7 /* Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */; };
+		73BA2951271D4406009663A7 /* Cal_MesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */; };
+		73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */; };
+		73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
@@ -110,6 +114,10 @@
 		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		73BA29452701F9AC009663A7 /* pH_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_class.swift; sourceTree = "<group>"; };
 		73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
+		73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cal_MesureViewController.swift; sourceTree = "<group>"; };
+		73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_CheckViewController.swift; sourceTree = "<group>"; };
+		73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_OutcomeViewController.swift; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
@@ -286,8 +294,20 @@
 				73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */,
 				73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */,
 				73413BF626D20D340096DAC4 /* CheckPicViewController.swift */,
+				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 			);
 			path = pH;
+			sourceTree = "<group>";
+		};
+		73BA294D271D43C0009663A7 /* Cl */ = {
+			isa = PBXGroup;
+			children = (
+				73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */,
+				73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */,
+				73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */,
+				73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */,
+			);
+			path = Cl;
 			sourceTree = "<group>";
 		};
 		73C7A70C25A45BFF00C62ADC = {
@@ -385,11 +405,11 @@
 		73C7A76625A4A06E00C62ADC /* Mesure */ = {
 			isa = PBXGroup;
 			children = (
+				73BA294D271D43C0009663A7 /* Cl */,
 				73A982872699CE19000917B8 /* pH */,
 				73C7A71C25A45BFF00C62ADC /* ViewController.swift */,
 				73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */,
 				73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */,
-				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 				73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */,
 				73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */,
 				73607D7526E0DBBC006AD3CB /* TutoViewController.swift */,
@@ -674,6 +694,7 @@
 				733442B32644FDC20095DA2B /* Store.swift in Sources */,
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* getTime.swift in Sources */,
+				73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */,
 				7368BF7B26D4A43C0031F339 /* pH_to_RGB.swift in Sources */,
 				73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */,
 				73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */,
@@ -684,6 +705,7 @@
 				73C7A77225A4A31700C62ADC /* LogMainViewController.swift in Sources */,
 				73BA29462701F9AC009663A7 /* pH_class.swift in Sources */,
 				7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */,
+				73BA294F271D43F6009663A7 /* Cl_Cal1ViewController.swift in Sources */,
 				73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */,
 				73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */,
 				73C7A78125A4ABD300C62ADC /* Cal1ViewController.swift in Sources */,
@@ -701,9 +723,11 @@
 				73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */,
 				7369288D266387190088280C /* ProCheck.swift in Sources */,
 				73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */,
+				73BA2951271D4406009663A7 /* Cal_MesureViewController.swift in Sources */,
 				73C7A76A25A4A30600C62ADC /* SetMainViewController.swift in Sources */,
 				73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */,
 				73C7A7DE25AB183300C62ADC /* GetPlaceInfo.swift in Sources */,
+				73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */,
 				73413BF726D20D340096DAC4 /* CheckPicViewController.swift in Sources */,
 				73C7A7B625A6AAF300C62ADC /* SetCharts.swift in Sources */,
 				73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */,
