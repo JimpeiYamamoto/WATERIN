@@ -51,7 +51,7 @@ class Cl_CheckViewController: UIViewController
         let mode = Cl_Class.judge_mode(paper_after_rgb: paper_after_rgb)
         let Cl_result = Cl_Class.calculate_Cl_by_mode(paper_after_rgb: paper_after_rgb)
         print("pH_outcome=", Cl_result)
-        return ["pH_result":Cl_result, "r_1_after":paper_after_rgb[0], "g_1_after":paper_after_rgb[1], "b_1_after":paper_after_rgb[2], "mode":Double(mode)]
+        return ["Cl_result":Cl_result, "r_1_after":paper_after_rgb[0], "g_1_after":paper_after_rgb[1], "b_1_after":paper_after_rgb[2], "mode":Double(mode)]
     }
 
     @IBAction func ok_action(_ sender: Any)

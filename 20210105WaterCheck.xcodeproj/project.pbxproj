@@ -30,7 +30,6 @@
 		73BA294F271D43F6009663A7 /* Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */; };
 		73BA2951271D4406009663A7 /* Cal_MesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */; };
 		73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */; };
-		73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
@@ -119,7 +118,6 @@
 		73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
 		73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cal_MesureViewController.swift; sourceTree = "<group>"; };
 		73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_CheckViewController.swift; sourceTree = "<group>"; };
-		73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_OutcomeViewController.swift; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */,
 				73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */,
 				73413BF626D20D340096DAC4 /* CheckPicViewController.swift */,
-				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 			);
 			path = pH;
 			sourceTree = "<group>";
@@ -308,7 +305,6 @@
 				73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */,
 				73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */,
 				73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */,
-				73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */,
 			);
 			path = Cl;
 			sourceTree = "<group>";
@@ -410,6 +406,7 @@
 			children = (
 				73BA294D271D43C0009663A7 /* Cl */,
 				73A982872699CE19000917B8 /* pH */,
+				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 				73C7A71C25A45BFF00C62ADC /* ViewController.swift */,
 				73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */,
 				73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */,
@@ -698,7 +695,6 @@
 				733442B32644FDC20095DA2B /* Store.swift in Sources */,
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* getTime.swift in Sources */,
-				73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */,
 				7368BF7B26D4A43C0031F339 /* pH_to_RGB.swift in Sources */,
 				73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */,
 				73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */,

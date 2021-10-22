@@ -255,7 +255,7 @@
             </objects>
             <point key="canvasLocation" x="2132" y="605"/>
         </scene>
-        <!--Cl Cal1 View Controller-->
+        <!--パッケージを撮影してください-->
         <scene sceneID="BBo-3K-uey">
             <objects>
                 <viewController storyboardIdentifier="cl_cal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J1d-Ab-xLh" customClass="Cl_Cal1ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,42 +305,42 @@
                                         <rect key="frame" x="159" y="460" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKL-BB-I9h">
                                         <rect key="frame" x="159" y="419" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-47-wha">
                                         <rect key="frame" x="159" y="378" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-7J-gVP">
                                         <rect key="frame" x="159" y="335" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isc-5C-Agr">
                                         <rect key="frame" x="159" y="293" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-R3-2ob">
                                         <rect key="frame" x="159" y="249" width="62" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -363,7 +363,7 @@
                         <viewLayoutGuide key="safeArea" id="R5Y-MG-UaM"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PWX-6K-iEf"/>
+                    <navigationItem key="navigationItem" title="パッケージを撮影してください" id="PWX-6K-iEf"/>
                     <connections>
                         <outlet property="full_v" destination="EKK-gt-IVD" id="hh1-s9-iEb"/>
                         <outlet property="imageView" destination="ajF-Ss-Vil" id="jWM-wp-spn"/>
@@ -387,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="3164" y="502.39880059970017"/>
         </scene>
-        <!--Cal Mesure View Controller-->
+        <!--試験紙を撮影してください-->
         <scene sceneID="9qm-76-VSP">
             <objects>
                 <viewController storyboardIdentifier="Cl_mesure_" id="wM7-T1-2TM" customClass="Cal_MesureViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -431,7 +431,7 @@
                         <viewLayoutGuide key="safeArea" id="o0d-sm-teJ"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zUw-Xo-TIm"/>
+                    <navigationItem key="navigationItem" title="試験紙を撮影してください" id="zUw-Xo-TIm"/>
                     <connections>
                         <outlet property="full_v" destination="upz-zI-ouQ" id="pYe-35-IEb"/>
                         <outlet property="image_view" destination="Abt-dP-fAE" id="TrN-HK-lZc"/>
@@ -445,7 +445,7 @@
             </objects>
             <point key="canvasLocation" x="4348" y="500.59970014992507"/>
         </scene>
-        <!--Cl Check View Controller-->
+        <!--測定に進む-->
         <scene sceneID="rqm-HW-oj9">
             <objects>
                 <viewController storyboardIdentifier="Cl_check_" id="8Gj-RB-VK5" customClass="Cl_CheckViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -489,7 +489,7 @@
                         <viewLayoutGuide key="safeArea" id="f77-2T-8df"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fM4-cz-pVS"/>
+                    <navigationItem key="navigationItem" title="測定に進む" id="fM4-cz-pVS"/>
                     <connections>
                         <outlet property="full_v" destination="jTR-ha-6dK" id="Uob-AI-ket"/>
                         <outlet property="image_view" destination="ejP-tr-TMB" id="UeH-Vk-jRM"/>
@@ -2144,14 +2144,6 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-a2-w0D">
-                                <rect key="frame" x="253" y="515" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="plus"/>
-                                <connections>
-                                    <action selector="plus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="WgZ-Uf-35I"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvp-gu-I85">
                                 <rect key="frame" x="68" y="515" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -2167,6 +2159,14 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-a2-w0D">
+                                <rect key="frame" x="272" y="515" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="plus"/>
+                                <connections>
+                                    <action selector="plus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="WgZ-Uf-35I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kSg-jQ-IJA"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2174,6 +2174,8 @@
                     <navigationItem key="navigationItem" id="qck-0Y-Bs7"/>
                     <connections>
                         <outlet property="alpha" destination="y3J-yk-VHE" id="Lh5-Af-dP5"/>
+                        <outlet property="alpha_minus_button" destination="Wvp-gu-I85" id="oez-rR-ex1"/>
+                        <outlet property="alpha_plus_button" destination="Sby-a2-w0D" id="xcj-vE-OCy"/>
                         <outlet property="back_button" destination="L5E-1x-zNK" id="IFm-8Z-LRX"/>
                         <outlet property="buttom_v" destination="6MN-mQ-s9W" id="WCJ-IO-3SV"/>
                         <outlet property="cate_label" destination="vNS-eN-Vxk" id="cc9-Qv-7qZ"/>
@@ -2793,7 +2795,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="k8N-Ra-Qfu"/>
-        <segue reference="Lbh-qb-ktE"/>
+        <segue reference="dcZ-qc-ADj"/>
         <segue reference="yex-5P-img"/>
         <segue reference="bbj-ti-2de"/>
     </inferredMetricsTieBreakers>

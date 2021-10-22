@@ -33,7 +33,6 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
     @IBOutlet weak var l_4: UILabel!
     @IBOutlet weak var l_5: UILabel!
     
-    
     var rgb = RGB()
     var t_info = take_info()
     let avCapture = AVCapture()
@@ -85,29 +84,9 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         ClcheckVC.t_info = self.t_info
         ClcheckVC.ref_rgb_1 = ref_rgb_get()
         ClcheckVC.t_info.ref1_image = imageView.image
-        if (ClcheckVC.ref_rgb_1["y2"]![2] >= 80.0)
-        {
-            let alertSheet = UIAlertController(title: "【注意】強い光が当たっています", message: "正しい結果が得られない恐れがあります", preferredStyle: UIAlertController.Style.actionSheet)
-            let action1 = UIAlertAction(title: "続ける", style: UIAlertAction.Style.default, handler:
-            { [] (action: UIAlertAction!) in
-                //ここに処理を書いていく
-                self.avCapture.delegate = nil
-                self.avCapture.stopSession()
-                self.navigationController?.pushViewController(ClcheckVC, animated: true)
-            })
-            let action2 = UIAlertAction(title: "やり直す", style: UIAlertAction.Style.destructive, handler:
-            { [] (action: UIAlertAction!) in
-            })
-            alertSheet.addAction(action1)
-            alertSheet.addAction(action2)
-            self.present(alertSheet, animated: true, completion: nil)
-        }
-        else
-        {
-            self.avCapture.delegate = nil
-            self.avCapture.stopSession()
-            self.navigationController?.pushViewController(ClcheckVC, animated: true)
-        }
+        self.avCapture.delegate = nil
+        self.avCapture.stopSession()
+        self.navigationController?.pushViewController(ClcheckVC, animated: true)
     }
     
     func ref_rgb_get() -> [String:[Double]]
@@ -121,7 +100,6 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         let y2 = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 1.15587529, y: Double(x_) * 2.52757794, width: Double(x_) * 0.21582734, height: Double(x_) * 0.20863309)
         let y1 = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 1.15587529, y: Double(x_) * 2.8177458, width: Double(x_) * 0.21582734, height: Double(x_) * 0.20863309)
         let y0 = rgb.RGB_lst(image: resize_image!, x: Double(x_) * 1.15587529, y: Double(x_) * 3.10551559, width: Double(x_) * 0.21582734, height: Double(x_) * 0.20863309)
-        
         
         print("---y_0---")
         print("r1:\(y0[0])\ng1:\(y0[1])\nb1:\(y0[2])")
@@ -138,7 +116,6 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         return (["y0":y0, "y1":y1, "y2":y2, "y3":y3, "y4":y4, "y5":y5])
     }
     
-
     func ref_set_v()
     {
         let v_w = view.frame.size.width / 100
@@ -161,7 +138,6 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         
     }
     
-
     func viewSetting()
     {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
@@ -180,6 +156,8 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         takeButton.imageView?.contentMode = .scaleAspectFit
         takeButton.contentHorizontalAlignment = .fill
         takeButton.contentVerticalAlignment = .fill
+        takeButton.backgroundColor = .clear
+        takeButton.titleLabel?.text = ""
     }
     
     func ref_color_set()

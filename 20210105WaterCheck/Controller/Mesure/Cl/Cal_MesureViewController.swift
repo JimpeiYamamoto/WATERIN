@@ -15,8 +15,6 @@ class Cal_MesureViewController: UIViewController, AVCaptureDelegate
 
     var t_info = take_info()
     var ref_rgb_1 = [String:[Double]]()
-    var ref_rgb_2 = [String:[Double]]()
-    
     let avCapture = AVCapture()
     var stillImageOutput: AVCapturePhotoOutput?
     
@@ -81,14 +79,12 @@ class Cal_MesureViewController: UIViewController, AVCaptureDelegate
         avCapture.stopSession()
     }
     
-
     func set_view()
     {
         let v_w = view.frame.size.width / 100
         let v_h = view.frame.size.height / 100
         full_v.frame = CGRect(x: v_w * 6.8, y: v_h * 11, width: v_w * 86.4, height: v_w * 153.6)
         image_view.frame = CGRect(x: 0, y: 0, width: full_v.frame.size.width, height: full_v.frame.size.height)
-//        let x_ = full_v.frame.size.width * 0.072985782
         let x_ = full_v.frame.size.width * 0.05308057
         paper_v.frame = CGRect(x: x_ * 8.82142857, y: x_ * 8.69642857, width: x_ * 1, height: x_ * 9.223300971)
         ta.frame = CGRect(x: x_ * 8.82142857, y: x_ * 8.69642857, width: x_ * 1, height: x_ * 1)
