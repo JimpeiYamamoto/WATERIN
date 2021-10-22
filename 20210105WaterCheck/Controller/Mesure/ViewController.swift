@@ -35,7 +35,8 @@ class ViewController: UIViewController, UITabBarDelegate{
     var t_info = take_info()
     var sub_num = 0
     let sub_lst = ["pH", "Cl"]
-    let paper_lst = ["MARCHERY-NAGEL", "Cl_paper"]
+    let paper_lst = ["MARCHERY-NAGEL", "Serim MONITOR FOR CHLORINE"]
+    let paper_photo_name_lst = ["m_n_image", "cl_paper"]
     var locationManager: CLLocationManager!
     
     override func viewDidLoad()
@@ -54,7 +55,9 @@ class ViewController: UIViewController, UITabBarDelegate{
         t_info.subject = "pH"
         t_info.paper = "MARCHERY-NAGEL"
         t_info.category = "未分類"
+        
         show_latest()
+        sample_image.image = UIImage(named: "m_n_image.jpg")
     }
     
     func setupLocationManager()
@@ -83,6 +86,8 @@ class ViewController: UIViewController, UITabBarDelegate{
         result_call.whichSubject = t_info.subject!
         top_sub_label.text = t_info.subject
         top_paper_label.text = t_info.paper
+        paper_tf.text = t_info.paper
+        sub_tf.text = t_info.subject
         result_call.getContents()
         date_label.adjustsFontSizeToFitWidth = true
         let cnt = result_call.ataiList.count
@@ -126,7 +131,7 @@ class ViewController: UIViewController, UITabBarDelegate{
         t_info.subject = sub_tf.text
         t_info.paper = paper_tf.text
         show_latest()
-        
+        sample_image.image = UIImage(named: paper_photo_name_lst[sub_num % 2])
     }
     
     @IBAction func left_subject(_ sender: Any)
@@ -137,6 +142,7 @@ class ViewController: UIViewController, UITabBarDelegate{
         t_info.subject = sub_tf.text
         t_info.paper = paper_tf.text
         show_latest()
+        sample_image.image = UIImage(named: paper_photo_name_lst[sub_num % 2])
     }
     
     @IBAction func pH_startAction(_ sender: Any)
@@ -169,6 +175,8 @@ class ViewController: UIViewController, UITabBarDelegate{
     
     func set_view()
     {
+        paper_tf.adjustsFontSizeToFitWidth = true
+        paper_label.adjustsFontSizeToFitWidth = true
         let v_w = view.frame.size.width / 100
         let v_h = view.frame.size.height / 100
         pH_startButton.frame = CGRect(x: v_w * 37, y: v_h * 73, width: v_w * 26, height: v_h * 20)

@@ -44,6 +44,8 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var parameter: UILabel!
     @IBOutlet weak var alpha: UILabel!
     @IBOutlet weak var back_button: UIButton!
+    @IBOutlet weak var alpha_minus_button: UIButton!
+    @IBOutlet weak var alpha_plus_button: UIButton!
     
     var r_g = Double()
     var r_b = Double()
@@ -55,12 +57,12 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        set_view()
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        set_view()
         //現在時刻の取得
         timeDict = timeClass.getTime()
         t_info.year = timeDict["year"]!
@@ -71,19 +73,21 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         //位置情報の取得を開始する
         setupLocationManager()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        print("\(t_info.subject!)を測定しました。")
-        print("試験紙は\(t_info.paper!)です")
         show_outcome()
         init_alpha()
+        sub_label.text = t_info.subject
     }
     
     func init_alpha()
     {
-        pH_Class.t_info = self.t_info
-        mode = t_info.outcome_mulch!["mode"]!
-        parameter.text = String(round(t_info.outcome_mulch!["pH_result"]! * 10) / 10.0)
-        alpha.text = "α：0"
-        alpha_num = 0
+        if (t_info.subject == "pH")
+        {
+            pH_Class.t_info = self.t_info
+            mode = t_info.outcome_mulch!["mode"]!
+            parameter.text = String(round(t_info.outcome_mulch!["pH_result"]! * 10) / 10.0)
+            alpha.text = "α：0"
+            alpha_num = 0
+        }
     }
     
     @IBAction func plus(_ sender: Any)
@@ -143,8 +147,24 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     func show_outcome()
     {
         date_label.text = "\(add_zero(num:t_info.year!))年 \(add_zero(num:t_info.month!))月\(add_zero(num:t_info.day!))日 \(add_zero(num:t_info.hour!)):\(add_zero(num:t_info.minute!))"
-        let outcome = round(t_info.outcome_mulch!["pH_result"]! * 10) / 10
-        outcome_label.text = String(outcome)
+        var outcome = 0.0
+        if (t_info.subject == "Cl")
+        {
+            outcome = round(t_info.outcome_mulch!["Cl_result"]! * 10) / 10
+        }
+        else
+        {
+            outcome = round(t_info.outcome_mulch!["pH_result"]! * 10) / 10
+        }
+        if (t_info.subject == "Cl")
+        {
+            outcome_label.text = String(outcome) + " ppm"
+        }
+        else
+        {
+            outcome_label.text = String(outcome)
+        }
+        outcome_label.adjustsFontSizeToFitWidth = true
         selected_paper_label.text = t_info.paper
         evaluate_label.text = judge_water(outcome: outcome)
         cate_tf.text = t_info.category!
@@ -159,7 +179,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     
     fileprivate func upload(image:UIImage, name:String)
     {
-        let file_name = "\(t_info.year!)_\(t_info.month!)_\(t_info.day!)_\(t_info.hour!)_\(t_info.minute!)_pH\(t_info.outcome_mulch!["pH_result"]!)_r1before\(t_info.target!["paper1_rgb"]![0])_\(name)"
+        let file_name = "\(t_info.year!)_\(t_info.month!)_\(t_info.day!)_\(t_info.hour!)_\(t_info.minute!)_pH\(t_info.outcome_mulch![t_info.subject! + "_result"]!)_\(name)"
         let storageRef = Storage.storage().reference().child("images").child("\(file_name).jpg")
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
@@ -186,14 +206,13 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
     {
         //Strageに画像を送信
         upload(image: t_info.ref1_image!, name: "ref1")
-        upload(image: t_info.ref2_image!, name: "ref2")
         upload(image: t_info.target_image!, name: "target")
         //RealTimeデータベースに送信
         var values = [String:String]()
         values["time"] = "\(t_info.year!)/\(t_info.month!)/\(t_info.day!)/\(t_info.hour!)/\(t_info.minute!)"
         values["subject"] = t_info.subject
         values["sikenshi"] = t_info.paper
-        values["pH"] = String(t_info.outcome_mulch!["pH_result"]!)
+        values[t_info.subject!] = String(t_info.outcome_mulch![t_info.subject! + "_result"]!)
         values["address"] = l_info.address
         values["lot"] = l_info.lot
         values["lat"] = l_info.lat
@@ -202,50 +221,58 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         values["subThoroughfare"] = l_info.subthr
         values["taken_ok"] = "ok"
         values["category"] = t_info.category
-        values["pH_alpha"] = String(alpha_pH)
-        values["alpha"] = String(alpha_num)
-        values["red1_before"] = String(t_info.target!["paper1_rgb"]![0])
-        values["green1_before"] = String(t_info.target!["paper1_rgb"]![1])
-        values["blue1_before"] = String(t_info.target!["paper1_rgb"]![2])
-        values["red1_after"] = String(t_info.outcome_mulch!["r_1_after"]!)
-        values["green1_after"] = String(t_info.outcome_mulch!["g_1_after"]!)
-        values["blue1_after"] = String(t_info.outcome_mulch!["b_1_after"]!)
-        values["red2_before"] = String(t_info.target!["paper2_rgb"]![0])
-        values["green2_before"] = String(t_info.target!["paper2_rgb"]![1])
-        values["blue2_before"] = String(t_info.target!["paper2_rgb"]![2])
-        values["red2_after"] = String(t_info.outcome_mulch!["r_2_after"]!)
-        values["green2_after"] = String(t_info.outcome_mulch!["g_2_after"]!)
-        values["blue2_after"] = String(t_info.outcome_mulch!["b_2_after"]!)
-        values["red3_before"] = String(t_info.target!["paper3_rgb"]![0])
-        values["green3_before"] = String(t_info.target!["paper3_rgb"]![1])
-        values["blue3_before"] = String(t_info.target!["paper3_rgb"]![2])
-        values["red3_after"] = String(t_info.outcome_mulch!["r_3_after"]!)
-        values["green3_after"] = String(t_info.outcome_mulch!["g_3_after"]!)
-        values["blue3_after"] = String(t_info.outcome_mulch!["b_3_after"]!)
-        //リファレンスのRGB
-        for ref in ref_rgb_1
+        if (t_info.subject == "Cl")
         {
-            let num = ref.key.components(separatedBy: "_")[1]
-            values["red_" + num] = String(ref.value[0])
-            values["green_" + num] = String(ref.value[1])
-            values["blue_" + num] = String(ref.value[2])
+            
         }
-        for ref in ref_rgb_2
+        else
         {
-            let num = ref.key.components(separatedBy: "_")[1]
-            if (String(num) == "7")
+            values["pH_alpha"] = String(alpha_pH)
+            values["alpha"] = String(alpha_num)
+            values["red1_before"] = String(t_info.target!["paper1_rgb"]![0])
+            values["green1_before"] = String(t_info.target!["paper1_rgb"]![1])
+            values["blue1_before"] = String(t_info.target!["paper1_rgb"]![2])
+            values["red1_after"] = String(t_info.outcome_mulch!["r_1_after"]!)
+            values["green1_after"] = String(t_info.outcome_mulch!["g_1_after"]!)
+            values["blue1_after"] = String(t_info.outcome_mulch!["b_1_after"]!)
+            values["red2_before"] = String(t_info.target!["paper2_rgb"]![0])
+            values["green2_before"] = String(t_info.target!["paper2_rgb"]![1])
+            values["blue2_before"] = String(t_info.target!["paper2_rgb"]![2])
+            values["red2_after"] = String(t_info.outcome_mulch!["r_2_after"]!)
+            values["green2_after"] = String(t_info.outcome_mulch!["g_2_after"]!)
+            values["blue2_after"] = String(t_info.outcome_mulch!["b_2_after"]!)
+            values["red3_before"] = String(t_info.target!["paper3_rgb"]![0])
+            values["green3_before"] = String(t_info.target!["paper3_rgb"]![1])
+            values["blue3_before"] = String(t_info.target!["paper3_rgb"]![2])
+            values["red3_after"] = String(t_info.outcome_mulch!["r_3_after"]!)
+            values["green3_after"] = String(t_info.outcome_mulch!["g_3_after"]!)
+            values["blue3_after"] = String(t_info.outcome_mulch!["b_3_after"]!)
+            //リファレンスのRGB
+            for ref in ref_rgb_1
             {
-                values["red_" + num + "_2"] = String(ref.value[0])
-                values["green_" + num + "_2"] = String(ref.value[1])
-                values["blue_" + num + "_2"] = String(ref.value[2])
+                let num = ref.key.components(separatedBy: "_")[1]
+                values["red_" + num] = String(ref.value[0])
+                values["green_" + num] = String(ref.value[1])
+                values["blue_" + num] = String(ref.value[2])
             }
-            values["red_" + num] = String(ref.value[0])
-            values["green_" + num] = String(ref.value[1])
-            values["blue_" + num] = String(ref.value[2])
+            for ref in ref_rgb_2
+            {
+                let num = ref.key.components(separatedBy: "_")[1]
+                if (String(num) == "7")
+                {
+                    values["red_" + num + "_2"] = String(ref.value[0])
+                    values["green_" + num + "_2"] = String(ref.value[1])
+                    values["blue_" + num + "_2"] = String(ref.value[2])
+                }
+                values["red_" + num] = String(ref.value[0])
+                values["green_" + num] = String(ref.value[1])
+                values["blue_" + num] = String(ref.value[2])
+            }
         }
-        let database = Database.database().reference().child("nikaho_syakujii")
+        let database = Database.database().reference().child(t_info.subject! + "_nikaho_syakujii")
         database.childByAutoId().setValue(values)
-        saveOrNonSave(pH_outcome: t_info.outcome_mulch!["pH_result"]!)
+        saveOrNonSave(outcome: t_info.outcome_mulch![t_info.subject! + "_result"]!)
+        print("!!!!!")
     }
     
     /*
@@ -253,7 +280,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
      はすでにt_info.subjectに応じて保存するようにできているので、
      引数に塩素モデルで計算した結果を代入すれば、pHにみたいに保存されるはずです。
      */
-    func saveOrNonSave(pH_outcome : Double)
+    func saveOrNonSave(outcome : Double)
     {
         // styleをActionSheetに設定
         let alertSheet = UIAlertController(title: "今回の測定結果を保存しますか？", message: "保存をすると、グラフで表示することができます", preferredStyle: UIAlertController.Style.actionSheet)
@@ -263,7 +290,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             reCall.whichSubject = t_info.subject!
             reCall.getContents()
             //appendしてから保存する
-            reCall.ataiList.append(pH_outcome)
+            reCall.ataiList.append(outcome)
             if (l_info.address == nil)
             {
                 reCall.addressList.append("")
@@ -340,7 +367,15 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         )
         top_view.layer.borderColor = UIColor.black.cgColor
         top_view.layer.borderWidth = 1.0
-
+        if (t_info.subject == "Cl")
+        {
+            parameter.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            alpha.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            alpha_plus_button.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            alpha_minus_button.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            water_label.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            evaluate_label.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        }
     }
     
     func setupLocationManager() {

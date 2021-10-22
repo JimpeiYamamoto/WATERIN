@@ -42,7 +42,7 @@ class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return (1)
+        return (2)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -77,9 +77,8 @@ class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         reCall.getContents()
         index_num = reCall.yearList.count
-        print("check=\(proCheck.check_mesure())")
         print("num = \(index_num)")
-        if (index_num == 0 || proCheck.check_mesure() < 0)
+        if (index_num == 0)
         {
             when_label.text = "最終測定：\nなし"
             times_label.text = "回数：0"

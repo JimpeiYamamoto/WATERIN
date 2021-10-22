@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1516F271E7E180015AFE1 /* Cl_class.swift */; };
 		7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */; };
 		7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */; };
 		733442B32644FDC20095DA2B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733442B22644FDC20095DA2B /* Store.swift */; };
@@ -29,7 +30,6 @@
 		73BA294F271D43F6009663A7 /* Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */; };
 		73BA2951271D4406009663A7 /* Cal_MesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */; };
 		73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */; };
-		73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */; };
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
@@ -90,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		240AE531CC4450735AF9E7BB /* Pods-20210105WaterCheckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.release.xcconfig"; sourceTree = "<group>"; };
+		2DC1516F271E7E180015AFE1 /* Cl_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_class.swift; sourceTree = "<group>"; };
 		349A5E23459D3FB67645BA9E /* Pods-20210105WaterCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.release.xcconfig"; sourceTree = "<group>"; };
 		646765498B46E179A5D6713F /* Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,11 +114,10 @@
 		73A982852699C4D0000917B8 /* Cl_Predict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Predict.swift; sourceTree = "<group>"; };
 		73B47EFA2639451400A6B47E /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		73BA29452701F9AC009663A7 /* pH_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_class.swift; sourceTree = "<group>"; };
-		73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73BA294B2704CE6D009663A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "20210105WaterCheck/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
 		73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cal_MesureViewController.swift; sourceTree = "<group>"; };
 		73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_CheckViewController.swift; sourceTree = "<group>"; };
-		73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cl_OutcomeViewController.swift; sourceTree = "<group>"; };
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +232,7 @@
 				73A9828326999F77000917B8 /* Regression.swift */,
 				7368BF7A26D4A43C0031F339 /* pH_to_RGB.swift */,
 				73BA29452701F9AC009663A7 /* pH_class.swift */,
+				2DC1516F271E7E180015AFE1 /* Cl_class.swift */,
 			);
 			path = predict;
 			sourceTree = "<group>";
@@ -294,7 +295,6 @@
 				73413BF426D207EF0096DAC4 /* Cal2ViewController.swift */,
 				73413BFA26D217BE0096DAC4 /* Mesure_ViewController.swift */,
 				73413BF626D20D340096DAC4 /* CheckPicViewController.swift */,
-				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 			);
 			path = pH;
 			sourceTree = "<group>";
@@ -305,7 +305,6 @@
 				73BA294E271D43F6009663A7 /* Cl_Cal1ViewController.swift */,
 				73BA2950271D4406009663A7 /* Cal_MesureViewController.swift */,
 				73BA2952271D4423009663A7 /* Cl_CheckViewController.swift */,
-				73BA2954271D44D2009663A7 /* Cl_OutcomeViewController.swift */,
 			);
 			path = Cl;
 			sourceTree = "<group>";
@@ -407,6 +406,7 @@
 			children = (
 				73BA294D271D43C0009663A7 /* Cl */,
 				73A982872699CE19000917B8 /* pH */,
+				73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */,
 				73C7A71C25A45BFF00C62ADC /* ViewController.swift */,
 				73C7A77625A4A34B00C62ADC /* PreMesureViewController.swift */,
 				73C7A78525A4AE2A00C62ADC /* SelectSikensiViewController.swift */,
@@ -685,6 +685,7 @@
 				73C7A7CF25AB0C9000C62ADC /* AVCapture.swift in Sources */,
 				73413BFB26D217BE0096DAC4 /* Mesure_ViewController.swift in Sources */,
 				73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */,
+				2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */,
 				73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */,
 				7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */,
 				73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */,
@@ -694,7 +695,6 @@
 				733442B32644FDC20095DA2B /* Store.swift in Sources */,
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* getTime.swift in Sources */,
-				73BA2955271D44D2009663A7 /* Cl_OutcomeViewController.swift in Sources */,
 				7368BF7B26D4A43C0031F339 /* pH_to_RGB.swift in Sources */,
 				73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */,
 				73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */,
