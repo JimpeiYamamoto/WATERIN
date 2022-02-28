@@ -64,8 +64,7 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "自分の結果"
-        reCall.whichSubject = whichSubject
-        reCall.getContents()
+        reCall.getContents(subject : whichSubject)
         contents = reCall.contents
         MakeCateFilList()
         //選択されたカテゴリーの名前を表示
@@ -247,7 +246,7 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
             let action1 = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
                 (action: UIAlertAction!) in
                 //削除するを選択したら呼ばれる
-                let removeContents = Contents(atai: cateContents[indexPath.row-3].atai!, address: cateContents[indexPath.row-3].address!, lat: cateContents[indexPath.row-3].lat!, lot: cateContents[indexPath.row-3].lot!, year: cateContents[indexPath.row-3].year!, month: cateContents[indexPath.row-3].month!, day: cateContents[indexPath.row-3].day!, hour: cateContents[indexPath.row-3].hour!, minute: cateContents[indexPath.row-3].minute!, category: cateContents[indexPath.row-3].category!, sikensi: cateContents[indexPath.row-3].sikensi!, pen: cateContents[indexPath.row - 3].pen!)
+                let removeContents = Contents(atai: cateContents[indexPath.row-3].atai!, address: cateContents[indexPath.row-3].address!, lat: cateContents[indexPath.row-3].lat!, lot: cateContents[indexPath.row-3].lot!, year: cateContents[indexPath.row-3].year!, month: cateContents[indexPath.row-3].month!, day: cateContents[indexPath.row-3].day!, hour: cateContents[indexPath.row-3].hour!, minute: cateContents[indexPath.row-3].minute!, category: cateContents[indexPath.row-3].category!, sikensi: cateContents[indexPath.row-3].sikensi!)
                 let index = contents.firstIndex(of: removeContents)
                 print("削除する前", contents)
                 print("削除するindex", index as Any)
@@ -280,7 +279,6 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                     addressList.append(contents[num].address!)
                     sikensiList.append(contents[num].sikensi!)
                     categoryList.append(contents[num].category!)
-                    penList.append(contents[num].pen!)
                     num += 1
                 }
                 //データを更新
@@ -297,9 +295,8 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                 reCall.categoryList = categoryList
                 reCall.penList = penList
                 //保存
-                reCall.DataAppendSave()
-                reCall.whichSubject = whichSubject
-                reCall.getContents()
+                reCall.DataAppendSave(subject: whichSubject)
+                reCall.getContents(subject: whichSubject)
                 contents = reCall.contents
                 MakeCateFilList()
                 tableView.reloadData()

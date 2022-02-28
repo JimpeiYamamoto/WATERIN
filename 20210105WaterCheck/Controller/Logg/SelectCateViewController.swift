@@ -38,17 +38,12 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         switch whichSubject {
         case "pH":
             cateList = saveDataGetString(key: "pH_category_list", Array: cateList)
-        case "COD":
-            cateList = saveDataGetString(key: "COD_category_list", Array: cateList)
         case "Cl":
             cateList = saveDataGetString(key: "Cl_category_list", Array: cateList)
-        case "亜鉛":
-            cateList = saveDataGetString(key: "亜鉛_category_list", Array: cateList)
         default:
             print("")
         }
-        reCall.whichSubject = whichSubject
-        reCall.getContents()
+        reCall.getContents(subject : whichSubject)
     }
     
     
@@ -130,7 +125,7 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
                     }
                     num += 1
                 }
-                reCall.DataAppendSave()
+                reCall.DataAppendSave(subject : whichSubject)
                 cateList.remove(at: indexPath.row - 2)
                 switch whichSubject {
                 case "pH":

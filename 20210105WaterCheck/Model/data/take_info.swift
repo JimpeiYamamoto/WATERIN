@@ -14,6 +14,7 @@ class take_info
     var subject:String?
     var outcome:Double?
     var paper:String?
+    var paper_pack_image_path:String?
     var year:String?
     var month:String?
     var day:String?

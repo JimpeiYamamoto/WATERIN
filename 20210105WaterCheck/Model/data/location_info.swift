@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 
 class location_info
 {
-    
     var address:String?
     var lat:String?
     var lot:String?
@@ -22,14 +23,25 @@ class location_info
     //~番地
     var subthr:String?
     
-//    init(address:String, lat:String, lot:String, admin:String, locality:String, place_name:String, subthr:String)
-//    {
-//        self.address = address
-//        self.lat = lat
-//        self.lot = lot
-//        self.admin = admin
-//        self.locality = locality
-//        self.place_name = place_name
-//        self.subthr = subthr
-//    }
+    var locationManager: CLLocationManager!
+    func setupLocationManager()
+    {
+        locationManager = CLLocationManager()
+        guard let locationManager = locationManager else { return }
+        locationManager.requestWhenInUseAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse ||  status == .authorizedAlways
+        {
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.first
+        _ = location?.coordinate.latitude
+        _ = location?.coordinate.longitude
+    }
+    
 }

@@ -63,19 +63,15 @@ class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewD
         var index_num = 0
         switch indexPath.row {
         case 0:
-            reCall.whichSubject = "pH"
+            reCall.getContents(subject: v.PH)
             name_label.text = "pH"
         case 1:
-            reCall.whichSubject = "Cl"
+            reCall.getContents(subject: v.CL)
             name_label.text = "残留塩素"
-        case 2:
-            reCall.whichSubject = "亜鉛"
-            name_label.text = "硬度"
         default:
             cell.backgroundView?.backgroundColor = .clear
             cell.backgroundColor = .clear
         }
-        reCall.getContents()
         index_num = reCall.yearList.count
         print("num = \(index_num)")
         if (index_num == 0)

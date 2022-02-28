@@ -374,7 +374,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         }
                         else
                         {
-                            self.contents.append(Contents(atai: Double(outcome!)!, address: "", lat: lat!, lot: lot!, year: arr[0], month: arr[1], day: arr[2], hour: arr[3], minute: arr[4], category: "", sikensi: "", pen: ""))
+                            self.contents.append(Contents(atai: Double(outcome!)!, address: "", lat: lat!, lot: lot!, year: arr[0], month: arr[1], day: arr[2], hour: arr[3], minute: arr[4], category: "", sikensi: ""))
                         }
                     }
                 }

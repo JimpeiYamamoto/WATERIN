@@ -287,8 +287,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
         let action1 = UIAlertAction(title: "はい", style: UIAlertAction.Style.default, handler: { [self]
                    (action: UIAlertAction!) in
             //ここに処理を書いていく
-            reCall.whichSubject = t_info.subject!
-            reCall.getContents()
+            reCall.getContents(subject : t_info.subject!)
             //appendしてから保存する
             reCall.ataiList.append(outcome)
             if (l_info.address == nil)
@@ -311,7 +310,7 @@ class OutcomeViewController: UIViewController, CLLocationManagerDelegate
             reCall.categoryList.append(t_info.category!)
             reCall.sikensiList.append(t_info.paper!)
             reCall.penList.append(t_info.paper!)
-            reCall.DataAppendSave()
+            reCall.DataAppendSave(subject: t_info.subject!)
             navigationController?.popToViewController(ofClass: ViewController.self)
                })
         let action2 = UIAlertAction(title: "いいえ", style: UIAlertAction.Style.destructive, handler: { [self]
