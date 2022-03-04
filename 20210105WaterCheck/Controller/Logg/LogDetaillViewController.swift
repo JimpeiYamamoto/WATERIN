@@ -30,8 +30,7 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
     var dateDict = [String:Int]()
     var dateText = String()
 
-    var getTime = GetTime()
-    var reCall = ResultCall()
+    var ud_data = UD_data()
     var contents = [Contents]()
     var filterdContents = [Contents]()
     var cateContents = [Contents]()
@@ -64,8 +63,8 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "自分の結果"
-        reCall.getContents(subject : whichSubject)
-        contents = reCall.contents
+        ud_data.getContents(subject : whichSubject)
+        contents = ud_data.contents
         MakeCateFilList()
         //選択されたカテゴリーの名前を表示
         if (selectedCategory == "")
@@ -252,7 +251,7 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("削除するindex", index as Any)
                 contents.remove(at: index!)
                 print("削除した後", contents)
-                reCall.contents = contents
+                ud_data.contents = contents
                 //ここでyearListとかの中身を一度消さないといけない？
                 yearList.removeAll()
                 monthList.removeAll()
@@ -282,22 +281,21 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                     num += 1
                 }
                 //データを更新
-                reCall.yearList = yearList
-                reCall.monthList = monthList
-                reCall.dayList = dayList
-                reCall.hourList = hourList
-                reCall.minuteList = minuteList
-                reCall.ataiList = ataiList
-                reCall.latList = latList
-                reCall.lotList = lotList
-                reCall.addressList = addressList
-                reCall.sikensiList = sikensiList
-                reCall.categoryList = categoryList
-                reCall.penList = penList
+                ud_data.yearList = yearList
+                ud_data.monthList = monthList
+                ud_data.dayList = dayList
+                ud_data.hourList = hourList
+                ud_data.minuteList = minuteList
+                ud_data.outcomeList = ataiList
+                ud_data.latList = latList
+                ud_data.lotList = lotList
+                ud_data.addressList = addressList
+                ud_data.sikensiList = sikensiList
+                ud_data.categoryList = categoryList
                 //保存
-                reCall.DataAppendSave(subject: whichSubject)
-                reCall.getContents(subject: whichSubject)
-                contents = reCall.contents
+                ud_data.ud_data_save(subject: whichSubject)
+                ud_data.getContents(subject: whichSubject)
+                contents = ud_data.contents
                 MakeCateFilList()
                 tableView.reloadData()
             })
@@ -348,11 +346,11 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         if (cate_tf.text == "全てのデータ")
         {
-            cateContents = reCall.contents
+            cateContents = ud_data.contents
         }
         else
         {
-            cateContents = reCall.contents.filter{ (contents) -> Bool in return
+            cateContents = ud_data.contents.filter{ (contents) -> Bool in return
                 cate_tf.text == contents.category
             }
         }
@@ -408,8 +406,9 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBAction func shareAction(_ sender: Any)
     {
-        let timeDict = getTime.getTime()
-        let fileName = "\(whichSubject)_\(String(cate_tf.text!))_\(timeDict["year"]!)_\(timeDict["month"]!)_\(timeDict["day"]!)_\(timeDict["hour"]!)_\(timeDict["minute"]!)"
+        let time_class = TimeClass()
+        time_class.get_now_time()
+        let fileName = "\(whichSubject)_\(String(cate_tf.text!))_\(time_class.year)_\(time_class.month)_\(time_class.day)_\(time_class.hour)_\(time_class.minute)"
         let message = makeCsv()
         print(message)
         let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITabBarDelegate
     @IBOutlet weak var sample_image: UIImageView!
     @IBOutlet weak var right_v: UIView!
     
-    var result_call = ResultCall()
+    var ud_data = UD_data()
     var t_info = take_info()
     var location = location_info()
     
@@ -56,14 +56,14 @@ class ViewController: UIViewController, UITabBarDelegate
     
     func show_latest_measure_info()
     {
-        result_call.getContents(subject: t_info.subject!)
+        ud_data.getContents(subject: t_info.subject!)
         top_sub_label.text = t_info.subject
         top_paper_label.text = t_info.paper
         paper_tf.text = t_info.paper
         sub_tf.text = t_info.subject
         sample_image.image = UIImage(named: t_info.paper_pack_image_path!)
         date_label.adjustsFontSizeToFitWidth = true
-        let cnt = result_call.ataiList.count
+        let cnt = ud_data.outcomeList.count
         if (cnt == 0)
         {
             date_label.text = "--月--日--:--"
@@ -72,13 +72,13 @@ class ViewController: UIViewController, UITabBarDelegate
         }
         else
         {
-            let month = String(format: "%02d", result_call.monthList[cnt - 1])
-            let date = String(format: "%02d", result_call.dayList[cnt - 1])
-            let hour = String(format: "%02d", result_call.hourList[cnt - 1])
-            let minute = String(format: "%02d", result_call.minuteList[cnt - 1])
+            let month = String(format: "%02d", ud_data.monthList[cnt - 1])
+            let date = String(format: "%02d", ud_data.dayList[cnt - 1])
+            let hour = String(format: "%02d", ud_data.hourList[cnt - 1])
+            let minute = String(format: "%02d", ud_data.minuteList[cnt - 1])
             date_label.text = "\(month)月\(date)日 \(hour):\(minute)"
             latest_paper_label.text = t_info.paper
-            latest_outcome_label.text = "\(round(result_call.ataiList[cnt - 1] * 10) / 10)"
+            latest_outcome_label.text = "\(round(ud_data.outcomeList[cnt - 1] * 10) / 10)"
         }
     }
 
@@ -108,14 +108,12 @@ class ViewController: UIViewController, UITabBarDelegate
             t_info.subject = v.CL
             t_info.paper = v.SERIM
             t_info.paper_pack_image_path = v.SERIM_PACK_IMG_PATH
-            
         }
         else
         {
             t_info.subject = v.PH
             t_info.paper = v.MARCHERY
             t_info.paper_pack_image_path = v.MARCHERY_PACK_IMG_PATH
-        
         }
         show_latest_measure_info()
     }
@@ -124,7 +122,7 @@ class ViewController: UIViewController, UITabBarDelegate
     {
         if (t_info.subject == v.PH)
         {
-            let mesureVC = storyboard?.instantiateViewController(identifier: "cal1") as! Cal1ViewController
+            let mesureVC = storyboard?.instantiateViewController(identifier: "cal1") as! pH_Cal1ViewController
             mesureVC.t_info = self.t_info
             navigationController?.pushViewController(mesureVC, animated: true)
         }

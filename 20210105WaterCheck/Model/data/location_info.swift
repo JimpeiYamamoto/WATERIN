@@ -22,8 +22,8 @@ class location_info
     var place_name:String?
     //~番地
     var subthr:String?
-    
     var locationManager: CLLocationManager!
+
     func setupLocationManager()
     {
         locationManager = CLLocationManager()
@@ -37,11 +37,25 @@ class location_info
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func reverse_geo_coding(locations:[ CLLocation ])
     {
-        let location = locations.first
-        _ = location?.coordinate.latitude
-        _ = location?.coordinate.longitude
+        let geocoder = CLGeocoder()
+        if let location = locations.first {
+            //逆ジオコーディング
+            geocoder.reverseGeocodeLocation( location, completionHandler: { ( placemarks, error ) in
+                if let placemark = placemarks?.first {
+                    //住所
+                    self.admin = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
+                    self.locality = placemark.locality == nil ? "" : placemark.locality!
+                    let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
+                    let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
+                    self.subthr = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
+                    self.place_name = !thoroughfare.contains( subLocality ) ? subLocality : thoroughfare
+                    self.address = self.admin! + self.locality! + self.place_name! + self.subthr!
+                    print(self.address as Any)
+                }
+            })
+        }
     }
     
 }

@@ -72,7 +72,8 @@ class Cal_MesureViewController: UIViewController, AVCaptureDelegate
         CloutVC.t_info = self.t_info
         CloutVC.ref_rgb_1 = ref_rgb_1
 //        outVC.target_rgb = target_rgb_get()
-        CloutVC.t_info.target = target_rgb_get()
+//        CloutVC.t_info.target_rgb = target_rgb_get()
+        CloutVC.t_info.target_rgb = [[0.1, 0.1], [0.1 ,0.1]]
         //撮影した写真を渡す
         CloutVC.takenImage = image_view.image!
         self.navigationController?.pushViewController(CloutVC, animated: true)

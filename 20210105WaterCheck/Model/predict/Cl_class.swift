@@ -60,9 +60,9 @@ class Cl_class
                        ref_rgb_1["y5"]![1]]
         let b_x_lst = [ref_rgb_1["y0"]![2], ref_rgb_1["y1"]![2], ref_rgb_1["y2"]![2], ref_rgb_1["y3"]![2], ref_rgb_1["y4"]![2],
                        ref_rgb_1["y5"]![2]]
-        let r_after = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: t_info.target!["paper_rgb"]![0])
-        let g_after = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: t_info.target!["paper_rgb"]![1])
-        let b_after = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: t_info.target!["paper_rgb"]![2])
+        let r_after = reg.get_ans(x_lst: r_x_lst, y_lst: r_y_lst, value: t_info.target_rgb![0][0])
+        let g_after = reg.get_ans(x_lst: g_x_lst, y_lst: g_y_lst, value: t_info.target_rgb![1][0])
+        let b_after = reg.get_ans(x_lst: b_x_lst, y_lst: b_y_lst, value: t_info.target_rgb![2][0])
         return ([r_after, g_after, b_after])
     }
 }

@@ -12,18 +12,19 @@ import UIKit
 class take_info
 {
     var subject:String?
-    var outcome:Double?
     var paper:String?
     var paper_pack_image_path:String?
-    var year:String?
-    var month:String?
-    var day:String?
-    var hour:String?
-    var minute:String?
     var category:String?
-    var outcome_mulch:[String:Double]?
-    var target:[String:[Double]]?
-    var ref1_image:UIImage?
-    var ref2_image:UIImage?
+    
+    var outcome:Double?
+    var calc_mode:Int?
+    
+    var target_rgb:[[Double]]?
+    var addjust_target_rgb:[[Double]]?
     var target_image:UIImage?
+    
+    var ref1_image:UIImage?
+    var ref1_rgb : [[[Double]]]?
+    var ref2_image:UIImage?
+    var ref2_rgb : [[[Double]]]?
 }

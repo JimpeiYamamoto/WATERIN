@@ -12,7 +12,7 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
     let ud = UserDefaults.standard
     var whichSubject = String()
     var cateList = [String]()
-    var reCall = ResultCall()
+    var ud_data = UD_data()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -43,7 +43,7 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             print("")
         }
-        reCall.getContents(subject : whichSubject)
+        ud_data.getContents(subject : whichSubject)
     }
     
     
@@ -117,24 +117,24 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
             let action1 = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
                 (action: UIAlertAction!) in
                 var num = 0
-                for _ in reCall.categoryList
+                for _ in ud_data.categoryList
                 {
-                    if (reCall.categoryList[num] == cateList[indexPath.row - 2])
+                    if (ud_data.categoryList[num] == cateList[indexPath.row - 2])
                     {
-                        reCall.categoryList[num] = "未分類"
+                        ud_data.categoryList[num] = "未分類"
                     }
                     num += 1
                 }
-                reCall.DataAppendSave(subject : whichSubject)
+                ud_data.ud_data_save(subject: whichSubject)
                 cateList.remove(at: indexPath.row - 2)
                 switch whichSubject {
-                case "pH":
+                case v.PH:
                     ud.set(cateList, forKey: "pH_category_list")
                 case "COD":
                     ud.set(cateList, forKey: "COD_category_list")
                 case "亜鉛":
                     ud.set(cateList, forKey: "亜鉛_category_list")
-                case "Cl":
+                case v.CL:
                     ud.set(cateList, forKey: "Cl_category_list")
                 default:
                     print("")

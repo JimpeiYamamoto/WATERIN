@@ -44,10 +44,6 @@ class Cl_CheckViewController: UIViewController
     {
         Cl_Class.t_info = self.t_info
         let paper_after_rgb = Cl_Class.paper_adjust_rgb(ref_rgb_1: ref_rgb_1)
-        print("---before---")
-        print("r1:\(t_info.target!["paper_rgb"]![0])\ng1:\(t_info.target!["paper_rgb"]![1])\nb1:\(t_info.target!["paper_rgb"]![2])")
-        print("---after---")
-        print("r1:\(paper_after_rgb[0])\ng1:\(paper_after_rgb[1])\nb1:\(paper_after_rgb[2])")
         let mode = Cl_Class.judge_mode(paper_after_rgb: paper_after_rgb)
         let Cl_result = Cl_Class.calculate_Cl_by_mode(paper_after_rgb: paper_after_rgb)
         print("pH_outcome=", Cl_result)
@@ -58,8 +54,8 @@ class Cl_CheckViewController: UIViewController
     {
         let outVC = (storyboard?.instantiateViewController(identifier: "outcome_"))! as OutcomeViewController
         outVC.t_info = self.t_info
-        outVC.t_info.outcome_mulch = calc_Cl()
-        outVC.ref_rgb_1 = self.ref_rgb_1
+//        outVC.t_info.outcome_mulch = calc_Cl()
+//        outVC.ref_rgb_1 = self.ref_rgb_1
         outVC.t_info.target_image = image_view.image
         self.navigationController?.pushViewController(outVC, animated: true)
     }
