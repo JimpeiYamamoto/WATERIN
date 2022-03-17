@@ -9,7 +9,7 @@ import UIKit
 
 class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var reCall = ResultCall()
+    var ud_data = UD_data()
     var proCheck = Procheck()
 
     @IBOutlet weak var tableView: UITableView!
@@ -42,7 +42,7 @@ class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return (1)
+        return (2)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -63,31 +63,26 @@ class LogMainViewController: UIViewController, UITableViewDelegate, UITableViewD
         var index_num = 0
         switch indexPath.row {
         case 0:
-            reCall.whichSubject = "pH"
+            ud_data.getContents(subject: v.PH)
             name_label.text = "pH"
         case 1:
-            reCall.whichSubject = "Cl"
+            ud_data.getContents(subject: v.CL)
             name_label.text = "残留塩素"
-        case 2:
-            reCall.whichSubject = "亜鉛"
-            name_label.text = "硬度"
         default:
             cell.backgroundView?.backgroundColor = .clear
             cell.backgroundColor = .clear
         }
-        reCall.getContents()
-        index_num = reCall.yearList.count
-        print("check=\(proCheck.check_mesure())")
+        index_num = ud_data.yearList.count
         print("num = \(index_num)")
-        if (index_num == 0 || proCheck.check_mesure() < 0)
+        if (index_num == 0)
         {
             when_label.text = "最終測定：\nなし"
             times_label.text = "回数：0"
         }
         else
         {
-            times_label.text = "回数：\(reCall.yearList.count)"
-            when_label.text = "最終測定：\n\(reCall.yearList[index_num-1])年 \(reCall.monthList[index_num-1])月\(reCall.dayList[index_num-1])日\(reCall.hourList[index_num-1])時\(reCall.minuteList[index_num-1])分"
+            times_label.text = "回数：\(ud_data.yearList.count)"
+            when_label.text = "最終測定：\n\(ud_data.yearList[index_num-1])年 \(ud_data.monthList[index_num-1])月\(ud_data.dayList[index_num-1])日\(ud_data.hourList[index_num-1])時\(ud_data.minuteList[index_num-1])分"
         }
         return (cell)
     }

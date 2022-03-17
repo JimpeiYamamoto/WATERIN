@@ -10,6 +10,9 @@ PODS:
   - Firebase/Database (6.22.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.1.4)
+  - Firebase/Storage (6.22.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.6.0)
   - FirebaseAuth (6.5.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.6)
@@ -33,6 +36,10 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - leveldb-library (~> 1.22)
+  - FirebaseStorage (3.6.0):
+    - FirebaseAuthInterop (~> 1.1)
+    - FirebaseCore (~> 6.6)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleDataTransport (5.1.1)
   - GoogleDataTransportCCTSupport (2.0.2):
     - GoogleDataTransport (~> 5.1)
@@ -64,6 +71,7 @@ DEPENDENCIES:
   - Charts
   - Firebase/Auth
   - Firebase/Database
+  - Firebase/Storage
   - SwiftyStoreKit
 
 SPEC REPOS:
@@ -76,6 +84,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
+    - FirebaseStorage
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
@@ -93,6 +102,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 13a6564cd6d5375066bbc8940cc1753af24497f3
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseDatabase: 0144e0706a4761f1b0e8679572eba8095ddb59be
+  FirebaseStorage: b43ee271294227e1a3225544b073f3b49b427f46
   GoogleDataTransport: 6ffa4dd0b6d547f8d27b91bd92fa9e197a3f5f1f
   GoogleDataTransportCCTSupport: 12f02e5c8f09c055615de90bcd5ba2c375546051
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
@@ -101,6 +111,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: b690cefc030d8dd01dd9304862bb52190a2c651c
+PODFILE CHECKSUM: 2aaa86b4d6af235c50ba434cec523d62b48d7898
 
 COCOAPODS: 1.9.1

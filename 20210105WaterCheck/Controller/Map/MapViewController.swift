@@ -24,7 +24,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var filterd_contents = [Contents]()
     var locManager: CLLocationManager!
     
-    var pH_to_rgb = pH_to_RGB()
+    var pH_Class = pH_class()
     var week_ca = WeekGraph()
     var month_ca = MonthGraph()
     var year_ca = YearGraph()
@@ -319,7 +319,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let myCircleView: MKCircleRenderer = MKCircleRenderer(overlay: overlay)
         // 円の内部を赤色で塗りつぶす.
         //myCircleView.fillColor = UIColor.red
-        let rgb_lst = pH_to_rgb.pH_to_RGB_lst(pH: color_pH)
+        let rgb_lst = pH_Class.pH_to_RGB_lst(pH: color_pH)
         myCircleView.fillColor = UIColor(red: CGFloat(rgb_lst[0]), green: CGFloat(rgb_lst[1]), blue: CGFloat(rgb_lst[2]), alpha: 1.0)
         // 円周の線の色を黒色に設定.
         myCircleView.strokeColor = UIColor.clear
@@ -374,7 +374,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                         }
                         else
                         {
-                            self.contents.append(Contents(atai: Double(outcome!)!, address: "", lat: lat!, lot: lot!, year: arr[0], month: arr[1], day: arr[2], hour: arr[3], minute: arr[4], category: "", sikensi: "", pen: ""))
+                            self.contents.append(Contents(atai: Double(outcome!)!, address: "", lat: lat!, lot: lot!, year: arr[0], month: arr[1], day: arr[2], hour: arr[3], minute: arr[4], category: "", sikensi: ""))
                         }
                     }
                 }
