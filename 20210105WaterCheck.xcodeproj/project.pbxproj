@@ -17,6 +17,7 @@
 		73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFC26D21BB50096DAC4 /* take_info.swift */; };
 		73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFE26D21DE20096DAC4 /* location_info.swift */; };
 		73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413C0126D22EE50096DAC4 /* MapViewController.swift */; };
+		7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */; };
 		7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7826D3845A0031F339 /* DayGraph.swift */; };
 		7369288D266387190088280C /* ProCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288C266387190088280C /* ProCheck.swift */; };
 		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
@@ -108,6 +109,7 @@
 		73413BFC26D21BB50096DAC4 /* take_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = take_info.swift; sourceTree = "<group>"; };
 		73413BFE26D21DE20096DAC4 /* location_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location_info.swift; sourceTree = "<group>"; };
 		73413C0126D22EE50096DAC4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
 		7368BF7826D3845A0031F339 /* DayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGraph.swift; sourceTree = "<group>"; };
 		7369288C266387190088280C /* ProCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCheck.swift; sourceTree = "<group>"; };
 		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 				73413C0126D22EE50096DAC4 /* MapViewController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		7350C42127E9859200A427F2 /* Cl */ = {
+			isa = PBXGroup;
+			children = (
+				7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */,
+			);
+			path = Cl;
 			sourceTree = "<group>";
 		};
 		737A8E01269ADE6900A47663 /* predict */ = {
@@ -456,6 +466,7 @@
 		73F94EE527CF3FC4004C2FDD /* Measure */ = {
 			isa = PBXGroup;
 			children = (
+				7350C42127E9859200A427F2 /* Cl */,
 				73F94EE627CF3FD7004C2FDD /* pH */,
 				73F94EEF27D0CB8F004C2FDD /* V_OutcomeViewController.swift */,
 			);
@@ -727,6 +738,7 @@
 				73413BFB26D217BE0096DAC4 /* pH_Mesure_ViewController.swift in Sources */,
 				73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */,
 				2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */,
+				7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */,
 				73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */,
 				73F94EE427CCCDCE004C2FDD /* DEFINE.swift in Sources */,
 				73F94EE227CCAD6C004C2FDD /* V_ViewController.swift in Sources */,
