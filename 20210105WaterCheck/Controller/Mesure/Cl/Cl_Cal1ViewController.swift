@@ -28,10 +28,8 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
     @IBOutlet weak var l_4: UILabel!
     @IBOutlet weak var l_5: UILabel!
     
-   
-    var t_info = take_info()
     let avCapture = AVCapture()
-    var stillImageOutput: AVCapturePhotoOutput?
+    var t_info = take_info()
 
     override func viewDidLoad()
     {
@@ -71,13 +69,13 @@ class Cl_Cal1ViewController: UIViewController, AVCaptureDelegate
         let cl_class = Cl_class()
         let f_v_w = full_v.frame.size.width
         let f_v_h = full_v.frame.size.height
-        t_info.ref1_rgb = cl_class.ref_rgb_get(image: imageView.image!,
-                                               ful_vw: f_v_w, ful_vh: f_v_h)
+        
+        t_info.ref1_rgb = cl_class.ref_rgb_get(image: imageView.image!, ful_vw: f_v_w, ful_vh: f_v_h)
         t_info.ref1_image = imageView.image
-        let ClcheckVC = (storyboard?.instantiateViewController(identifier: "Cl_mesure_"))! as Cal_MesureViewController
-        ClcheckVC.t_info = self.t_info
+        let ClmesureVC = (storyboard?.instantiateViewController(identifier: "Cl_mesure_"))! as Cal_MesureViewController
+        ClmesureVC.t_info = t_info
         self.avCapture.delegate = nil
         self.avCapture.stopSession()
-        self.navigationController?.pushViewController(ClcheckVC, animated: true)
+        self.navigationController?.pushViewController(ClmesureVC, animated: true)
     }
 }

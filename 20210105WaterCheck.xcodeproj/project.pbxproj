@@ -18,6 +18,8 @@
 		73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFE26D21DE20096DAC4 /* location_info.swift */; };
 		73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413C0126D22EE50096DAC4 /* MapViewController.swift */; };
 		7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */; };
+		7350C42527F2D96300A427F2 /* V_Cal_MesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */; };
+		7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */; };
 		7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7826D3845A0031F339 /* DayGraph.swift */; };
 		7369288D266387190088280C /* ProCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288C266387190088280C /* ProCheck.swift */; };
 		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
@@ -110,6 +112,8 @@
 		73413BFE26D21DE20096DAC4 /* location_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location_info.swift; sourceTree = "<group>"; };
 		73413C0126D22EE50096DAC4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
+		7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cal_MesureViewController.swift; sourceTree = "<group>"; };
+		7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_CheckViewController.swift; sourceTree = "<group>"; };
 		7368BF7826D3845A0031F339 /* DayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGraph.swift; sourceTree = "<group>"; };
 		7369288C266387190088280C /* ProCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCheck.swift; sourceTree = "<group>"; };
 		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */,
+				7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */,
+				7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */,
 			);
 			path = Cl;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */,
 				73F94EEE27CF7043004C2FDD /* V_pH_CheckPicViewController.swift in Sources */,
 				73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */,
+				7350C42527F2D96300A427F2 /* V_Cal_MesureViewController.swift in Sources */,
 				733442B32644FDC20095DA2B /* Store.swift in Sources */,
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* TimeClass.swift in Sources */,
@@ -780,6 +787,7 @@
 				73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */,
 				73E888F127D255F5008F9447 /* FirebaseClass.swift in Sources */,
 				73F94EF027D0CB8F004C2FDD /* V_OutcomeViewController.swift in Sources */,
+				7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */,
 				73F94EEA27CF62D7004C2FDD /* V_pH_Cal2ViewController.swift in Sources */,
 				73BA2951271D4406009663A7 /* Cl_MesureViewController.swift in Sources */,
 				73C7A76A25A4A30600C62ADC /* SetMainViewController.swift in Sources */,
