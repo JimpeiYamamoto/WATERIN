@@ -26,11 +26,13 @@ class v
     //double
     static let UD_OUTCOME = ""
     //int
+    static let UD_TIME = "_time"
     static let UD_YEAR = "_year"
     static let UD_MONTH = "_month"
     static let UD_DAY = "_day"
     static let UD_HOUR = "_hour"
     static let UD_MINUTE = "_minute"
+    static let UD_SECOND = "_second"
     //string
     static let UD_ADDRESS = "_add"
     static let UD_LAT = "_lat"
@@ -46,8 +48,9 @@ class v
 
     
     /** Firebase_Database */
-    static let DATABASE_C1 = "UserTakenImage"
+    static let DATABASE_C1 = "UserTakenImage2"
     /** Firebase_Database_key */
+    static let TIME = "time"
     static let YEAR = "year"
     static let MONTH = "month"
     static let DAY = "day"
@@ -63,7 +66,7 @@ class v
     static let CATEGORY = "category"
     
     /** Firebase_Storage */
-    static let STORAGE_C1 = "UserTakenInfo"
+    static let STORAGE_C1 = "UserTakenInfo2"
     static let REF_1_IMAGE_NAME = "ref1.jpg"
     static let REF_2_IMAGE_NAME = "ref2.jpg"
     static let TARGET_IMAGE_NAME = "target.jpg"

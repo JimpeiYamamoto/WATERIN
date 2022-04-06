@@ -41,10 +41,8 @@ class location_info
     {
         let geocoder = CLGeocoder()
         if let location = locations.first {
-            //逆ジオコーディング
             geocoder.reverseGeocodeLocation( location, completionHandler: { ( placemarks, error ) in
                 if let placemark = placemarks?.first {
-                    //住所
                     self.admin = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
                     self.locality = placemark.locality == nil ? "" : placemark.locality!
                     let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
@@ -57,5 +55,4 @@ class location_info
             })
         }
     }
-    
 }

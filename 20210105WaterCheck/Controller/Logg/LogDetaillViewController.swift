@@ -12,11 +12,11 @@ import Firebase
 class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let ud = UserDefaults.standard
-    var yearList = [Int]()
-    var monthList = [Int]()
-    var dayList = [Int]()
-    var hourList = [Int]()
-    var minuteList = [Int]()
+    var yearList = [String]()
+    var monthList = [String]()
+    var dayList = [String]()
+    var hourList = [String]()
+    var minuteList = [String]()
     var ataiList = [Double]()
     var latList = [String]()
     var lotList = [String]()
@@ -245,7 +245,14 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
             let action1 = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
                 (action: UIAlertAction!) in
                 //削除するを選択したら呼ばれる
-                let removeContents = Contents(atai: cateContents[indexPath.row-3].atai!, address: cateContents[indexPath.row-3].address!, lat: cateContents[indexPath.row-3].lat!, lot: cateContents[indexPath.row-3].lot!, year: cateContents[indexPath.row-3].year!, month: cateContents[indexPath.row-3].month!, day: cateContents[indexPath.row-3].day!, hour: cateContents[indexPath.row-3].hour!, minute: cateContents[indexPath.row-3].minute!, category: cateContents[indexPath.row-3].category!, sikensi: cateContents[indexPath.row-3].sikensi!)
+                let removeContents = Contents(atai: cateContents[indexPath.row-3].atai!, address: cateContents[indexPath.row-3].address!,
+                                              lat: cateContents[indexPath.row-3].lat!, lot: cateContents[indexPath.row-3].lot!,
+                                              time:cateContents[indexPath.row-3].time!, year:cateContents[indexPath.row-3].year!,
+                                              month: cateContents[indexPath.row-3].month!, day: cateContents[indexPath.row-3].day!,
+                                              hour: cateContents[indexPath.row-3].hour!, minute: cateContents[indexPath.row-3].minute!,
+                                              second: cateContents[indexPath.row-3].second!,
+                                              category: cateContents[indexPath.row-3].category!,
+                                              sikensi: cateContents[indexPath.row-3].sikensi!)
                 let index = contents.firstIndex(of: removeContents)
                 print("削除する前", contents)
                 print("削除するindex", index as Any)
@@ -267,11 +274,11 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                 penList.removeAll()
                 var num=0
                 for _ in contents{
-                    yearList.append(Int(contents[num].year!)!)
-                    monthList.append(Int(contents[num].month!)!)
-                    dayList.append(Int(contents[num].day!)!)
-                    hourList.append(Int(contents[num].hour!)!)
-                    minuteList.append(Int(contents[num].minute!)!)
+                    yearList.append(contents[num].year!)
+                    monthList.append(contents[num].month!)
+                    dayList.append(contents[num].day!)
+                    hourList.append(contents[num].hour!)
+                    minuteList.append(contents[num].minute!)
                     ataiList.append(contents[num].atai!)
                     latList.append(contents[num].lat!)
                     lotList.append(contents[num].lot!)
