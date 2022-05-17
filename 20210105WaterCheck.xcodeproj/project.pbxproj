@@ -17,6 +17,11 @@
 		73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFC26D21BB50096DAC4 /* take_info.swift */; };
 		73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BFE26D21DE20096DAC4 /* location_info.swift */; };
 		73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413C0126D22EE50096DAC4 /* MapViewController.swift */; };
+		7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */; };
+		7350C42527F2D96300A427F2 /* V_Cal_MesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */; };
+		7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */; };
+		735FC28027F338620030949C /* V_MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FC27F27F338620030949C /* V_MapViewController.swift */; };
+		735FC28227F9764C0030949C /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FC28127F9764C0030949C /* Calender.swift */; };
 		7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7826D3845A0031F339 /* DayGraph.swift */; };
 		7369288D266387190088280C /* ProCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288C266387190088280C /* ProCheck.swift */; };
 		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
@@ -31,7 +36,7 @@
 		73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */; };
 		73BD8D9B25ADE87500F80127 /* backNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9A25ADE87500F80127 /* backNavigation.swift */; };
 		73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */; };
-		73BD8DAA25B2CF1500F80127 /* ResultCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8DA925B2CF1500F80127 /* ResultCall.swift */; };
+		73BD8DAA25B2CF1500F80127 /* UD_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD8DA925B2CF1500F80127 /* UD_data.swift */; };
 		73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71825A45BFF00C62ADC /* AppDelegate.swift */; };
 		73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71A25A45BFF00C62ADC /* SceneDelegate.swift */; };
 		73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A71C25A45BFF00C62ADC /* ViewController.swift */; };
@@ -108,6 +113,11 @@
 		73413BFC26D21BB50096DAC4 /* take_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = take_info.swift; sourceTree = "<group>"; };
 		73413BFE26D21DE20096DAC4 /* location_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = location_info.swift; sourceTree = "<group>"; };
 		73413C0126D22EE50096DAC4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_Cal1ViewController.swift; sourceTree = "<group>"; };
+		7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cal_MesureViewController.swift; sourceTree = "<group>"; };
+		7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_CheckViewController.swift; sourceTree = "<group>"; };
+		735FC27F27F338620030949C /* V_MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_MapViewController.swift; sourceTree = "<group>"; };
+		735FC28127F9764C0030949C /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		7368BF7826D3845A0031F339 /* DayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGraph.swift; sourceTree = "<group>"; };
 		7369288C266387190088280C /* ProCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCheck.swift; sourceTree = "<group>"; };
 		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
@@ -122,7 +132,7 @@
 		73BD8D9525ADE0A600F80127 /* SelectCategoryMesureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryMesureViewController.swift; sourceTree = "<group>"; };
 		73BD8D9A25ADE87500F80127 /* backNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backNavigation.swift; sourceTree = "<group>"; };
 		73BD8D9F25AECACF00F80127 /* AddCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCateViewController.swift; sourceTree = "<group>"; };
-		73BD8DA925B2CF1500F80127 /* ResultCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCall.swift; sourceTree = "<group>"; };
+		73BD8DA925B2CF1500F80127 /* UD_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD_data.swift; sourceTree = "<group>"; };
 		73C7A71525A45BFF00C62ADC /* 20210105WaterCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20210105WaterCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C7A71825A45BFF00C62ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73C7A71A25A45BFF00C62ADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +240,24 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		7350C42127E9859200A427F2 /* Cl */ = {
+			isa = PBXGroup;
+			children = (
+				7350C42227E985B300A427F2 /* V_Cl_Cal1ViewController.swift */,
+				7350C42427F2D96300A427F2 /* V_Cal_MesureViewController.swift */,
+				7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */,
+			);
+			path = Cl;
+			sourceTree = "<group>";
+		};
+		735FC27E27F338490030949C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				735FC27F27F338620030949C /* V_MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		737A8E01269ADE6900A47663 /* predict */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +278,7 @@
 				73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */,
 				73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */,
 				73C7A7B525A6AAF300C62ADC /* SetCharts.swift */,
+				735FC28127F9764C0030949C /* Calender.swift */,
 			);
 			path = calender_graph;
 			sourceTree = "<group>";
@@ -257,7 +286,7 @@
 		737A8E03269ADEC800A47663 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				73BD8DA925B2CF1500F80127 /* ResultCall.swift */,
+				73BD8DA925B2CF1500F80127 /* UD_data.swift */,
 				73C7A7B025A6A04D00C62ADC /* Contents.swift */,
 				73413BFC26D21BB50096DAC4 /* take_info.swift */,
 				73413BFE26D21DE20096DAC4 /* location_info.swift */,
@@ -365,6 +394,7 @@
 		73C7A76025A45ECB00C62ADC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				735FC27E27F338490030949C /* Map */,
 				73F94EE527CF3FC4004C2FDD /* Measure */,
 				73F94EE127CCAD6C004C2FDD /* V_ViewController.swift */,
 			);
@@ -456,6 +486,7 @@
 		73F94EE527CF3FC4004C2FDD /* Measure */ = {
 			isa = PBXGroup;
 			children = (
+				7350C42127E9859200A427F2 /* Cl */,
 				73F94EE627CF3FD7004C2FDD /* pH */,
 				73F94EEF27D0CB8F004C2FDD /* V_OutcomeViewController.swift */,
 			);
@@ -722,11 +753,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C7A77C25A4A7F500C62ADC /* LogDetaillViewController.swift in Sources */,
-				73BD8DAA25B2CF1500F80127 /* ResultCall.swift in Sources */,
+				73BD8DAA25B2CF1500F80127 /* UD_data.swift in Sources */,
 				73C7A7CF25AB0C9000C62ADC /* AVCapture.swift in Sources */,
 				73413BFB26D217BE0096DAC4 /* pH_Mesure_ViewController.swift in Sources */,
 				73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */,
 				2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */,
+				7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */,
 				73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */,
 				73F94EE427CCCDCE004C2FDD /* DEFINE.swift in Sources */,
 				73F94EE227CCAD6C004C2FDD /* V_ViewController.swift in Sources */,
@@ -736,6 +768,7 @@
 				73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */,
 				73F94EEE27CF7043004C2FDD /* V_pH_CheckPicViewController.swift in Sources */,
 				73413C0226D22EE50096DAC4 /* MapViewController.swift in Sources */,
+				7350C42527F2D96300A427F2 /* V_Cal_MesureViewController.swift in Sources */,
 				733442B32644FDC20095DA2B /* Store.swift in Sources */,
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* TimeClass.swift in Sources */,
@@ -761,6 +794,7 @@
 				73F94EEC27CF6B74004C2FDD /* V_pH_Measure_ViewController.swift in Sources */,
 				73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */,
 				7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */,
+				735FC28027F338620030949C /* V_MapViewController.swift in Sources */,
 				73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */,
 				73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */,
 				73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */,
@@ -768,8 +802,10 @@
 				73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */,
 				73E888F127D255F5008F9447 /* FirebaseClass.swift in Sources */,
 				73F94EF027D0CB8F004C2FDD /* V_OutcomeViewController.swift in Sources */,
+				7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */,
 				73F94EEA27CF62D7004C2FDD /* V_pH_Cal2ViewController.swift in Sources */,
 				73BA2951271D4406009663A7 /* Cl_MesureViewController.swift in Sources */,
+				735FC28227F9764C0030949C /* Calender.swift in Sources */,
 				73C7A76A25A4A30600C62ADC /* SetMainViewController.swift in Sources */,
 				73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */,
 				73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */,

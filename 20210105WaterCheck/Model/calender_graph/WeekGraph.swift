@@ -236,7 +236,8 @@ class WeekGraph{
     
     func getNew()->[String:Int]{
         
-        if (lM == 12 && lD == 31){
+        if (lM == 12 && lD == monthMaxDay[lM])
+        {
             Fyear += 1
             Lyear = Fyear
             checkURU()
@@ -244,8 +245,9 @@ class WeekGraph{
             fD = 1
             lM = 1
             lD = 7
-                
-        }else if (lM == 12 && lD > 24){
+        }
+        else if (lM == 12 && lD + 7 > monthMaxDay[lM]!)
+        {
             Lyear = Fyear + 1
             checkURU()
             fM = 12
@@ -253,7 +255,9 @@ class WeekGraph{
             lM = 1
             lD = 6 - (monthMaxDay[fM]! - fD)
                 
-        }else if (fM == 12 && lM == 1){
+        }
+        else if (fM == 12 && lM == 1)
+        {
             Fyear += 1
             Lyear = Fyear
             checkURU()
@@ -262,25 +266,26 @@ class WeekGraph{
             lM = 1
             lD = fD + 6
             
-        }else if (lD == monthMaxDay[lM]){
-            //Fyear = Fyear
-            //Lyear = Lyear
+        }
+        else if (lD == monthMaxDay[lM])
+        {
             checkURU()
             fM = lM + 1
             fD = 1
             lM = fM
             lD = 7
                 
-        }else if (lD + 7 > monthMaxDay[lM]!){
-            //Fyear = Fyear
-            //Lyear = Lyear
+        }
+        else if (lD + 7 > monthMaxDay[lM]!)
+        {
             checkURU()
             fM = lM
             fD = lD + 1
             lM = fM + 1
             lD = 6 - (monthMaxDay[fM]! - fD)
-                
-        }else{
+        }
+        else
+        {
             Lyear = Fyear
             checkURU()
             fM = lM
@@ -300,7 +305,8 @@ class WeekGraph{
         
     func getOld()->[String:Int]{
         
-        if (fM == 1 && fD == 1){
+        if (fM == 1 && fD == 1)
+        {
             Fyear -= 1
             Lyear -= 1
             checkURU()
@@ -309,7 +315,9 @@ class WeekGraph{
             fM = 12
             fD = 25
                 
-        }else if (fM == 1 && fD < 8){
+        }
+        else if (fM == 1 && fD < 8)
+        {
             Lyear = Fyear
             Fyear -= 1
             checkURU()
@@ -318,42 +326,36 @@ class WeekGraph{
             fM = 12
             fD = monthMaxDay[fM]! - (6 - lD)
             
-        }else if (fM == 12 && lM == 1){
-            //Fyear = Fyear
+        }
+        else if (fM == 12 && lM == 1)
+        {
             Lyear = Fyear
             checkURU()
             lM = 12
             lD = fD - 1
             fM = 12
             fD = lD - 6
-            
-        }else if (fD == 1){
-    //            Lyear = Lyear
-    //            Fyear = Fyear
-            checkURU()
+        }
+        else if (fD == 1)
+        {
             lM = fM - 1
             lD = monthMaxDay[lM]!
             fM = lM
             fD = monthMaxDay[lM]! - 6
-            
-        }else if (fD < 8){
-    //           Lyear = Lyear
-    //           Fyear = Fyear
-            checkURU()
+        }
+        else if (fD < 8)
+        {
             lM = fM
             lD = fD - 1
             fM = lM - 1
             fD = monthMaxDay[fM]! - (6 - lD)
-                
-        }else{
-    //           Lyear = Lyear
-    //            Fyear = Fyear
-            checkURU()
+        }
+        else
+        {
             lM = fM
             lD = fD - 1
             fM = lM
             fD = lD - 6
-            
         }
         var setDict:[String:Int] = [:]
         setDict.updateValue(Fyear, forKey: "Fyear")
@@ -372,31 +374,23 @@ class WeekGraph{
         month = date.month!
         day = date.day!
         Yobi = dayOfWeek(year, month, day)
-            //もしうるう年なら、2月29日とする
-        if isLeapYear(year: year) == true{
-            monthMaxDay[2] = 29
-        }
-    }
-    //もし閏年だったなら、trueを返す
-    func isLeapYear(year: Int) -> Bool {
-        return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
+        checkURU()
     }
     
     func dayOfWeek(_ year: Int, _ month: Int, _ day: Int) -> Int
     {
-        let zellerCongruence = { (year: Int, month: Int, day: Int) in (year + year/4 - year/100 + year/400 + (13 * month + 8)/5 + day) % 7 }
         var year = year
         var month = month
         if month == 1 || month == 2 {
             year -= 1
             month += 12
         }
-        return zellerCongruence(year, month, day)
+        return ((year + year/4 - year/100 + year/400 + (13 * month + 8)/5 + day) % 7)
     }
         
     func checkURU()
     {
-        if isLeapYear(year: Fyear) == true
+        if (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
         {
             monthMaxDay[2] = 29
         }

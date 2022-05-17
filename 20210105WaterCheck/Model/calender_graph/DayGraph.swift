@@ -7,7 +7,9 @@
 
 import Foundation
 
-class DayGraph{
+
+class DayGraph
+{
     var year = Int()
     var month = Int()
     var day = Int()
@@ -116,9 +118,7 @@ class DayGraph{
         year = date.year!
         month = date.month!
         day = date.day!
-        
         Yobi = dayOfWeek(year, month, day)
-            //もしうるう年なら、2月29日とする
         if isLeapYear(year: year) == true{
             monthMaxDay[2] = 29
         }
@@ -139,9 +139,12 @@ class DayGraph{
         return zellerCongruence(year, month, day)
     }
     func checkURU(){
-        if isLeapYear(year: Fyear) == true{
+        if isLeapYear(year: Fyear) == true
+        {
             monthMaxDay[2] = 29
-        }else{
+        }
+        else
+        {
             monthMaxDay[2] = 28
         }
     }

@@ -13,6 +13,8 @@ import FirebaseStorage
 class FirebaseClass
 {
     var ID = String()
+    var contents = [Contents]()
+    var filter_contents = [Contents]()
     
     func upload_one_image(name:String, t_info:take_info, image:UIImage, time_info_: TimeClass)
     {
@@ -45,7 +47,6 @@ class FirebaseClass
     
     func upload_images_storage(t_info:take_info, time_info:TimeClass)
     {
-        
         let name_ref1 = v.REF_1_IMAGE_NAME
         let name_ref2 = v.REF_2_IMAGE_NAME
         let name_target = v.TARGET_IMAGE_NAME
@@ -72,6 +73,8 @@ class FirebaseClass
         values[v.HOUR] = time_info.hour
         values[v.MINUTE] = time_info.minute
         values[v.SECOND] = time_info.second
+        let ope_con = operate_contents()
+        values[v.TIME] = ope_con.get_time_string(year: values[v.YEAR]!, month: values[v.MONTH]!, day: values[v.DAY]!, hour: values[v.HOUR]!, minute: values[v.MINUTE]!, second: values[v.SECOND]!)
         
         values[v.ADDRESS] = l_info.address!
         values[v.LAT] = l_info.lat!
@@ -94,5 +97,37 @@ class FirebaseClass
             randomString += String(letters.randomElement()!)
         }
         ID = randomString
+    }
+    
+    func fetchFirebase(snapShot:[DataSnapshot], subject : String) {
+        for snap in snapShot {
+            if let postData = snap.value as? [String:String] {
+                let outcome = postData[subject]
+                let category = postData[v.CATEGORY]
+                let paper = postData[v.PAPER]
+                let address = postData[v.ADDRESS]
+                let lat = postData[v.LAT]
+                let lot = postData[v.LOT]
+                let year = postData[v.YEAR]
+                let month = postData[v.MONTH]
+                let day = postData[v.DAY]
+                let hour = postData[v.HOUR]
+                let minute = postData[v.MINUTE]
+                let second = postData[v.SECOND]
+                let timestr = postData[v.TIME]
+                contents.append(Contents(atai: Double(outcome!)!, address: address!,
+                                         lat: lat!, lot: lot!, time: timestr!,
+                                         year: year!, month: month!, day: day!,
+                                         hour: hour!, minute: minute!,
+                                         second: second!, category: category!,
+                                         sikensi: paper!))
+            }
+        }
+    }
+        
+    func filter_content(start:String, stop:String)
+    {
+        filter_contents.removeAll()
+        filter_contents = operate_contents().filter_content_by_time(contents: contents, start: start, stop: stop)
     }
 }
