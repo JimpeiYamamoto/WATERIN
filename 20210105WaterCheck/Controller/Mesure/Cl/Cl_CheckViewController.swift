@@ -6,9 +6,7 @@
 //
 
 import UIKit
-/*
- Clの試験紙をとった写真が正しく測定できているかをチェックするViewControllerです。
- */
+
 class Cl_CheckViewController: UIViewController
 {
     var t_info = take_info()

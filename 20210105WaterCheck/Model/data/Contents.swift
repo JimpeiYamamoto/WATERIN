@@ -74,14 +74,9 @@ class operate_contents
          前と後ろから探して二部探索みたいにした方が良いかもな
          ここのアルゴリズムは要検討
          */
-        for content in contents
-        {
-            let tmp = Int(content.time!.prefix(8))
-            print("tmp=\(tmp)")
-            print("start_int=\(start_int)")
-            print("stop_int=\(stop_int)")
-            if (tmp! >= start_int!) && (tmp! <= stop_int!)
-            {
+        for content in contents {
+            let time = String(content.time!.prefix(8))
+            if (Int(time)! >= start_int!) && (Int(time)! <= stop_int!){
                 filtered_contents.append(content)
             }
         }

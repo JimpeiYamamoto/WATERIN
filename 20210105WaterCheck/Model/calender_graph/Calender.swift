@@ -26,8 +26,12 @@ class Calender_Info
         self.lm = lm
         self.fd = fd
         self.ld = ld
-        f_str = String(fy) + String(fm) + String(fd)
-        l_str = String(ly) + String(lm) + String(ld)
+        f_str = String(format: "%04d", fy) +
+                String(format: "%02d", fm) +
+                String(format: "%02d", fd)
+        l_str = String(format: "%04d", ly) +
+                String(format: "%02d", lm) +
+                String(format: "%02d", ld)
     }
     
     func init_max_day(year:Int) -> [Int:Int]

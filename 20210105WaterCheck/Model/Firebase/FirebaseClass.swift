@@ -99,46 +99,35 @@ class FirebaseClass
         ID = randomString
     }
     
-    func fetch_firebase(subject:String)
-    {
-        contents.removeAll()
-        _ = Database.database().reference().child(v.STORAGE_C1).child(subject).queryOrderedByKey().observe(.value)
-        { [self] snapshot in
-            if let snapShot = snapshot.children.allObjects as? [DataSnapshot]
-            {
-                for snap in snapShot
-                {
-                    if let postData = snap.value as? [String:String]
-                    {
-                        let outcome = postData[subject]
-                        let category = postData[v.CATEGORY]
-                        let paper = postData[v.PAPER]
-                        let address = postData[v.ADDRESS]
-                        let lat = postData[v.LAT]
-                        let lot = postData[v.LOT]
-                        let year = postData[v.YEAR]
-                        let month = postData[v.MONTH]
-                        let day = postData[v.DAY]
-                        let hour = postData[v.HOUR]
-                        let minute = postData[v.MINUTE]
-                        let second = postData[v.SECOND]
-                        let timestr = postData[v.TIME]
-                        print(postData)
-                        contents.append(Contents(atai: Double(outcome!)!, address: address!, lat: lat!, lot: lot!, time: timestr!,
-                                                 year: year!, month: month!, day: day!, hour: hour!,
-                                                 minute: minute!, second: second!, category: category!, sikensi: paper!))
-                    }
-                }
+    func fetchFirebase(snapShot:[DataSnapshot], subject : String) {
+        for snap in snapShot {
+            if let postData = snap.value as? [String:String] {
+                let outcome = postData[subject]
+                let category = postData[v.CATEGORY]
+                let paper = postData[v.PAPER]
+                let address = postData[v.ADDRESS]
+                let lat = postData[v.LAT]
+                let lot = postData[v.LOT]
+                let year = postData[v.YEAR]
+                let month = postData[v.MONTH]
+                let day = postData[v.DAY]
+                let hour = postData[v.HOUR]
+                let minute = postData[v.MINUTE]
+                let second = postData[v.SECOND]
+                let timestr = postData[v.TIME]
+                contents.append(Contents(atai: Double(outcome!)!, address: address!,
+                                         lat: lat!, lot: lot!, time: timestr!,
+                                         year: year!, month: month!, day: day!,
+                                         hour: hour!, minute: minute!,
+                                         second: second!, category: category!,
+                                         sikensi: paper!))
             }
         }
-        print("fetch_firebase_contents")
-        print("content.count=\(contents.count)")
-        print(contents)
-        print("________________________")
     }
-    
+        
     func filter_content(start:String, stop:String)
     {
+        filter_contents.removeAll()
         filter_contents = operate_contents().filter_content_by_time(contents: contents, start: start, stop: stop)
     }
 }

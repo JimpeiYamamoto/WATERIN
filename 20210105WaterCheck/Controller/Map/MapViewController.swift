@@ -47,10 +47,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                    fd: date.day!, ld: date.day!)
         c_info =  Day_Calender().init_info(c_info: c_info)
         date_tf.text = "\(c_info.fy)年 \(c_info.fm)/\(c_info.fd)"
-        fb_class.fetch_firebase(subject: v.PH)
-        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-        print(fb_class.contents)
-        draw_circle_pin()
+//        fb_class.fetch_firebase(subject: v.PH)
+//        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
+//        print(fb_class.contents)
+//        draw_circle_pin()
+        fetchDrawCircle()
     }
     
     override func didReceiveMemoryWarning()
@@ -96,11 +97,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         coodinate_lst.removeAll()
         pin_lst.removeAll()
-        for content in fb_class.contents
+        for content in fb_class.filter_contents
         {
             color_pH = content.atai!
             let center = CLLocationCoordinate2DMake(Double(content.lat!)!, Double(content.lot!)!)
-            print("lat=\(content.lat!)\n\(content.lot!)")
             let myCircle: MKCircle = MKCircle(center: center, radius: CLLocationDistance(20))
             map_view.addOverlay(myCircle)
             coodinate_lst.append(myCircle)
@@ -151,8 +151,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map_view.userTrackingMode = .follow
     }
     
-    @IBAction func seg_change_action(_ sender: UISegmentedControl)
-    {
+    @IBAction func seg_change_action(_ sender: UISegmentedControl){
         switch sender.selectedSegmentIndex {
         case 0:
             c_info = Day_Calender().init_info(c_info: c_info)
@@ -170,16 +169,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             print("segment Erorr")
         }
         segment_view.selectedSegmentIndex = sender.selectedSegmentIndex
-        fb_class.fetch_firebase(subject: v.PH)
-        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-        draw_circle_pin()
+        fetchDrawCircle()
     }
 
-    @IBAction func reload_action(_ sender: Any)
-    {
-        fb_class.fetch_firebase(subject: v.PH)
-        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-        draw_circle_pin()
+    @IBAction func reload_action(_ sender: Any){
+        fetchDrawCircle()
     }
     
     @IBAction func back_action(_ sender: Any)
@@ -201,9 +195,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         default:
             print("segment Erorr")
         }
-        fb_class.fetch_firebase(subject: v.PH)
-        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-        draw_circle_pin()
+//        fb_class.fetch_firebase(subject: v.PH)
+//        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
+//        draw_circle_pin()
+        fetchDrawCircle()
     }
     
     @IBAction func ahead_action(_ sender: Any)
@@ -225,9 +220,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         default:
             print("segment Erorr")
         }
-        fb_class.fetch_firebase(subject: v.PH)
-        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-        draw_circle_pin()
+        fetchDrawCircle()
     }
-
+    
+    func fetchDrawCircle() {
+        fb_class.contents.removeAll()
+        _ = Database.database().reference().child(v.STORAGE_C1).child(v.PH).queryOrderedByKey().observe(.value)
+        { [self] snapshot in
+            if let snapShot = snapshot.children.allObjects as? [DataSnapshot]
+            {
+                fb_class.fetchFirebase(snapShot: snapShot, subject: v.PH)
+                fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
+                draw_circle_pin()
+            }
+        }
+    }
 }
