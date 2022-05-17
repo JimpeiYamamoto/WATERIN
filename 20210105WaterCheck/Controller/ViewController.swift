@@ -64,6 +64,8 @@ class ViewController: UIViewController, UITabBarDelegate
         sample_image.image = UIImage(named: t_info.paper_pack_image_path!)
         date_label.adjustsFontSizeToFitWidth = true
         let cnt = ud_data.outcomeList.count
+        print("cnt=",cnt)
+        print("month_cnt=",ud_data.monthList.count)
         if (cnt == 0)
         {
             date_label.text = "--月--日--:--"
@@ -72,10 +74,10 @@ class ViewController: UIViewController, UITabBarDelegate
         }
         else
         {
-            let month = String(format: "%02d", ud_data.monthList[cnt - 1])
-            let date = String(format: "%02d", ud_data.dayList[cnt - 1])
-            let hour = String(format: "%02d", ud_data.hourList[cnt - 1])
-            let minute = String(format: "%02d", ud_data.minuteList[cnt - 1])
+            let month = ud_data.monthList[cnt - 1]
+            let date = ud_data.dayList[cnt - 1]
+            let hour = ud_data.hourList[cnt - 1]
+            let minute = ud_data.minuteList[cnt - 1]
             date_label.text = "\(month)月\(date)日 \(hour):\(minute)"
             latest_paper_label.text = t_info.paper
             latest_outcome_label.text = "\(round(ud_data.outcomeList[cnt - 1] * 10) / 10)"
