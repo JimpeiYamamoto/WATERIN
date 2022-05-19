@@ -62,18 +62,9 @@ class operate_contents
     func filter_content_by_time(contents:[Contents],
                                 start:String, stop:String) -> [Contents]
     {
-        /**
-         [input]
-         start : 20220330123023
-         stop : 20220330123023
-         */
         let start_int = Int(start)
         let stop_int = Int(stop)
         var filtered_contents = [Contents]()
-        /**
-         前と後ろから探して二部探索みたいにした方が良いかもな
-         ここのアルゴリズムは要検討
-         */
         for content in contents {
             let time = String(content.time!.prefix(8))
             if (Int(time)! >= start_int!) && (Int(time)! <= stop_int!){
