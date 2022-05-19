@@ -86,7 +86,7 @@ class Year_Calender
         c_info.fy -= 1
         c_info.ly -= 1
         c_info.fm = 1
-        c_info.lm = 1
+        c_info.lm = 12
         c_info.fd = 1
         c_info.ld = 31
         return (Calender_Info(fy: c_info.fy, ly: c_info.ly, fm: c_info.fm, lm: c_info.lm,

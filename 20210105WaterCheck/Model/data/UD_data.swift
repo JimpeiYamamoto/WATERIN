@@ -59,6 +59,7 @@ class UD_data
         timestrList = saveDataGetString(key: subject + v.UD_TIME, Array: timestrList)
         yearList = saveDataGetString(key: subject + v.UD_YEAR, Array: yearList)
         monthList = saveDataGetString(key: subject + v.UD_MONTH, Array: monthList)
+        print("monthlst=",monthList)
         dayList = saveDataGetString(key: subject + v.UD_DAY, Array: dayList)
         hourList = saveDataGetString(key: subject + v.UD_HOUR, Array: hourList)
         minuteList = saveDataGetString(key: subject + v.UD_MINUTE, Array: minuteList)

@@ -35,27 +35,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         initMap()
     }
     
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         segment_view.selectedSegmentIndex = 0
-        /*
-         現在の時間の情報を取得
-         */
         let date = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: Date())
         c_info = Calender_Info(fy: date.year!, ly: date.year!, fm: date.month!, lm: date.month!,
                                    fd: date.day!, ld: date.day!)
         c_info =  Day_Calender().init_info(c_info: c_info)
         date_tf.text = "\(c_info.fy)年 \(c_info.fm)/\(c_info.fd)"
-//        fb_class.fetch_firebase(subject: v.PH)
-//        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-//        print(fb_class.contents)
-//        draw_circle_pin()
         fetchDrawCircle()
     }
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -85,14 +76,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return (true)
     }
     
-    func draw_circle_pin()
-    {
-        for cood in coodinate_lst
-        {
+    func draw_circle_pin() {
+        for cood in coodinate_lst {
             map_view.removeOverlay(cood)
         }
-        for pin in pin_lst
-        {
+        for pin in pin_lst {
             map_view.removeAnnotation(pin)
         }
         coodinate_lst.removeAll()
@@ -113,8 +101,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
-    {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let myCircleView: MKCircleRenderer = MKCircleRenderer(overlay: overlay)
         let rgb_lst = pH_class().pH_to_RGB_lst(pH: color_pH)
         myCircleView.fillColor = UIColor(red: CGFloat(rgb_lst[v.R]),
@@ -123,11 +110,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                                          alpha: 0.8)
         myCircleView.strokeColor = UIColor.clear
         myCircleView.lineWidth = 1.5
-        return (myCircleView)
+        return myCircleView
     }
 
-    func initMap()
-    {
+    func initMap() {
         var locManager = CLLocationManager()
         locManager.delegate = self
         locManager = CLLocationManager()
@@ -195,9 +181,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         default:
             print("segment Erorr")
         }
-//        fb_class.fetch_firebase(subject: v.PH)
-//        fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
-//        draw_circle_pin()
         fetchDrawCircle()
     }
     
@@ -230,7 +213,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let snapShot = snapshot.children.allObjects as? [DataSnapshot]
             {
                 fb_class.fetchFirebase(snapShot: snapShot, subject: v.PH)
-                fb_class.filter_content(start: c_info.f_str, stop: c_info.l_str)
+                fb_class.filter_content(start: c_info.f_str,
+                                        stop: c_info.l_str)
                 draw_circle_pin()
             }
         }

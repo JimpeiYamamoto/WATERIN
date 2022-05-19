@@ -23,7 +23,8 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         let width = view.frame.size.width
         let height = view.frame.size.height
-        tableView.frame = CGRect(x: width/40*2, y: height/40*5, width: width/40*36, height: height/40*33)
+        tableView.frame = CGRect(x: width/40*2, y: height/40*5,
+                                 width: width/40*36, height: height/40*33)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
                     title: "",
                     style: .plain,
@@ -32,8 +33,7 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         )
     }
 
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         switch whichSubject {
         case "pH":
@@ -45,7 +45,6 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         ud_data.getContents(subject : whichSubject)
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cateList.count+2
@@ -81,18 +80,17 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         let preVC = nav.viewControllers[nav.viewControllers.count-2] as! LogDetaillViewController
         switch indexPath.row {
         case 0:
-            preVC.selectedCategory = "全てのデータ"
+            preVC.cate_tf.text = "全てのデータ"
         case 1:
-            preVC.selectedCategory = "未分類"
+            preVC.cate_tf.text = "未分類"
         default:
             if cateList.count != 0{
-                preVC.selectedCategory = cateList[indexPath.row-2]
+                preVC.cate_tf.text = cateList[indexPath.row-2]
             }
         }
         self.navigationController?.popViewController(animated: true)
     }
     
-    //最初にUserDefaultから読み込む関数
     func saveDataGetString(key:String, Array:[String]) -> [String]{
         var saveArray = Array
         if ud.array(forKey: key) != nil{

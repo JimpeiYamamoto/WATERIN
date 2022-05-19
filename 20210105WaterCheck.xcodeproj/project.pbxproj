@@ -22,7 +22,7 @@
 		7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */; };
 		735FC28027F338620030949C /* V_MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FC27F27F338620030949C /* V_MapViewController.swift */; };
 		735FC28227F9764C0030949C /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735FC28127F9764C0030949C /* Calender.swift */; };
-		7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368BF7826D3845A0031F339 /* DayGraph.swift */; };
+		7366042028362D3F0005B360 /* V_LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366041F28362D3F0005B360 /* V_LogDetailViewController.swift */; };
 		7369288D266387190088280C /* ProCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288C266387190088280C /* ProCheck.swift */; };
 		7369288F2665C32A0088280C /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369288E2665C32A0088280C /* UpgradeNotice.swift */; };
 		73A9828426999F77000917B8 /* Regression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9828326999F77000917B8 /* Regression.swift */; };
@@ -52,11 +52,8 @@
 		73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A78D25A59FE800C62ADC /* SelectCateViewController.swift */; };
 		73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A79225A5A92000C62ADC /* resizeExtension.swift */; };
 		73C7A79825A5A97200C62ADC /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A79725A5A97200C62ADC /* RGB.swift */; };
-		73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */; };
-		73C7A7A725A5AA4400C62ADC /* MonthGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */; };
-		73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */; };
 		73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7B025A6A04D00C62ADC /* Contents.swift */; };
-		73C7A7B625A6AAF300C62ADC /* SetCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7B525A6AAF300C62ADC /* SetCharts.swift */; };
+		73C7A7B625A6AAF300C62ADC /* LineChartsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7B525A6AAF300C62ADC /* LineChartsClass.swift */; };
 		73C7A7CF25AB0C9000C62ADC /* AVCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7CE25AB0C9000C62ADC /* AVCapture.swift */; };
 		73C7A7D425AB0E4300C62ADC /* OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */; };
 		73C7A7D925AB118C00C62ADC /* TimeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C7A7D825AB118C00C62ADC /* TimeClass.swift */; };
@@ -118,7 +115,7 @@
 		7350C42627F2DAAA00A427F2 /* V_Cl_CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_Cl_CheckViewController.swift; sourceTree = "<group>"; };
 		735FC27F27F338620030949C /* V_MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_MapViewController.swift; sourceTree = "<group>"; };
 		735FC28127F9764C0030949C /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
-		7368BF7826D3845A0031F339 /* DayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGraph.swift; sourceTree = "<group>"; };
+		7366041F28362D3F0005B360 /* V_LogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_LogDetailViewController.swift; sourceTree = "<group>"; };
 		7369288C266387190088280C /* ProCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCheck.swift; sourceTree = "<group>"; };
 		7369288E2665C32A0088280C /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
 		73A9828326999F77000917B8 /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
@@ -154,11 +151,8 @@
 		73C7A78D25A59FE800C62ADC /* SelectCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCateViewController.swift; sourceTree = "<group>"; };
 		73C7A79225A5A92000C62ADC /* resizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resizeExtension.swift; sourceTree = "<group>"; };
 		73C7A79725A5A97200C62ADC /* RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
-		73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekGraph.swift; sourceTree = "<group>"; };
-		73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthGraph.swift; sourceTree = "<group>"; };
-		73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearGraph.swift; sourceTree = "<group>"; };
 		73C7A7B025A6A04D00C62ADC /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
-		73C7A7B525A6AAF300C62ADC /* SetCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharts.swift; sourceTree = "<group>"; };
+		73C7A7B525A6AAF300C62ADC /* LineChartsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsClass.swift; sourceTree = "<group>"; };
 		73C7A7CE25AB0C9000C62ADC /* AVCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCapture.swift; sourceTree = "<group>"; };
 		73C7A7D325AB0E4300C62ADC /* OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeViewController.swift; sourceTree = "<group>"; };
 		73C7A7D825AB118C00C62ADC /* TimeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeClass.swift; sourceTree = "<group>"; };
@@ -258,6 +252,14 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		7366041E28362D230005B360 /* Logg */ = {
+			isa = PBXGroup;
+			children = (
+				7366041F28362D3F0005B360 /* V_LogDetailViewController.swift */,
+			);
+			path = Logg;
+			sourceTree = "<group>";
+		};
 		737A8E01269ADE6900A47663 /* predict */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,11 +275,6 @@
 		737A8E02269ADE8100A47663 /* calender_graph */ = {
 			isa = PBXGroup;
 			children = (
-				7368BF7826D3845A0031F339 /* DayGraph.swift */,
-				73C7A7A125A5A9DD00C62ADC /* WeekGraph.swift */,
-				73C7A7A625A5AA4400C62ADC /* MonthGraph.swift */,
-				73C7A7AB25A5AA5100C62ADC /* YearGraph.swift */,
-				73C7A7B525A6AAF300C62ADC /* SetCharts.swift */,
 				735FC28127F9764C0030949C /* Calender.swift */,
 			);
 			path = calender_graph;
@@ -394,6 +391,7 @@
 		73C7A76025A45ECB00C62ADC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7366041E28362D230005B360 /* Logg */,
 				735FC27E27F338490030949C /* Map */,
 				73F94EE527CF3FC4004C2FDD /* Measure */,
 				73F94EE127CCAD6C004C2FDD /* V_ViewController.swift */,
@@ -471,6 +469,7 @@
 			children = (
 				73C7A7D825AB118C00C62ADC /* TimeClass.swift */,
 				73BD8D9A25ADE87500F80127 /* backNavigation.swift */,
+				73C7A7B525A6AAF300C62ADC /* LineChartsClass.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -759,10 +758,10 @@
 				73BD8DA025AECACF00F80127 /* AddCateViewController.swift in Sources */,
 				2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */,
 				7350C42327E985B300A427F2 /* V_Cl_Cal1ViewController.swift in Sources */,
+				7366042028362D3F0005B360 /* V_LogDetailViewController.swift in Sources */,
 				73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */,
 				73F94EE427CCCDCE004C2FDD /* DEFINE.swift in Sources */,
 				73F94EE227CCAD6C004C2FDD /* V_ViewController.swift in Sources */,
-				7368BF7926D3845A0031F339 /* DayGraph.swift in Sources */,
 				73413BFD26D21BB50096DAC4 /* take_info.swift in Sources */,
 				73ED33E926456D36006F2D34 /* UserViewController.swift in Sources */,
 				73C7A71D25A45BFF00C62ADC /* ViewController.swift in Sources */,
@@ -773,7 +772,6 @@
 				73A9828426999F77000917B8 /* Regression.swift in Sources */,
 				73C7A7D925AB118C00C62ADC /* TimeClass.swift in Sources */,
 				73C7A79325A5A92000C62ADC /* resizeExtension.swift in Sources */,
-				73C7A7A225A5A9DD00C62ADC /* WeekGraph.swift in Sources */,
 				73F94EE827CF4132004C2FDD /* V_pH_Cal1_ViewController.swift in Sources */,
 				73C7A79825A5A97200C62ADC /* RGB.swift in Sources */,
 				73413BF526D207EF0096DAC4 /* pH_Cal2ViewController.swift in Sources */,
@@ -785,7 +783,6 @@
 				73C7A71925A45BFF00C62ADC /* AppDelegate.swift in Sources */,
 				73C7A7B125A6A04D00C62ADC /* Contents.swift in Sources */,
 				73C7A78125A4ABD300C62ADC /* pH_Cal1ViewController.swift in Sources */,
-				73C7A7A725A5AA4400C62ADC /* MonthGraph.swift in Sources */,
 				73ED33EF264594E8006F2D34 /* ChangePassViewController.swift in Sources */,
 				73C7A7D425AB0E4300C62ADC /* OutcomeViewController.swift in Sources */,
 				73ED33F1264CF37F006F2D34 /* model_free.mlmodel in Sources */,
@@ -799,7 +796,6 @@
 				73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */,
 				73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */,
 				7369288D266387190088280C /* ProCheck.swift in Sources */,
-				73C7A7AC25A5AA5100C62ADC /* YearGraph.swift in Sources */,
 				73E888F127D255F5008F9447 /* FirebaseClass.swift in Sources */,
 				73F94EF027D0CB8F004C2FDD /* V_OutcomeViewController.swift in Sources */,
 				7350C42727F2DAAA00A427F2 /* V_Cl_CheckViewController.swift in Sources */,
@@ -810,7 +806,7 @@
 				73C7A71B25A45BFF00C62ADC /* SceneDelegate.swift in Sources */,
 				73BA2953271D4423009663A7 /* Cl_CheckViewController.swift in Sources */,
 				73413BF726D20D340096DAC4 /* pH_CheckPicViewController.swift in Sources */,
-				73C7A7B625A6AAF300C62ADC /* SetCharts.swift in Sources */,
+				73C7A7B625A6AAF300C62ADC /* LineChartsClass.swift in Sources */,
 				73B47EFB2639451400A6B47E /* SubscriptionViewController.swift in Sources */,
 				73BD8D9625ADE0A600F80127 /* SelectCategoryMesureViewController.swift in Sources */,
 			);
