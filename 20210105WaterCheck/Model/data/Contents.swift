@@ -67,6 +67,8 @@ class operate_contents
         var filtered_contents = [Contents]()
         for content in contents {
             let time = String(content.time!.prefix(8))
+            print(content.time!)
+            print("time=", time)
             if (Int(time)! >= start_int!) && (Int(time)! <= stop_int!){
                 filtered_contents.append(content)
             }
