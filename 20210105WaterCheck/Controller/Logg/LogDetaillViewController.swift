@@ -231,6 +231,7 @@ class LogDetaillViewController: UIViewController, UITableViewDelegate, UITableVi
                 cate_tf.text == content.category
             })
         }
+        print("filterdContents=", ret)
         return ret
     }
     

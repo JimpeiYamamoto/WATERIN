@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2DC15170271E7E180015AFE1 /* Cl_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1516F271E7E180015AFE1 /* Cl_class.swift */; };
-		7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */; };
-		7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */; };
 		733442B32644FDC20095DA2B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733442B22644FDC20095DA2B /* Store.swift */; };
 		73413BF526D207EF0096DAC4 /* pH_Cal2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BF426D207EF0096DAC4 /* pH_Cal2ViewController.swift */; };
 		73413BF726D20D340096DAC4 /* pH_CheckPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73413BF626D20D340096DAC4 /* pH_CheckPicViewController.swift */; };
@@ -62,7 +60,6 @@
 		73ED33EB26457973006F2D34 /* MKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EA26457973006F2D34 /* MKViewController.swift */; };
 		73ED33ED2645858C006F2D34 /* ConformUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EC2645858C006F2D34 /* ConformUpViewController.swift */; };
 		73ED33EF264594E8006F2D34 /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33EE264594E8006F2D34 /* ChangePassViewController.swift */; };
-		73ED33F1264CF37F006F2D34 /* model_free.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33F0264CF37D006F2D34 /* model_free.mlmodel */; };
 		73ED33F3264CFD6B006F2D34 /* RuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED33F2264CFD6B006F2D34 /* RuleViewController.swift */; };
 		73F94EE227CCAD6C004C2FDD /* V_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F94EE127CCAD6C004C2FDD /* V_ViewController.swift */; };
 		73F94EE427CCCDCE004C2FDD /* DEFINE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F94EE327CCCDCE004C2FDD /* DEFINE.swift */; };
@@ -101,8 +98,6 @@
 		679C6DF92EF069F769005716 /* Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck-20210105WaterCheckUITests/Pods-20210105WaterCheck-20210105WaterCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6991A428921C7A72D32AC8D7 /* Pods-20210105WaterCheckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheckTests.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheckTests/Pods-20210105WaterCheckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70B0944F779CDD01D186722C /* Pods-20210105WaterCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210105WaterCheck.debug.xcconfig"; path = "Target Support Files/Pods-20210105WaterCheck/Pods-20210105WaterCheck.debug.xcconfig"; sourceTree = "<group>"; };
-		7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = orange_blue_green.mlmodel; sourceTree = "<group>"; };
-		7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = pink_blue_green.mlmodel; sourceTree = "<group>"; };
 		733442B22644FDC20095DA2B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		73413BF426D207EF0096DAC4 /* pH_Cal2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_Cal2ViewController.swift; sourceTree = "<group>"; };
 		73413BF626D20D340096DAC4 /* pH_CheckPicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pH_CheckPicViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +156,6 @@
 		73ED33EA26457973006F2D34 /* MKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKViewController.swift; sourceTree = "<group>"; };
 		73ED33EC2645858C006F2D34 /* ConformUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConformUpViewController.swift; sourceTree = "<group>"; };
 		73ED33EE264594E8006F2D34 /* ChangePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
-		73ED33F0264CF37D006F2D34 /* model_free.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_free.mlmodel; sourceTree = "<group>"; };
 		73ED33F2264CFD6B006F2D34 /* RuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViewController.swift; sourceTree = "<group>"; };
 		73F94EE127CCAD6C004C2FDD /* V_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V_ViewController.swift; sourceTree = "<group>"; };
 		73F94EE327CCCDCE004C2FDD /* DEFINE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEFINE.swift; sourceTree = "<group>"; };
@@ -407,9 +401,6 @@
 				73C7A76825A4A0A000C62ADC /* Logg */,
 				73C7A76725A4A08D00C62ADC /* Setting */,
 				73C7A76625A4A06E00C62ADC /* Mesure */,
-				73ED33F0264CF37D006F2D34 /* model_free.mlmodel */,
-				7312FC932628373800DDFF18 /* orange_blue_green.mlmodel */,
-				7312FC942628373900DDFF18 /* pink_blue_green.mlmodel */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -785,12 +776,9 @@
 				73C7A78125A4ABD300C62ADC /* pH_Cal1ViewController.swift in Sources */,
 				73ED33EF264594E8006F2D34 /* ChangePassViewController.swift in Sources */,
 				73C7A7D425AB0E4300C62ADC /* OutcomeViewController.swift in Sources */,
-				73ED33F1264CF37F006F2D34 /* model_free.mlmodel in Sources */,
-				7312FC962628373900DDFF18 /* pink_blue_green.mlmodel in Sources */,
 				73ED33ED2645858C006F2D34 /* ConformUpViewController.swift in Sources */,
 				73F94EEC27CF6B74004C2FDD /* V_pH_Measure_ViewController.swift in Sources */,
 				73A982862699C4D0000917B8 /* Cl_Predict.swift in Sources */,
-				7312FC952628373900DDFF18 /* orange_blue_green.mlmodel in Sources */,
 				735FC28027F338620030949C /* V_MapViewController.swift in Sources */,
 				73413BFF26D21DE20096DAC4 /* location_info.swift in Sources */,
 				73C7A78E25A59FE800C62ADC /* SelectCateViewController.swift in Sources */,
