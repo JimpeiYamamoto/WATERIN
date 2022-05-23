@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iYj-wb-dRz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iYj-wb-dRz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -225,35 +225,12 @@
                         <segue destination="eXk-92-G8q" kind="show" id="k8N-Ra-Qfu"/>
                         <segue destination="p4B-10-WbV" kind="show" id="bbj-ti-2de"/>
                         <segue destination="f6N-zS-pY8" kind="show" id="jpG-Jg-pRo"/>
-                        <segue destination="s0J-zn-i5j" kind="show" id="eaP-Wd-C6N"/>
                         <segue destination="J1d-Ab-xLh" kind="show" id="l7r-sX-C30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1752.8" y="-253.2233883058471"/>
-        </scene>
-        <!--Tuto View Controller-->
-        <scene sceneID="Nwb-03-ipU">
-            <objects>
-                <viewController storyboardIdentifier="tuto" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s0J-zn-i5j" customClass="TutoViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oKO-dh-C5O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="m_n_image" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Ot-c29">
-                                <rect key="frame" x="16" y="44" width="343" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ksa-Gh-Rjb"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="b6y-fb-wPV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y13-GO-Jbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2132" y="605"/>
         </scene>
         <!--パッケージを撮影してください-->
         <scene sceneID="BBo-3K-uey">
@@ -351,10 +328,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
                                     <imageReference key="image" image="largecircle.fill.circle" catalog="system" symbolScale="large"/>
-                                </buttonConfiguration>
+                                </state>
                                 <connections>
                                     <action selector="takeAction:" destination="J1d-Ab-xLh" eventType="touchUpInside" id="TrK-ea-iCg"/>
                                 </connections>
@@ -385,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecl-NJ-oLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3164" y="502.39880059970017"/>
+            <point key="canvasLocation" x="2724" y="522"/>
         </scene>
         <!--試験紙を撮影してください-->
         <scene sceneID="9qm-76-VSP">
@@ -421,8 +398,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="largecircle.fill.circle" catalog="system" title=""/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="largecircle.fill.circle" catalog="system"/>
                                 <connections>
                                     <action selector="take_action:" destination="wM7-T1-2TM" eventType="touchUpInside" id="D3d-Tz-fvL"/>
                                 </connections>
@@ -443,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5os-Be-A44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4348" y="500.59970014992507"/>
+            <point key="canvasLocation" x="3545" y="521"/>
         </scene>
         <!--測定に進む-->
         <scene sceneID="rqm-HW-oj9">
@@ -479,8 +456,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.forward.circle" catalog="system"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.forward.circle" catalog="system"/>
                                 <connections>
                                     <action selector="ok_action:" destination="8Gj-RB-VK5" eventType="touchUpInside" id="x1A-fP-tUR"/>
                                 </connections>
@@ -501,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwl-bJ-I8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5212" y="500.59970014992507"/>
+            <point key="canvasLocation" x="5212" y="521"/>
         </scene>
         <!--ユーザー登録-->
         <scene sceneID="a5w-qI-wyp">
@@ -1048,7 +1025,7 @@
         <!--試験紙を撮影してください-->
         <scene sceneID="MQR-0f-FCB">
             <objects>
-                <viewController storyboardIdentifier="mesure_" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MRw-2B-ICI" customClass="Mesure_ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mesure_" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MRw-2B-ICI" customClass="pH_Mesure_ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lj5-U3-FsD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1127,7 +1104,7 @@
         <!--パッケージの表を撮影してください-->
         <scene sceneID="vne-n2-mfU">
             <objects>
-                <viewController storyboardIdentifier="cal1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f6N-zS-pY8" customClass="Cal1ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cal1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f6N-zS-pY8" customClass="pH_Cal1ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Stj-Iz-Ssq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1481,7 +1458,7 @@
         <!--パッケージの裏を撮影してください-->
         <scene sceneID="Jd5-la-8zt">
             <objects>
-                <viewController storyboardIdentifier="cal2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VJY-fK-zLv" customClass="Cal2ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cal2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VJY-fK-zLv" customClass="pH_Cal2ViewController" customModule="_0210105WaterCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4fB-iF-a2L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1871,7 +1848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oV-Ja-ZGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5713" y="-1680"/>
+            <point key="canvasLocation" x="6225" y="-1427"/>
         </scene>
         <!--カテゴリー-->
         <scene sceneID="EPB-mB-gz1">
@@ -1908,7 +1885,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15J-dE-Zyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5713" y="-948"/>
+            <point key="canvasLocation" x="6225" y="-699"/>
         </scene>
         <!--測定に進む-->
         <scene sceneID="26q-B4-gSc">
@@ -2137,45 +2114,12 @@
                                     <action selector="finish_action:" destination="Pvy-B0-haR" eventType="touchUpInside" id="fvo-Bt-8jo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcx-xW-2hO">
-                                <rect key="frame" x="57" y="465" width="140" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvp-gu-I85">
-                                <rect key="frame" x="68" y="515" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="minus"/>
-                                <connections>
-                                    <action selector="minus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="vsr-ZI-gpR"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="α:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3J-yk-VHE">
-                                <rect key="frame" x="168" y="461" width="154" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sby-a2-w0D">
-                                <rect key="frame" x="272" y="515" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <state key="normal" image="plus"/>
-                                <connections>
-                                    <action selector="plus:" destination="Pvy-B0-haR" eventType="touchUpInside" id="WgZ-Uf-35I"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kSg-jQ-IJA"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qck-0Y-Bs7"/>
                     <connections>
-                        <outlet property="alpha" destination="y3J-yk-VHE" id="Lh5-Af-dP5"/>
-                        <outlet property="alpha_minus_button" destination="Wvp-gu-I85" id="oez-rR-ex1"/>
-                        <outlet property="alpha_plus_button" destination="Sby-a2-w0D" id="xcj-vE-OCy"/>
                         <outlet property="back_button" destination="L5E-1x-zNK" id="IFm-8Z-LRX"/>
                         <outlet property="buttom_v" destination="6MN-mQ-s9W" id="WCJ-IO-3SV"/>
                         <outlet property="cate_label" destination="vNS-eN-Vxk" id="cc9-Qv-7qZ"/>
@@ -2185,7 +2129,6 @@
                         <outlet property="evaluate_label" destination="SBc-OO-0kH" id="uGY-kx-qAI"/>
                         <outlet property="outcome_label" destination="Rnf-xN-3F4" id="h5J-ZC-ekK"/>
                         <outlet property="paper_label" destination="Qrh-Kw-zrK" id="qjT-5T-zFZ"/>
-                        <outlet property="parameter" destination="lcx-xW-2hO" id="zug-Ly-G4G"/>
                         <outlet property="second_v" destination="llh-7I-r8Q" id="Kfi-1Q-hzw"/>
                         <outlet property="selected_paper_label" destination="X35-Iw-hNC" id="rQT-y0-Bm4"/>
                         <outlet property="sub_label" destination="GZE-6h-jRN" id="vKf-FO-hbi"/>
@@ -2196,7 +2139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLp-eg-5g6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6182" y="-189"/>
+            <point key="canvasLocation" x="6226" y="99"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2go-Q9-rf7">
@@ -2796,7 +2739,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="k8N-Ra-Qfu"/>
         <segue reference="dcZ-qc-ADj"/>
-        <segue reference="yex-5P-img"/>
+        <segue reference="bd0-C3-89I"/>
         <segue reference="bbj-ti-2de"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -2814,9 +2757,7 @@
         <image name="largecircle.fill.circle" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="m_n_image" width="481" height="602"/>
-        <image name="minus" width="512" height="512"/>
         <image name="network" catalog="system" width="128" height="121"/>
-        <image name="plus" width="512" height="512"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

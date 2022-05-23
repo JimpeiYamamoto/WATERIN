@@ -12,7 +12,7 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
     let ud = UserDefaults.standard
     var whichSubject = String()
     var cateList = [String]()
-    var reCall = ResultCall()
+    var ud_data = UD_data()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -23,7 +23,8 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         let width = view.frame.size.width
         let height = view.frame.size.height
-        tableView.frame = CGRect(x: width/40*2, y: height/40*5, width: width/40*36, height: height/40*33)
+        tableView.frame = CGRect(x: width/40*2, y: height/40*5,
+                                 width: width/40*36, height: height/40*33)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
                     title: "",
                     style: .plain,
@@ -32,25 +33,18 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         )
     }
 
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         switch whichSubject {
         case "pH":
             cateList = saveDataGetString(key: "pH_category_list", Array: cateList)
-        case "COD":
-            cateList = saveDataGetString(key: "COD_category_list", Array: cateList)
         case "Cl":
             cateList = saveDataGetString(key: "Cl_category_list", Array: cateList)
-        case "亜鉛":
-            cateList = saveDataGetString(key: "亜鉛_category_list", Array: cateList)
         default:
             print("")
         }
-        reCall.whichSubject = whichSubject
-        reCall.getContents()
+        ud_data.getContents(subject : whichSubject)
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cateList.count+2
@@ -86,18 +80,17 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
         let preVC = nav.viewControllers[nav.viewControllers.count-2] as! LogDetaillViewController
         switch indexPath.row {
         case 0:
-            preVC.selectedCategory = "全てのデータ"
+            preVC.cate_tf.text = "全てのデータ"
         case 1:
-            preVC.selectedCategory = "未分類"
+            preVC.cate_tf.text = "未分類"
         default:
             if cateList.count != 0{
-                preVC.selectedCategory = cateList[indexPath.row-2]
+                preVC.cate_tf.text = cateList[indexPath.row-2]
             }
         }
         self.navigationController?.popViewController(animated: true)
     }
     
-    //最初にUserDefaultから読み込む関数
     func saveDataGetString(key:String, Array:[String]) -> [String]{
         var saveArray = Array
         if ud.array(forKey: key) != nil{
@@ -122,24 +115,24 @@ class SelectCateViewController: UIViewController, UITableViewDelegate, UITableVi
             let action1 = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { [self]
                 (action: UIAlertAction!) in
                 var num = 0
-                for _ in reCall.categoryList
+                for _ in ud_data.categoryList
                 {
-                    if (reCall.categoryList[num] == cateList[indexPath.row - 2])
+                    if (ud_data.categoryList[num] == cateList[indexPath.row - 2])
                     {
-                        reCall.categoryList[num] = "未分類"
+                        ud_data.categoryList[num] = "未分類"
                     }
                     num += 1
                 }
-                reCall.DataAppendSave()
+                ud_data.ud_data_save(subject: whichSubject)
                 cateList.remove(at: indexPath.row - 2)
                 switch whichSubject {
-                case "pH":
+                case v.PH:
                     ud.set(cateList, forKey: "pH_category_list")
                 case "COD":
                     ud.set(cateList, forKey: "COD_category_list")
                 case "亜鉛":
                     ud.set(cateList, forKey: "亜鉛_category_list")
-                case "Cl":
+                case v.CL:
                     ud.set(cateList, forKey: "Cl_category_list")
                 default:
                     print("")

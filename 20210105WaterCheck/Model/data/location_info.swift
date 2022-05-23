@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 
 class location_info
 {
-    
     var address:String?
     var lat:String?
     var lot:String?
@@ -21,15 +22,37 @@ class location_info
     var place_name:String?
     //~番地
     var subthr:String?
+    var locationManager: CLLocationManager!
+
+    func setupLocationManager()
+    {
+        locationManager = CLLocationManager()
+        guard let locationManager = locationManager else { return }
+        locationManager.requestWhenInUseAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse ||  status == .authorizedAlways
+        {
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
+    }
     
-//    init(address:String, lat:String, lot:String, admin:String, locality:String, place_name:String, subthr:String)
-//    {
-//        self.address = address
-//        self.lat = lat
-//        self.lot = lot
-//        self.admin = admin
-//        self.locality = locality
-//        self.place_name = place_name
-//        self.subthr = subthr
-//    }
+    func reverse_geo_coding(locations:[ CLLocation ])
+    {
+        let geocoder = CLGeocoder()
+        if let location = locations.first {
+            geocoder.reverseGeocodeLocation( location, completionHandler: { ( placemarks, error ) in
+                if let placemark = placemarks?.first {
+                    self.admin = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
+                    self.locality = placemark.locality == nil ? "" : placemark.locality!
+                    let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
+                    let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
+                    self.subthr = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
+                    self.place_name = !thoroughfare.contains( subLocality ) ? subLocality : thoroughfare
+                    self.address = self.admin! + self.locality! + self.place_name! + self.subthr!
+                    print(self.address as Any)
+                }
+            })
+        }
+    }
 }
