@@ -79,6 +79,7 @@ class LineChartsClass {
             let y = content.atai
             ret.append(ChartDataEntry(x: x, y: y!))
         }
+        print("Entry=", ret)
         return ret
     }
     
